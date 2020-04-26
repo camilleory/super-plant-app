@@ -54,6 +54,28 @@ router.post(
   })
 );
 
+
+
+// login google
+router.get(
+  "/google",
+  passport.authenticate("google", {
+    scope: [
+      "https://www.googleapis.com/auth/userinfo.profile",
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  })
+);
+router.get(
+  "/google/callback",
+  passport.authenticate("google", {
+    successRedirect: "/",
+    failureRedirect: "/login" // here you would redirect to the login page using traditional login approach
+  })
+);
+
+
+
 // logout
 router.get("/logout", (req, res) => {
   req.logout()
