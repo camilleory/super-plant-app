@@ -1,12 +1,12 @@
-{{#if user}} Hi {{user.username}}, you are logged in. <a href="/logout">Logout</a>{{/if}} 
+{{#if user}} Hi {{user.username}}, you are logged in. <a href="/auth/logout">Logout</a>{{/if}} 
 
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 <br>
 
 {{#unless user}}
-<a href="/signup">Signup</a>
+<a href="/auth/signup">Signup</a>
 
-<a href="/login">Login</a>
+<a href="/auth/login">Login</a>
 {{/unless}}
 

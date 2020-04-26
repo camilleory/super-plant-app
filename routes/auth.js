@@ -31,7 +31,7 @@ router.post("/signup", (req, res) => {
 
   user.save().then((signedUpUser) => {
     req.login(signedUpUser, () => {
-      res.redirect('/');
+      res.redirect('/garden');
     });
   });
 });
@@ -47,8 +47,8 @@ router.get("/login", (req, res, next) => {
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/",
-    failureRedirect: "/login",
+    successRedirect: "/garden",
+    failureRedirect: "/auth/login",
     failureFlash: true,
     passReqToCallback: true,
   })
@@ -69,7 +69,7 @@ router.get(
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    successRedirect: "/",
+    successRedirect: "/garden",
     failureRedirect: "/login" // here you would redirect to the login page using traditional login approach
   })
 );

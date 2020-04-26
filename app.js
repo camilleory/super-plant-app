@@ -112,7 +112,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "/google/callback",
+      callbackURL: "/auth/google/callback",
     },
     (accessToken, refreshToken, profile, done) => {
       // to see the structure of the data in received response:
@@ -146,7 +146,10 @@ app.locals.title = "PlantApp - Plants Love It";
 const index = require("./routes/index");
 app.use("/", index);
 
-const authRoutes = require("./routes/auth.routes");
-app.use("/", authRoutes);
+const auth = require("./routes/auth");
+app.use("/auth", auth);
+
+const garden = require("./routes/garden");
+app.use("/garden", garden);
 
 module.exports = app;
