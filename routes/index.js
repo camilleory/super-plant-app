@@ -1,10 +1,7 @@
 const express = require('express');
-const router  = express.Router();
-
-/* GET home page */
-
-  
+const router  = express.Router();  
 const passport = require("passport");
+
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -21,6 +18,3 @@ router.get('/', (req, res, next) => {
 
 
 module.exports = router;
-
-
-//https://trefle.io/api/plants?q=rosemary&token=ckZrTGRTdWdKKzVUenNvOVVqOFRGdz09
