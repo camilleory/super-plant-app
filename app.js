@@ -149,6 +149,9 @@ app.use("/", index);
 const auth = require("./routes/auth");
 app.use("/auth", auth);
 
+const plants = require('./routes/plants');
+app.use('/', plants);
+
 const garden = require("./routes/garden");
 app.use("/garden", garden);
 

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const PlantSchema = new Schema({
   scientific_name: {
     type: String,
   },
@@ -19,7 +19,7 @@ const userSchema = new Schema({
   note: String,
 });
 
-const Plant = mongoose.model("Plant", userSchema);
+const Plant = mongoose.model("Plant", PlantSchema);
 module.exports = Plant;
 
 //Can we have another data type in our model than the one in the API?
