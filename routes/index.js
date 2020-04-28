@@ -1,15 +1,24 @@
 const express = require('express');
 const router  = express.Router();
-const axios = require('axios')
+
+/* GET home page */
+
+  
+const passport = require("passport");
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  axios.get('https://trefle.io/api/kingdoms?token=ckZrTGRTdWdKKzVUenNvOVVqOFRGdz09').then(function (response) {
-     console.log(response.data)
-    });
-  res.render('index');
-  
+  res.render('index', {user: req.user});
 });
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
 
