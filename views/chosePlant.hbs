@@ -1,0 +1,17 @@
+Please chose which kind of plant you own: 
+
+<form action="/chosePlant" method="post">
+
+  <select name="plantSelection">
+
+{{#each response}}
+
+
+ <option value ="selectedPlant" > {{this.common_name}} </option>
+
+{{/each}}
+
+
+</select>
+<button type="submit">Submit</button>
+</form>

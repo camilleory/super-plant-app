@@ -1,0 +1,24 @@
+
+
+<h2>Add a plant</h2>
+
+  <form action="/addPlant" method="post">
+  <label for="">Plant name:</label>
+  <input type="text" name="common_name">
+
+  {{!-- <label for="">Scientific plant name:</label>
+  <input type="text" name="scientific_name"> --}}
+
+  <label for="">Nickname:</label>
+  <input type="text" name="nickname">
+
+<label for="">Note:</label>
+  <input type="text" name="note">
+
+  <p>Upload an image of your plant</p>
+
+  <button type="submit">Add to garden</button>
+</form> 
+
+
+<p>{{data}}</p>
