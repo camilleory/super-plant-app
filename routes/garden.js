@@ -2,29 +2,28 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 const Plant = require("../models/plantModel");
+const passport = require('passport');
 
-// every route below ist protected through this middleware
-// router.use((req, res, next) => {
-//   if (req.isAuthenticated()) {
-//     next();
-//   } else {
-//     res.redirect("auth/login");
-//   }
-// });
-
-// router.get("/garden", (req, res, next) => {
-//   res.render("garden/garden");
-// });
+// every route below ist protected through this middleware, only accessable after login
+router.use((req, res, next) => {
+  if (req.isAuthenticated()) {
+    next();
+  } else {
+    res.redirect("/auth/login");
+  }
+});
 
 // garden GET REQUEST (READ)
 // If the user has a list of plants --> Display plants from Database 
 // TO DO --> If the user is new, show some random plants (from API or from Database?)
 
 router.get('/', (req, res, next) => {
+
   Plant.find().then((plants) => {
     //console.log("plants from Database:", plants + plants.length)
     res.render('garden/garden', {
-      plantsList: plants
+      plantsList: plants,
+      user: req.user,
     });
   });
 });
@@ -70,8 +69,8 @@ router.post('/chosePlant', (req, res) => {
           common_name: response.data.common_name,
           // image_url: response.data.images[0].url,
           // average_temperature: 9,
-          //precipitation_minimum: response.data.growth.precipitation_minimum,
-          //precipitation_maximum: response.data.growth.precipitation_maximum,
+          // precipitation_minimum: response.data.growth.precipitation_minimum,
+          // precipitation_maximum: response.data.growth.precipitation_maximum,
           // temperature_minimum: response.data.growth.temperature_minimum,
           // shade_tolerance: response.data.growth.shade_tolerance,
           // toxicity:response.data.specifications.toxicity,

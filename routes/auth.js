@@ -23,7 +23,7 @@ router.get("/signup", (req, res) => {
 router.post("/signup", (req, res) => {
   const salt = bcrypt.genSaltSync(bcryptSalt);
   const hashedPassword = bcrypt.hashSync(req.body.password, salt);
-
+  
   let user = new User({
     username: req.body.username,
     password: hashedPassword,
