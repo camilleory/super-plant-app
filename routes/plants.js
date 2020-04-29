@@ -75,12 +75,13 @@ router.get('/chosePlant', (req, res, next) => {
 
 //chosePlant POST REQUEST --> Get plant ID and make a new post request to api, then save data into database
 
-
 router.post('/chosePlant', (req, res) => {
-
-  axios.get('https://trefle.io/api/plants/${id}', (req, res) => {
-    id=req.params.selectedPlant
-  }).then((response) => {
+  axios.get("https://trefle.io/api/plants/"+ req.body.plantSelection, {
+    params: {
+      token: "ckZrTGRTdWdKKzVUenNvOVVqOFRGdz09"
+    }
+    })
+    .then((response) => {
     console.log("This is the response from API", response.data)
     res.render('garden' /*, {response: response.data}*/ )
   });
