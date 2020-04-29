@@ -1,12 +1,20 @@
+Welcome to your private garden, {{user.username}}! <a href="auth/logout">Log out</a>.
 
-<h2>Your garden</h2>
+<h1>Your garden</h1>
+<a href="garden/addPlant">Add a new plant</a>
+
 <ul>
 {{#each plantsList}}
-<li>{{this.scientific_name}}</li>
-<li>{{this.common_name}}</li>
+
+<h4>{{this.common_name}}</h4>
+<li>Scientific Name: {{this.scientific_name}}</li>
+<li>Common Name: {{this.common_name}}</li>
+<br>
 <a href="garden/editPlant">Edit plant</a>
+<br>
+<br>
 <form action="garden/delete/{{this.id}}" method="POST"><button type="submit">Delete plant</button>
 </form>
+<br>
 {{/each}}
 </ul>
-<a href="garden/addPlant">Add a new plant</a>

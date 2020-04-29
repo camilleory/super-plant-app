@@ -67,7 +67,7 @@ app.use(
       ttl: 24 * 60 * 60, // 1 day
     }),
   })
-);
+);                 
 
 // associate user with a session // store the user into the session
 passport.serializeUser((user, callback) => {
@@ -139,9 +139,6 @@ passport.use(
 //Passport setup
 app.use(passport.initialize());
 app.use(passport.session());
-
-// default value for title local
-app.locals.title = "PlantApp - Plants Love It";
 
 const index = require("./routes/index");
 app.use("/", index);
