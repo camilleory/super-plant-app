@@ -1,17 +1,16 @@
-Please chose which kind of plant you own: 
+Please chose which kind of plant you own:
 
-<form action="garden/chosePlant" method="post">
-
+<form action="/garden/chosePlant" method="post">
   <select name="plantSelection">
-
 {{#each response}}
-
-
- <option value ="selectedPlant" > {{this.common_name}} </option>
-
+ <option value ={{this.id}} > {{this.common_name}} </option>
+  {{!-- <label for="">Nickname:</label>
+  <input type="text" name="nickname">
+<label for="">Note:</label>
+  <input type="text" name="note">
+  <p>Upload an image of your plant</p>
+  <button type="submit">Add to garden</button> --}}
 {{/each}}
-
-
 </select>
 <button type="submit">Submit</button>
 </form>

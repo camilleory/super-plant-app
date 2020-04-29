@@ -1,19 +1,12 @@
+
 <h2>Your garden</h2>
-
-
 <ul>
 {{#each plantsList}}
-
-<li>{{this}}
-<a href="#">Edit plant</a>
-<a href="#">Delete plant</a>
-
-
-</li>
-
-
+<li>{{this.scientific_name}}</li>
+<li>{{this.common_name}}</li>
+<a href="garden/editPlant">Edit plant</a>
+<form action="garden/delete/{{this.id}}" method="POST"><button type="submit">Delete plant</button>
+</form>
 {{/each}}
-
 </ul>
-
 <a href="garden/addPlant">Add a new plant</a>
