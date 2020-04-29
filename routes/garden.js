@@ -59,7 +59,7 @@ router.get('/chosePlant', (req, res, next) => {
 router.post('/chosePlant', (req, res) => {
   axios.get("https://trefle.io/api/plants/" + req.body.plantSelection, {
       params: {
-        token: "ckZrTGRTdWdKKzVUenNvOVVqOFRGdz09"
+        token: process.env.TREFLE_TOKEN
       }
     })
     .then((response) => {
