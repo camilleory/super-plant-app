@@ -124,7 +124,7 @@ router.get('/editPlant', (req, res, next) => {
   res.render('editPlant');
 });
 
-
+router.post
 
 
 module.exports = router;
