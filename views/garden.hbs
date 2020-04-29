@@ -4,12 +4,11 @@
 <ul>
 {{#each plantsList}}
 
-<li>{{this}}
+<li>{{this}}</li>
+
 <a href="#">Edit plant</a>
-<a href="#">Delete plant</a>
-
-
-</li>
+<form action="/delete/{{this.id}}" method="POST"><button type="submit">Delete plant</button>
+</form>
 
 
 {{/each}}

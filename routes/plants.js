@@ -12,7 +12,7 @@ const Plant = require('../models/plantModel')
 router.get('/garden', (req, res, next) => {
   Plant.find().then((plants) => {
 
-    console.log("plants from Database:", plants + plants.length)
+    //console.log("plants from Database:", plants + plants.length)
 
     res.render('garden', {
       plantsList: plants
@@ -43,8 +43,8 @@ router.post('/addPlant', (req, res) => {
     res.render('chosePlant', {
       response: response.data
     })
-  }).then (()=> {
-      console.log('ID parameter will be here')
+  }).then(() => {
+    console.log('ID parameter will be here')
 
   })
 });
@@ -76,28 +76,54 @@ router.get('/chosePlant', (req, res, next) => {
 //chosePlant POST REQUEST --> Get plant ID and make a new post request to api, then save data into database
 
 router.post('/chosePlant', (req, res) => {
-  axios.get("https://trefle.io/api/plants/"+ req.body.plantSelection, {
-    params: {
-      token: "ckZrTGRTdWdKKzVUenNvOVVqOFRGdz09"
-    }
+  axios.get("https://trefle.io/api/plants/" + req.body.plantSelection, {
+      params: {
+        token: "ckZrTGRTdWdKKzVUenNvOVVqOFRGdz09"
+      }
     })
     .then((response) => {
-    console.log("This is the response from API", response.data)
-    res.render('garden' /*, {response: response.data}*/ )
-  });
+        console.log("This is the response from API", response.data)
+        let plant = new Plant({
+          scientific_name: response.data.scientific_name,
+          common_name: response.data.common_name,
+          image_url: response.data.images[0].url,
+          // average_temperature: 9,
+          //precipitation_minimum: response.data.growth.precipitation_minimum,
+          //precipitation_maximum: response.data.growth.precipitation_maximum,
+          // temperature_minimum: response.data.growth.temperature_minimum,
+          // shade_tolerance: response.data.growth.shade_tolerance,
+          // toxicity:response.data.specifications.toxicity,
+          // nickname: "some nickname",
+          // note: "some note"
+
+        })
+
+        plant.save().then(() => {
+          res.redirect('/garden')
+        })
+      
+    });
 })
 
 
-// Delete Plant
-// router.post('garden/delete/:id', (req, res) => {
+// Delete Plant POST REQUEST
+router.post('/delete/:id', (req, res) => {
 
-//   console.log(req.params.id)
+  console.log(req.params.id)
 
-//   Plant.findByIdAndDelete(req.params.id).then(() => {
-//     res.redirect('/garden')
-//   })
+  Plant.findByIdAndRemove(req.params.id).then(() => {
+    res.redirect('/garden')
+  })
 
-// })
+})
+
+// EditPlant GET REQUEST
+
+router.get('/editPlant', (req, res, next) => {
+
+  res.render('editPlant');
+});
+
 
 
 
