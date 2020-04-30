@@ -38,7 +38,7 @@ router.post('/addPlant', (req, res) => {
   axios.get('https://trefle.io/api/plants/', {
     params: {
       q: req.body.common_name,
-      token: "ckZrTGRTdWdKKzVUenNvOVVqOFRGdz09"
+      token: process.env.TREFLE_TOKEN
     }
   }).then((response) => {
     console.log("This is the response from API", response.data)
