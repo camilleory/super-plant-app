@@ -69,12 +69,12 @@ router.post('/chosePlant', (req, res) => {
           common_name: response.data.common_name,
           // image_url: response.data.images[0].url,
           // average_temperature: 9,
-          // precipitation_minimum: response.data.growth.precipitation_minimum,
-          // precipitation_maximum: response.data.growth.precipitation_maximum,
-          // temperature_minimum: response.data.growth.temperature_minimum,
+          // precipitation_minimum: temperature_minimum,
           // shade_tolerance: response.data.growth.shade_tolerance,
           // toxicity:response.data.specifications.toxicity,
-          // nickname: "some nickname",
+          // nickname: "soresponse.data.growth.precipitation_minimum,
+          // precipitation_maximum: response.data.growth.precipitation_maximum,
+          // temperature_minimum: response.data.growth.teme nickname",
           // note: "some note"
         })
         plant.save().then(() => {
