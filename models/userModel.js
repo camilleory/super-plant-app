@@ -5,8 +5,8 @@ const userSchema = new Schema(
   {
     username: String,
     password: String,
-    plantId: [{ type: Schema.Types.ObjectId, ref: "Plant" }],
     isAdmin: Boolean,
+    googleID: String,
   },
   {
     timestamps: true,

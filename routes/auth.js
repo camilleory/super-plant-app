@@ -89,7 +89,8 @@ router.get(
   "/google/callback",
   passport.authenticate("google", {
     successRedirect: "/garden",
-    failureRedirect: "/login", // here you would redirect to the login page using traditional login approach
+    failureRedirect: "/login",
+    passReqToCallback: true,
   })
 );
 
