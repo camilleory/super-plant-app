@@ -14,12 +14,13 @@ const PlantSchema = new Schema({
     type: String,
     required: true,
   },
-  family_common_name: String,
   images: {
     type: Array,
     default: [{url: "images/no-image-found.jpg"}],
     set: noValue,
   },
+  owner: Schema.Types.ObjectId,
+  family_common_name: String,
   nickname: String,
   note: String,
 });
