@@ -19,7 +19,7 @@ router.use((req, res, next) => {
 
 router.get("/", (req, res, next) => {
   Plant.find({owner: req.user}).then((plants) => {
-    //console.log("plants from Database:", plants + plants.length)
+    console.log(req.user)
     res.render("garden/garden", {
       plantsList: plants,
       user: req.user,

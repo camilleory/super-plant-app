@@ -118,6 +118,7 @@ passport.use(
       // to see the structure of the data in received response:
       console.log("Google account details:", profile);
 
+      // User.findOne({ googleID: profile.id })
       User.findOne({ googleID: profile.id })
         .then((user) => {
           if (user) {
@@ -125,7 +126,7 @@ passport.use(
             return;
           }
 
-          User.create({ googleID: profile.id })
+          User.create({ googleID: profile.id, username: profile.displayName })
             .then((newUser) => {
               done(null, newUser);
             })
