@@ -6,9 +6,13 @@ Welcome to your private garden, {{user.username}}! <a href="auth/logout">Log out
 <ul>
 {{#each plantsList}}
 
-<h4>{{this.common_name}}</h4>
+<h3>{{this.common_name}}</h3>
+<li><img height="250px" src="{{this.images.0.url}}" alt=""></li>
 <li>Scientific Name: {{this.scientific_name}}</li>
 <li>Common Name: {{this.common_name}}</li>
+<li>Family Common Name: {{this.family_common_name}}</li>
+<li>Nickname: {{this.nickname}}</li>
+<li>Note: {{this.note}}</li>
 <br>
 <a href="garden/editPlant">Edit plant</a>
 <br>

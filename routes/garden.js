@@ -67,16 +67,11 @@ router.post('/chosePlant', (req, res) => {
         let plant = new Plant({
           scientific_name: response.data.scientific_name,
           common_name: response.data.common_name,
-          // image_url: response.data.images[0].url,
-          // average_temperature: 9,
-          // precipitation_minimum: temperature_minimum,
-          // shade_tolerance: response.data.growth.shade_tolerance,
-          // toxicity:response.data.specifications.toxicity,
-          // nickname: "soresponse.data.growth.precipitation_minimum,
-          // precipitation_maximum: response.data.growth.precipitation_maximum,
-          // temperature_minimum: response.data.growth.teme nickname",
-          // note: "some note"
-        })
+          family_common_name: response.data.family_common_name,
+          images: response.data.images,
+          nickname: "some nickname",
+          note: "some note",
+        })  
         plant.save().then(() => {
           res.redirect('/garden')
         })

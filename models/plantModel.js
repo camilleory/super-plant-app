@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+function noValue(val) {
+  if (val[0] === undefined) val = [{url: "images/no-image-found.jpg"}];
+  return val;
+}
+
 const PlantSchema = new Schema({
   scientific_name: {
     type: String,
@@ -9,12 +14,12 @@ const PlantSchema = new Schema({
     type: String,
     required: true,
   },
-  image_url: String,
-  average_temperature: Number,
-  precipitation_minimum: Number,
-  precipitation_maximum: Number,
-  shade_tolerance: String,
-  toxicity: String,
+  family_common_name: String,
+  images: {
+    type: Array,
+    default: [{url: "images/no-image-found.jpg"}],
+    set: noValue,
+  },
   nickname: String,
   note: String,
 });
