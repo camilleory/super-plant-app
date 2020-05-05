@@ -14,8 +14,9 @@ Welcome to your private garden, {{user.username}}! <a href="auth/logout">Log out
 <li>Nickname: {{this.nickname}}</li>
 <li>Note: {{this.note}}</li>
 <br>
-<a href="garden/editPlant">Edit plant</a>
+<a href="garden/editPlant/{{this.id}}">Edit plant</a>
 <br>
+
 <br>
 <form action="garden/delete/{{this.id}}" method="POST"><button type="submit">Delete plant</button>
 </form>

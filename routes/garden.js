@@ -92,9 +92,34 @@ router.post("/delete/:id", (req, res) => {
     res.redirect("/garden");
   });
 });
+
+
 // EditPlant GET REQUEST
-router.get("/editPlant", (req, res, next) => {
-  res.render("garden/editPlant");
+router.get("/editPlant/:id", (req, res, next) => {
+  Plant.findById(req.params.id).then((plant)=>{
+    res.render("garden/editPlant", {myPlant: plant});
+  })
 });
+
+
+// EditPlant POST REQUEST
+
+router.post("/editPlant/:id", (req, res) => {
+
+  Plant.findByIdAndUpdate(req.params.id, {
+    scientific_name: req.body.scientific_name,
+    common_name: req.body.common_name,
+    nickname: req.body.nickname,
+    note: req.body.note,
+    // water: req.body.water,
+    // position: req.body.position
+  }).then(() => {
+    res.redirect('/garden')
+  });
+});
+
+
+
+
 
 module.exports = router;

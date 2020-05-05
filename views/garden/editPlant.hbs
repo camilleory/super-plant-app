@@ -1,1 +1,30 @@
 <h2>EDIT PLANT</h2>
+
+<form action="/garden/editPlant/{{myPlant.id}}" method="post">
+
+
+<img height="250px" src="{{myPlant.image_url}}" alt=""></li>
+  <button>Upload an image of your plant</button>
+
+
+ <label for="">Scientific Name:</label>
+  <input type="text" name="scientific_name" value="{{myPlant.scientific_name}}">
+
+  <label for="">Common Name:</label>
+  <input type="text" name="scientific_name" value="{{myPlant.common_name}}">
+
+  <label for="">Nickname:</label>
+  <input type="text" name="nickname" value="{{myPlant.nickname}}">
+
+  <label for="">Note:</label>
+  <input type="text" name="note" value="{{myPlant.note}}">
+  
+  
+  {{!-- <label for="">Water amount:</label>
+  <input type="text" name="water">
+
+  <label for="">Optimal position:</label>
+  <input type="text" name="position"> --}}
+
+  <button type="submit">Edit</button>
+</form>
