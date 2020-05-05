@@ -32,6 +32,9 @@ a {
   text-align: center;
   /* max-width: 40vw; */
   font-size: large;
+  padding-left: 10%;
+  padding-right: 10%;
+
 }
 
 .form-container input {
