@@ -21,6 +21,9 @@ a {
   color: #1664FF; }
 
 /*# sourceMappingURL=style.css.map */
+h5 {
+  color: #4FDB98; }
+
 /* FORM */
 .form-container {
   display: flex;
@@ -36,17 +39,46 @@ a {
   padding: 35px;
   border: 2px solid #1664FF; }
 
-.form-container button {
+.btn-style {
   padding: 35px;
   border-radius: 1em;
   border: none;
   background-color: #1664FF;
   color: white; }
 
+.signup-btn {
+  width: 60vw;
+  margin-bottom: 30px;
+  padding: 35px;
+  border-radius: 1em;
+  border: none;
+  background-color: none;
+  color: white; }
+
+.signup-btn a {
+  color: white;
+  text-decoration: none; }
+
+.signup-btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none; }
+
 .btn-shadow {
   -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
+
+.btn-shadow:hover {
+  -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3); }
+
+.form-container button {
+  padding: 35px;
+  border-radius: 1em;
+  border: none;
+  background-color: #1664FF;
+  color: white; }
 
 .hamburger {
   font-size: 20px;
