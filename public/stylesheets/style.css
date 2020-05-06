@@ -7,42 +7,52 @@ body {
   background-color: #fff000;
   background-image: url(../images/Secret-Garden.jpg);
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
   font-family: Josefin Sans, sans-serif;
   font-weight: 500;
   color: white; }
 
+main {
+  margin-top: 10vh; }
+
 a {
-  color: #00B7FF; }
+  color: #1664FF; }
 
 /*# sourceMappingURL=style.css.map */
-/* FORMS */
+/* FORM */
 .form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* max-width: 40vw; */
   font-size: large;
-  padding-left: 10%;
-  padding-right: 10%; }
+  line-height: 1.7em;
+  padding: 4% 13%; }
 
 .form-container input {
   padding: 35px;
-  border: 2px solid #FF3981; }
+  border: 2px solid #1664FF; }
 
 .form-container button {
   padding: 35px;
   border-radius: 1em;
-  background-color: #FF3981;
+  border: none;
+  background-color: #1664FF;
   color: white; }
 
-/* .shadow {
-  -moz-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
-	-webkit-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
-	box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
-} */
+.btn-shadow {
+  -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
+  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
+
+.hamburger {
+  font-size: 20px;
+  color: #1664FF; }
+
+.navbar-toggler {
+  border: none; }
 
 /*# sourceMappingURL=style.css.map */
