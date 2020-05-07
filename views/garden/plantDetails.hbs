@@ -1,4 +1,3 @@
-Plant details here
 
 <h3>{{myPlant.common_name}}</h3>
 <li><img height="250px" src="{{myPlant.images.0.url}}" alt=""></li>
@@ -8,8 +7,14 @@ Plant details here
 <li>Family Common Name: {{myPlant.family_common_name}}</li>
 <li>Nickname: {{myPlant.nickname}}</li>
 <li>Note: {{myPlant.note}}</li>
+<li>Water amount: {{myPlant.water}}</li>
+<li>Optimal position: {{myPlant.position}}</li>
+
 <br>
 
+
+<form action="/garden/delete/{{myPlant.id}}" method="POST"><button type="submit">Delete plant</button></form>
+
  
-<a href="/editPlant/{{myPlant.id}}">Edit plant</a>
-<form action="garden/delete/{{myPlant.id}}" method="POST"><button type="submit">Delete plant</button>
+<a href="/garden/editPlant/{{myPlant.id}}">Edit plant</a>
+

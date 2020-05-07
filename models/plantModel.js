@@ -23,6 +23,8 @@ const PlantSchema = new Schema({
   family_common_name: String,
   nickname: String,
   note: String,
+  water: String,
+  position: String
 });
 
 const Plant = mongoose.model("Plant", PlantSchema);
