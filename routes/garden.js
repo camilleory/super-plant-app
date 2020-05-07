@@ -78,6 +78,8 @@ router.post("/chosePlant", (req, res) => {
         owner: req.user.id,
         nickname: "some nickname",
         note: "some note",
+        water: "water amount",
+        position:"sun or shadow"
       });
       plant.save().then(() => {
         res.redirect("/garden");
@@ -85,13 +87,17 @@ router.post("/chosePlant", (req, res) => {
     });
 });
 
-// Delete Plant POST REQUEST
-router.post("/delete/:id", (req, res) => {
-  console.log(req.params.id);
-  Plant.findByIdAndRemove(req.params.id).then(() => {
-    res.redirect("/garden");
-  });
+
+//Detail page GET REQUEST
+router.get("/plantDetails/:id", (req, res, next) => {
+  Plant.findById(req.params.id).then((plant)=>{
+    res.render("garden/plantDetails", {myPlant: plant});
 });
+});
+
+
+
+
 
 
 // EditPlant GET REQUEST
@@ -111,22 +117,22 @@ router.post("/editPlant/:id", (req, res) => {
     common_name: req.body.common_name,
     nickname: req.body.nickname,
     note: req.body.note,
-    // water: req.body.water,
-    // position: req.body.position
+    water: req.body.water,
+    position: req.body.position
   }).then(() => {
     res.redirect('/garden')
   });
 });
 
 
-//Detail page GET REQUEST
-router.get("/plantDetails/:id", (req, res, next) => {
-  Plant.findById(req.params.id).then((plant)=>{
-    res.render("garden/plantDetails", {myPlant: plant});
-});
-});
 
-
+// Delete Plant POST REQUEST
+router.post("/delete/:id", (req, res) => {
+  console.log(req.params.id);
+  Plant.findByIdAndRemove(req.params.id).then(() => {
+    res.redirect("/garden");
+  });
+});
 
 
 
