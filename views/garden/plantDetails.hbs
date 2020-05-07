@@ -1,6 +1,18 @@
 
 <h3>{{myPlant.common_name}}</h3>
-<li><img height="250px" src="{{myPlant.images.0.url}}" alt=""></li>
+{{!-- <li><img height="250px" src="{{myPlant.images.0.url}}" alt=""></li> --}}
+{{#each myPlant.images}}
+<img height="250px" src="{{url}}" alt="">
+{{/each}}
+<br>
+<br>
+
+<h4>Upload you own image</h4>
+<form action="/garden/plantDetails/uploadImage/{{myPlant.id}}" method="post" enctype="multipart/form-data">
+<input type="file" name="user-image" id="">
+<button type="submit">Upload Image</button>
+</form>
+<br>
 
 <li>Scientific Name: {{myPlant.scientific_name}}</li>
 <li>Common Name: {{myPlant.common_name}}</li>
