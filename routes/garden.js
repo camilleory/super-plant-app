@@ -4,7 +4,15 @@ const axios = require("axios");
 const Plant = require("../models/plantModel");
 const passport = require("passport");
 
-// every route below ist protected through this middleware, only accessable after login
+
+const cloudinary = require('cloudinary');
+const cloudinaryStorage = require('multer-storage-cloudinary');
+// package to allow <input type="file"> in forms
+const multer = require('multer');
+
+
+
+// every route below ist protected through this middleware, only accessable after login and email verification
 router.use((req, res, next) => {
   if (req.isAuthenticated() && req.user.verifiedEmail === true) {
     next();
@@ -125,6 +133,42 @@ router.post("/editPlant/:id", (req, res) => {
   });
 });
 
+
+
+// cloudinary setup
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_KEY,
+  api_secret: process.env.CLOUDINARY_SECRET
+});
+
+var storage = cloudinaryStorage({
+  cloudinary: cloudinary,
+  folder: 'plant-images', // The name of the folder in cloudinary
+  allowedFormats: ['jpg', 'png'],
+  filename: function (req, file, cb) {
+    cb(null, file.originalname); // The file on cloudinary would have the same name as the original file name
+  }
+});
+
+
+// upload user image and push to first position of plant image array. no image model needed.
+const uploadCloud = multer({ storage: storage });
+
+router.post(
+  "/plantDetails/uploadImage/:id",
+  uploadCloud.single("user-image"),
+  (req, res) => {
+    const imageURL = req.file.url;
+
+    Plant.findByIdAndUpdate(req.params.id, {
+      $push: { images: { $each: [{ url: imageURL }], $position: 0 } },
+      new: true,
+    }).then((plant) => {
+      res.redirect("/garden/plantDetails/" + req.params.id);
+    });
+  }
+);
 
 
 // Delete Plant POST REQUEST

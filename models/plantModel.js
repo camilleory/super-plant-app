@@ -30,4 +30,4 @@ const PlantSchema = new Schema({
 const Plant = mongoose.model("Plant", PlantSchema);
 module.exports = Plant;
 
-//Can we have another data type in our model than the one in the API?
+
