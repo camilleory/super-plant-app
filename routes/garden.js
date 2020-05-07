@@ -6,7 +6,7 @@ const passport = require("passport");
 
 // every route below ist protected through this middleware, only accessable after login
 router.use((req, res, next) => {
-  if (req.isAuthenticated()) {
+  if (req.isAuthenticated() && req.user.verifiedEmail === true) {
     next();
   } else {
     res.redirect("/auth/login");
@@ -76,8 +76,10 @@ router.post("/chosePlant", (req, res) => {
         family_common_name: response.data.family_common_name,
         images: response.data.images,
         owner: req.user.id,
-        nickname: "some nickname",
-        note: "some note",
+        nickname: req.body.nickname,
+        note: req.body.note,
+        water: req.body.water,
+        position:req.body.position
       });
       plant.save().then(() => {
         res.redirect("/garden");
@@ -85,13 +87,17 @@ router.post("/chosePlant", (req, res) => {
     });
 });
 
-// Delete Plant POST REQUEST
-router.post("/delete/:id", (req, res) => {
-  console.log(req.params.id);
-  Plant.findByIdAndRemove(req.params.id).then(() => {
-    res.redirect("/garden");
-  });
+
+//Detail page GET REQUEST
+router.get("/plantDetails/:id", (req, res, next) => {
+  Plant.findById(req.params.id).then((plant)=>{
+    res.render("garden/plantDetails", {myPlant: plant});
 });
+});
+
+
+
+
 
 
 // EditPlant GET REQUEST
@@ -111,14 +117,23 @@ router.post("/editPlant/:id", (req, res) => {
     common_name: req.body.common_name,
     nickname: req.body.nickname,
     note: req.body.note,
-    // water: req.body.water,
-    // position: req.body.position
+    water: req.body.water,
+    position: req.body.position
   }).then(() => {
+    //redirect to detail page with id (?)
     res.redirect('/garden')
   });
 });
 
 
+
+// Delete Plant POST REQUEST
+router.post("/delete/:id", (req, res) => {
+  console.log(req.params.id);
+  Plant.findByIdAndRemove(req.params.id).then(() => {
+    res.redirect("/garden");
+  });
+});
 
 
 

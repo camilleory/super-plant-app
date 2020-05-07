@@ -8,17 +8,16 @@
   {{/if}}
 
   <form action="/auth/login" method="post" class="form-container">
-    <label for="username">Username:</label>
-    <input type="test" name="username" placeholder="Username">
+    <label for="email">Email:</label>
+    <input type="email" name="email" placeholder="Email">
     <br />
     <label for="password">Password: </label>
-    <input type="password" name="password" placeholder="*******">
+    <input type="password" name="passwd" placeholder="*******">
     <br />
     <button type="submit" class="btn-style btn-shadow">Login</button>
     {{#unless user}}
     <a href="/auth/google" class="btn-style btn-shadow">Login with Google</a>
     {{/unless}}
   </form>
-  
   <br />
   <p>Don't have an account? <a href="/auth/signup">Sign up</a> instead.</p>
