@@ -121,7 +121,7 @@ router.post("/editPlant/:id", (req, res) => {
     position: req.body.position
   }).then(() => {
     //redirect to detail page with id (?)
-    res.redirect('/garden')
+    res.redirect('/garden/plantDetails/'+ req.params.id)
   });
 });
 

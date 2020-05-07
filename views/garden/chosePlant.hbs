@@ -3,6 +3,8 @@ Please chose which kind of plant you own:
 <form action="/garden/chosePlant" method="post">
   <select name="plantSelection">
 {{#each response}}
+
+
  <option value ={{this.id}} > {{this.common_name}} </option>
   
  
