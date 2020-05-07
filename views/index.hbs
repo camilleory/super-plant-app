@@ -1,21 +1,19 @@
 {{#if user}} Hi {{user.username}}, you are logged in. <a href="/auth/logout">Logout</a>{{/if}}
 
-<h2>all my plants</h2>
-<h5>look after them and they will look after you</h5>
-
 <main class="form-container">
+  <br />
+  <br />
+  <h1>all my plants</h1>
+  <br />
 
   {{#if user}}Go to your <a href="/garden">Garden</a>.{{/if}}
-
-  <br>
-  <br>
 
   {{#unless user}}
 
   <a class="signup-btn btn-shadow" href="/auth/login">Login</a>
-
+  <a class="signup-btn btn-shadow" href="/auth/google">Login with Google</a>
   <a class="signup-btn btn-shadow" href="/auth/signup">Sign up</a>
 
+  {{/unless}}
 
 </main>
-{{/unless}}

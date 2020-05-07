@@ -1,23 +1,23 @@
-<h2>LOGIN</h2>
+<span class="logo">all my plants</span>
+<br /><br />
+<main class="form-container">
+  <h1>Login</h1>
 
-<form action="/auth/login" method="post">
+  {{#if message}}
+  <p class="error-msg">{{message}}</p>
+  {{/if}}
 
-<label for="email">Email:</label>
-<input type="email" name="email" placeholder="Email">
-<br>
-<br>
-<label for="password">Password: </label>
-<input type="password" name="passwd" placeholder="*******">
-<br>
-<br>
-<button type="submit">Login</button>
-</form>
-<br>
-{{message}}
-<br>
-<br>
-{{#unless user}}
-  <div>
-    <a href="/auth/google">Login With Google</a>
-  </div>
-{{/unless}}
+  <form action="/auth/login" method="post" class="form-container">
+    <label for="email">Email:</label>
+    <input type="email" name="email" placeholder="Email">
+    <br />
+    <label for="password">Password: </label>
+    <input type="password" name="passwd" placeholder="*******">
+    <br />
+    <button type="submit" class="btn-style btn-shadow">Login</button>
+    {{#unless user}}
+    <a href="/auth/google" class="btn-style btn-shadow">Login with Google</a>
+    {{/unless}}
+  </form>
+  <br />
+  <p>Don't have an account? <a href="/auth/signup">Sign up</a> instead.</p>
