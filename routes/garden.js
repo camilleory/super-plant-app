@@ -120,6 +120,7 @@ router.post("/editPlant/:id", (req, res) => {
     water: req.body.water,
     position: req.body.position
   }).then(() => {
+    //redirect to detail page with id (?)
     res.redirect('/garden')
   });
 });
