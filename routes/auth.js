@@ -50,7 +50,7 @@ router.post("/signup", (req, res, next) => {
     html: `Click on this link to verify your email adress for Super Plant App: http://localhost:3000/auth/verify-email/${token}`,
   });
 
-  User.findOne({ token: token })
+  User.findOne({ email })
     .then((user) => {
       
       if (user !== null) {
@@ -74,11 +74,11 @@ router.post("/signup", (req, res, next) => {
     })
 
     .then(() => {
-      res.redirect("/auth/login" /*, { message: req.flash("error") } */);
+      res.render("auth/verify" /*, { message: req.flash("error") } */);
     })
 
     .catch((error) => {
-      res.render("auth/signup", { message: "Something went wrong" });
+      res.render("auth/verify", /*{ message: "Something went wrong" } */);
     });
 });
 

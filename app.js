@@ -126,7 +126,7 @@ passport.use(
       console.log("Google account details:", profile);
 
       // User.findOne({ googleID: profile.id })
-      User.findOne({ googleID: profile.id })
+      User.findOne({ email: profile.emails[0].value })
         .then((user) => {
           if (user) {
             done(null, user);
