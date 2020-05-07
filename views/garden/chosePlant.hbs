@@ -4,13 +4,22 @@ Please chose which kind of plant you own:
   <select name="plantSelection">
 {{#each response}}
  <option value ={{this.id}} > {{this.common_name}} </option>
-  {{!-- <label for="">Nickname:</label>
-  <input type="text" name="nickname">
-<label for="">Note:</label>
-  <input type="text" name="note">
-  <p>Upload an image of your plant</p>
-  <button type="submit">Add to garden</button> --}}
+  
+ 
 {{/each}}
 </select>
+
+<br>
+<label for="">Nickname:</label>
+<input type="text" name="nickname">
+ <label for="">Note:</label>
+  <input type="text" name="note">
+  <p>Upload an image of your plant</p>
+ <label for="">Water amount:</label>
+   <input type="text" name="water">
+<label for="">Optimal position:</label>
+   <input type="text" name="position">
+
+  <p>Upload an image of your plant</p>
 <button type="submit">Submit</button>
 </form>
