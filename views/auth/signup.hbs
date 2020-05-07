@@ -1,21 +1,23 @@
-<h2>SIGNUP</h2>
+<span class="logo">all my plants</span>
+<br /><br />
+<main class="form-container">
+  <h1>Sign up</h1>
 
-<form action="/auth/signup" method="post">
+  {{#if message}}
+  <p class="error-msg">{{message}}</p>
+  {{/if}}
 
-
+<form action="/auth/signup" method="post" class="form-container">
 <label for="name">Name:</label>
 <input type="text" name="name" placeholder="Name">
-<br>
+<br />
 <label for="email">Email:</label>
 <input type="email" name="email" placeholder="Email">
-<br>
+<br />
 <label for="password">Password: </label>
 <input type="password" name="password" placeholder="*******">
-<br>
-<br>
-{{message}}
-<br>
-<br>
-<button type="submit">Signup</button>
-
+<br /> 
+<button type="submit" class="btn-style btn-shadow">Sign up</button>
 </form>
+<br />
+<p>Already have an account? <a href="/auth/login">Login</a> instead.</p>
