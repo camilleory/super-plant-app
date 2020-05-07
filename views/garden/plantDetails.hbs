@@ -13,8 +13,10 @@
 <br>
 
 
+
 <form action="/garden/delete/{{myPlant.id}}" method="POST"><button type="submit">Delete plant</button></form>
 
  
 <a href="/garden/editPlant/{{myPlant.id}}">Edit plant</a>
 
+{{!-- it's not possible to delete after editing (id get lost) --}}

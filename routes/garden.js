@@ -76,10 +76,10 @@ router.post("/chosePlant", (req, res) => {
         family_common_name: response.data.family_common_name,
         images: response.data.images,
         owner: req.user.id,
-        nickname: "some nickname",
-        note: "some note",
-        water: "water amount",
-        position:"sun or shadow"
+        nickname: req.body.nickname,
+        note: req.body.note,
+        water: req.body.water,
+        position:req.body.position
       });
       plant.save().then(() => {
         res.redirect("/garden");
