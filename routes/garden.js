@@ -6,7 +6,7 @@ const passport = require("passport");
 
 // every route below ist protected through this middleware, only accessable after login
 router.use((req, res, next) => {
-  if (req.isAuthenticated()) {
+  if (req.isAuthenticated() && req.user.verifiedEmail === true) {
     next();
   } else {
     res.redirect("/auth/login");

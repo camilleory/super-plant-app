@@ -3,10 +3,15 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    username: String,
+    name: String,
+    email: String,
     password: String,
     isAdmin: Boolean,
     googleID: String,
+    verifiedEmail: {
+      type: Boolean, default: false
+    },
+    token: String,
   },
   {
     timestamps: true,
