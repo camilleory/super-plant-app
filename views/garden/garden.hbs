@@ -1,23 +1,40 @@
-Welcome to your private garden, {{user.name}}! <a href="auth/logout">Log out</a>.
+<nav class="navbar fixed-top navbar-dark mt-2" style="background-color: none;">
+  <a class="navbar-brand logo" href="/garden">all my plants</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars hamburger"></i>
+  </button>
 
-<h1>Your garden</h1>
-<a href="garden/addPlant">Add a new plant</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="d-flex justify-content-end">
+      <ul class="navbar-nav mt-2">
+        <li class="nav-item">
+          <a class="nav-link nav-own" href="/auth/logout">Log out</a>
+        </li>
+      </ul>
+    </div>
 
-<ul>
-{{#each plantsList}}
+  </div>
+</nav>
 
-<h3>{{this.common_name}}</h3>
-<li><img height="250px" src="{{this.images.0.url}}" alt=""></li>
+<main class="main-garden">
 
-<br>
+  <h1>my garden</h1>
 
-<a href="garden/plantDetails/{{this.id}}">View details</a>
+  <p> what a wonderful garden, {{user.name}}! </p>
+  <a href="garden/addPlant">Add a new plant</a>
 
-<br>
+<div class="garden-container">
+    <ul>
+      {{#each plantsList}}
+      <li>
+        <a href="garden/plantDetails/{{this.id}}"><img height="250px" class="garden-img" src="{{this.images.0.url}}" alt=""></a>
+        <a href="garden/plantDetails/{{this.id}}"><h3>{{this.common_name}}</h3></a>
+      </li>
+      <br>
+      {{!-- <form action="garden/delete/{{this.id}}" method="POST"><button type="submit">Delete plant</button> </form> --}}
+      {{/each}}
+    </ul>
+</div>
 
-<br>
-{{!-- <form action="garden/delete/{{this.id}}" method="POST"><button type="submit">Delete plant</button> --}}
-</form>
-<br>
-{{/each}}
-</ul>
+</main>
