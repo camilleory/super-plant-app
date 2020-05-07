@@ -15,16 +15,29 @@ body {
   font-family: Josefin Sans, sans-serif;
   font-weight: 500;
   color: white;
+  font-size: large;
 }
 
 main {
   margin-top: 10vh;
 }
 
+.logo {
+  color: #333;
+  font-size: xx-large;
+  text-shadow: 2px 2px #1664FF;
+  // letter-spacing: 0.1em;
+}
+
 a {
   color: #1664FF; }
 
 /*# sourceMappingURL=style.css.map */
+
+h1 {
+  text-shadow: 5px 5px #333;
+  letter-spacing: 0.1em;
+}
 
 h5 {
   color: #4FDB98; 
@@ -43,22 +56,42 @@ h5 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: large;
   line-height: 1.7em;
   padding: 4% 13%;
 }
 
 .form-container input {
-  padding: 35px;
+  padding: 25px 25px;
   border: 2px solid #1664FF;
+  width: 60vw;
 }
 
+// .form-container button {
+//   padding: 35px;
+//   border-radius: 1em;
+//   border: none;
+//   background-color: #1664FF;
+//   color: white;
+// }
+
 .btn-style {
+  width: 60vw;
   padding: 35px;
+  margin: 15px 0;
   border-radius: 1em;
   border: none;
   background-color: #1664FF;
   color: white;
+}
+
+.btn-style a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-style:hover {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
 }
 
 .signup-btn {
@@ -69,6 +102,7 @@ h5 {
   border: none;
   background-color: none;
   color: white;
+  font-size: x-large;
 }
 
 .signup-btn a {
@@ -85,37 +119,29 @@ h5 {
   -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
   box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
-  // box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.9);
-
 }
+
 .btn-shadow:hover {
   -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.3);
 	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.3);
   box-shadow: 5px 8px 15px rgba(0,0,0,0.3);
 }
 
-.form-container button {
-  padding: 35px;
-  border-radius: 1em;
-  border: none;
-  background-color: #1664FF;
-  color: white;
+.error-msg {
+  width: 60vw;
+  color: #333;
+  margin: 20px 0;
+  padding: 15px 10px;
+  background-color:rgba(240, 52, 52, 0.8);
+  // border: 1px solid red;
+  -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+  box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 }
 
 
 
-
-// nav a {
-//   color: #fff000; // applies to all of the ul links
-// }
-
-// nav a:visited {
-//   color: #fff000; // applies to all of the ul links
-// }
-
-// nav a:hover {
-//   color: #fff000; // applies to all of the ul links
-// }
+/* BOOTSTRAP NAV BAR */
 
 .hamburger {
   font-size: 20px;
