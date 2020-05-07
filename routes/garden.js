@@ -119,6 +119,14 @@ router.post("/editPlant/:id", (req, res) => {
 });
 
 
+//Detail page GET REQUEST
+router.get("/plantDetails/:id", (req, res, next) => {
+  Plant.findById(req.params.id).then((plant)=>{
+    res.render("garden/plantDetails", {myPlant: plant});
+});
+});
+
+
 
 
 
