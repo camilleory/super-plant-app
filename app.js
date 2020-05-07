@@ -29,7 +29,8 @@ mongoose
   });
 
 const app_name = require("./package.json").name;
-const debug = require("debug")(`${app_name}:${path.basename(__filename).split(".")[0]}`
+const debug = require("debug")(
+  `${app_name}:${path.basename(__filename).split(".")[0]}`
 );
 
 const app = express();
@@ -42,11 +43,13 @@ app.use(cookieParser());
 app.use(flash());
 
 // Express View engine setup
-app.use(require('node-sass-middleware')({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  sourceMap: true
-}));
+app.use(
+  require("node-sass-middleware")({
+    src: path.join(__dirname, "public"),
+    dest: path.join(__dirname, "public"),
+    sourceMap: true,
+  })
+);
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
@@ -65,7 +68,7 @@ app.use(
       ttl: 24 * 60 * 60, // 1 day
     }),
   })
-);                 
+);
 
 // associate user with a session // store the user into the session
 passport.serializeUser((user, callback) => {
@@ -85,21 +88,27 @@ passport.deserializeUser((id, callback) => {
 // local strategy ===> how to move the strategies to a different folder an require it here??? ask Hendrik / Mir
 
 passport.use(
-  new LocalStrategy((username, password, callback) => {
-    User.findOne({ username })
-      .then((user) => {
-        if (!user) {
-          return callback(null, false, { message: "No such user" });
-        }
-        if (!bcrypt.compareSync(password, user.password)) {
-          return callback(null, false, { message: "Wrong password" });
-        }
-        callback(null, user);
-      })
-      .catch((error) => {
-        callback(error);
-      });
-  })
+  new LocalStrategy(
+    {
+      usernameField: 'email',
+      passwordField: 'passwd',
+    },
+    (email, password, callback) => {
+      User.findOne({email})
+        .then((user) => {
+          if (!user) {
+            return callback(null, false, { message: "No such user" });
+          }
+          if (!bcrypt.compareSync(password, user.password)) {
+            return callback(null, false, { message: "Wrong password" });
+          }
+          callback(null, user);
+        })
+        .catch((error) => {
+          callback(error);
+        });
+    }
+  )
 );
 
 // google strategy
@@ -124,7 +133,12 @@ passport.use(
             return;
           }
 
-          User.create({ googleID: profile.id, username: profile.displayName })
+          User.create({ 
+            googleID: profile.id,
+            name: profile.displayName,
+            email: profile.emails[0].value,
+            verifiedEmail: profile.emails[0].verified,
+          })
             .then((newUser) => {
               done(null, newUser);
             })

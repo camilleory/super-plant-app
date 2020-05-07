@@ -14,6 +14,18 @@ const passport = require("passport");
 const session = require("express-session");
 const flash = require("connect-flash");
 
+const nodemailer = require("nodemailer");
+
+// signup with email
+
+let transporter = nodemailer.createTransport({
+  service: "Gmail",
+  auth: {
+    user: process.env.OUR_EMAIL,
+    pass: process.env.OUR_EMAIL_PW,
+  },
+});
+
 //signup and stay logged in
 router.get("/signup", (req, res) => {
   res.render("auth/signup");
@@ -21,20 +33,30 @@ router.get("/signup", (req, res) => {
 
 router.post("/signup", (req, res, next) => {
 
-  const { username, password } = req.body;
+  const { email, password, name } = req.body;
+  const token = Math.floor(Math.random() * 1000000);
 
-  if (!username || !password) {
+  if (!email || !password) {
     res.render("auth/signup", {
-      message: "Username or Password can't be blank",
+      message: "Email or Password can't be blank",
     });
     return;
   }
 
-  User.findOne({username})
-    .then((user) => {
+  transporter.sendMail({
+    from: ' "Super Plant App" <masterOfPlants@superplantapp.com>',
+    to: email,
+    subject: "Login to Super Plant App",
+    html: `Click on this link to verify your email adress for Super Plant App: http://localhost:3000/auth/verify-email/${token}`,
+  });
 
+  User.findOne({ token: token })
+    .then((user) => {
+      
       if (user !== null) {
-        res.render("auth/signup", { message: "The username already exists" });
+        res.render("auth/signup", {
+          message: "User already exists",
+        });
         return;
       }
 
@@ -42,20 +64,39 @@ router.post("/signup", (req, res, next) => {
       const hashedPassword = bcrypt.hashSync(req.body.password, salt);
 
       let newUser = new User({
-        username: username,
+        email: email,
         password: hashedPassword,
+        token: token,
+        name: name,
       });
 
-      newUser.save().then((signedUpUser) => {
-        req.login(signedUpUser, () => {
-          res.redirect("/garden");
-        });
-      })
+      return newUser.save();
+    })
+
+    .then(() => {
+      res.redirect("/auth/login" /*, { message: req.flash("error") } */);
     })
 
     .catch((error) => {
       res.render("auth/signup", { message: "Something went wrong" });
     });
+});
+
+router.get("/verify-email/:token", (req, res) => {
+
+  User.findOne({ token: req.params.token })
+  
+  .then((user) => {
+
+    req.login(user, () => {
+      req.user.verifiedEmail = true;
+      req.user.save()
+      
+      .then(() => {
+        res.redirect("/garden");
+      });
+    });
+  });
 });
 
 //login
