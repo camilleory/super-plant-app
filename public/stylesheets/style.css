@@ -66,6 +66,23 @@ h5 {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none; }
 
+.google-login-btn {
+  width: 60vw;
+  padding: 35px;
+  margin: 15px 0;
+  border-radius: 1em;
+  border: none;
+  background-color: white;
+  color: #1664FF; }
+
+.google-login-btn a {
+  color: #1664FF;
+  text-decoration: none; }
+
+.google-login-btn:hover {
+  color: rgba(22, 100, 255, 0.8);
+  text-decoration: none; }
+
 .signup-btn {
   width: 60vw;
   margin-bottom: 30px;
@@ -100,6 +117,15 @@ h5 {
   margin: 20px 0;
   padding: 15px 10px;
   background-color: rgba(240, 52, 52, 0.8);
+  -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
+  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
+
+.verify {
+  color: #333;
+  margin: 20px 0;
+  padding: 15px 10px;
+  background-color: rgba(255, 255, 255, 0.8);
   -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
