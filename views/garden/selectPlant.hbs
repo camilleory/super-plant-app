@@ -1,3 +1,26 @@
-<h2>There are many types of {{this.common_name}}. Select the right one.</h2>
+<nav class="navbar fixed-top mt-2" style="background-color: none;">
+  <a class="navbar-brand" href="/garden">all my plants</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars hamburger"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="d-flex justify-content-end">
+      <ul class="navbar-nav mt-2">
+        <li class="nav-item">
+          <a class="nav-link nav-own" href="/auth/logout">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<a href="/garden/chosePlant">Ok !</a>
+<main class="form-container">
+
+  <p class="verify">
+  There are many types of {{this.common_name}}. 
+  <br />
+  <a href="/garden/chosePlant">Select the one you really want!</a>
+  </p>
+
+</main>
