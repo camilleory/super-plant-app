@@ -26,7 +26,9 @@ router.use((req, res, next) => {
 // TO DO --> If the user is new, show some random plants (from API or from Database?)
 
 router.get("/", (req, res, next) => {
-  Plant.find({owner: req.user}).then((plants) => {
+  Plant.find({
+    owner: req.user
+  }).then((plants) => {
     console.log(req.user)
     res.render("garden/garden", {
       plantsList: plants,
@@ -52,7 +54,7 @@ router.post("/addPlant", (req, res) => {
     .then((response) => {
       console.log("This is the response from API", response.data);
       res.render("garden/selectPlant", {
-        response: response.data,
+        response: response.data
       });
     })
     .then(() => {
@@ -61,13 +63,46 @@ router.post("/addPlant", (req, res) => {
 });
 
 //selectPlant GET REQUEST
+// Here we get the list of plants. 
 router.get("/selectPlant", (req, res, next) => {
   res.render("garden/selectPlant");
 });
 
+// We need a post request to get to the full data and retrieve the plant pictures
+
+router.post("/selectPlant", (req, res) => {
+
+  //console.log('information sent to backend'+ req.body.id)
+  let idArray = req.body.id;
+  console.log("idArray", idArray);
+
+  idArray.forEach(el => {
+
+    axios
+      .get("https://trefle.io/api/plants/" + el, {
+        params: {
+          token: process.env.TREFLE_TOKEN,
+        },
+      })
+      .then((response) => {
+        console.log("id should be here", response.data);
+
+        res.render("garden/chosePlant", {
+          fullData: response.data
+        });
+
+      });
+  });
+});
+
+
+
+
+
+
 
 //chosePlant GET REQUEST
-router.get("/chosePlant", (req, res, next) => {
+router.get("/chosePlant", (req, res) => {
   res.render("garden/chosePlant");
 });
 
@@ -93,7 +128,7 @@ router.post("/chosePlant", (req, res) => {
         nickname: req.body.nickname,
         note: req.body.note,
         water: req.body.water,
-        position:req.body.position
+        position: req.body.position
       });
       plant.save().then(() => {
         res.redirect("/garden");
@@ -109,9 +144,11 @@ router.post("/chosePlant", (req, res) => {
 
 //Detail page GET REQUEST
 router.get("/plantDetails/:id", (req, res, next) => {
-  Plant.findById(req.params.id).then((plant)=>{
-    res.render("garden/plantDetails", {myPlant: plant});
-});
+  Plant.findById(req.params.id).then((plant) => {
+    res.render("garden/plantDetails", {
+      myPlant: plant
+    });
+  });
 });
 
 
@@ -121,8 +158,10 @@ router.get("/plantDetails/:id", (req, res, next) => {
 
 // EditPlant GET REQUEST
 router.get("/editPlant/:id", (req, res, next) => {
-  Plant.findById(req.params.id).then((plant)=>{
-    res.render("garden/editPlant", {myPlant: plant});
+  Plant.findById(req.params.id).then((plant) => {
+    res.render("garden/editPlant", {
+      myPlant: plant
+    });
   })
 });
 
@@ -140,7 +179,7 @@ router.post("/editPlant/:id", (req, res) => {
     position: req.body.position
   }).then(() => {
     //redirect to detail page with id (?)
-    res.redirect('/garden/plantDetails/'+ req.params.id)
+    res.redirect('/garden/plantDetails/' + req.params.id)
   });
 });
 
@@ -164,7 +203,9 @@ var storage = cloudinaryStorage({
 
 
 // upload user image and push to first position of plant image array. no image model needed.
-const uploadCloud = multer({ storage: storage });
+const uploadCloud = multer({
+  storage: storage
+});
 
 router.post(
   "/plantDetails/uploadImage/:id",
@@ -173,7 +214,14 @@ router.post(
     const imageURL = req.file.url;
 
     Plant.findByIdAndUpdate(req.params.id, {
-      $push: { images: { $each: [{ url: imageURL }], $position: 0 } },
+      $push: {
+        images: {
+          $each: [{
+            url: imageURL
+          }],
+          $position: 0
+        }
+      },
       new: true,
     }).then((plant) => {
       res.redirect("/garden/plantDetails/" + req.params.id);

@@ -1,5 +1,17 @@
 Please chose which kind of plant you own:
 
+
+
+{{#each fullData}}
+
+{{this.common_name}}
+<img src="{{this.images.0.url}}" height="250px" alt=""> 
+
+{{/each}}
+
+
+
+{{!-- 
 <form action="/garden/chosePlant" method="post">
   <select name="plantSelection">
 {{#each response}}
@@ -24,4 +36,6 @@ Please chose which kind of plant you own:
 
   <p>Upload an image of your plant</p>
 <button type="submit">Submit</button>
-</form>
+</form> --}}
+
+

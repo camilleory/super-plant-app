@@ -1,3 +1,16 @@
-<h2>There are many types of {{this.common_name}}. Select the right one.</h2>
+<h2>There are many types of this plant. Select the right one.</h2>
 
-<a href="/garden/chosePlant">Ok !</a>
+
+<form action="/garden/selectPlant/" method="post">
+{{#each response}}
+<ul>
+<li>{{this.common_name}}</li>
+<li>
+    <input type="text" name="id" value="{{this.id}}">
+</li>
+
+</ul>
+{{/each}}
+
+<a href="/garden/chosePlant"><button type="submit">Ok !</button></a>
+</form>
