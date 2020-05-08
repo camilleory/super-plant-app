@@ -1,24 +1,17 @@
-{{!-- <div class="container"> --}}
-<nav class="navbar fixed-top navbar-dark mt-2" style="background-color: none;">
+<nav class="navbar fixed-top mt-2" style="background-color: none;">
   <a class="navbar-brand" href="/garden">all my plants</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    {{!-- <span class="navbar-toggler-icon"> --}}
-      <i class="fas fa-bars hamburger"></i>
-      {{!-- </span> --}}
+    <i class="fas fa-bars hamburger"></i>
   </button>
-  {{!-- </div> --}}
-
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div class="d-flex justify-content-end">
-    <ul class="navbar-nav mt-2">
-      <li class="nav-item">
-        <a class="nav-link nav-own" href="/auth/logout">Log out</a>
-      </li>
-    </ul>
+      <ul class="navbar-nav mt-2">
+        <li class="nav-item">
+          <a class="nav-link nav-own" href="/auth/logout">Log out</a>
+        </li>
+      </ul>
     </div>
-
   </div>
 </nav>
 
@@ -27,7 +20,7 @@
   <form action="/garden/addPlant" method="post" class="form-container">
     <label for="common_name">Enter the common or scientific name of the plant you have at home, or a plant you are
       curious
-      about. &#42;</label>
+      about.&#42;</label>
     <br />
     <input type="text" name="common_name" placeholder="Name" required>
     {{!-- <label for="">Scientific plant name:</label>

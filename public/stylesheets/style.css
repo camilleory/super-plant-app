@@ -18,11 +18,6 @@ body {
 main {
   margin-top: 10vh; }
 
-.logo {
-  color: #333;
-  font-size: xx-large;
-  text-shadow: 2px 2px #1664FF; }
-
 a {
   color: #1664FF; }
 
@@ -34,7 +29,24 @@ h1 {
 h5 {
   color: #4FDB98; }
 
-/* FORM */
+/* ****** BOOTSTRAP NAV BAR ****** */
+.navbar a {
+  color: #333;
+  font-size: xx-large;
+  text-shadow: 2px 2px #1664FF; }
+
+.navbar a:hover {
+  color: #1664FF;
+  text-shadow: none; }
+
+.hamburger {
+  font-size: 20px;
+  color: #1664FF; }
+
+.navbar-toggler {
+  border: none; }
+
+/* ****** AUTHENTICATION FORMS ****** */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -124,21 +136,13 @@ h5 {
 .verify {
   color: #333;
   margin: 20px 0;
-  padding: 15px 10px;
+  padding: 15px;
   background-color: rgba(255, 255, 255, 0.8);
   -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
 
-/* BOOTSTRAP NAV BAR */
-.hamburger {
-  font-size: 20px;
-  color: #1664FF; }
-
-.navbar-toggler {
-  border: none; }
-
-/* GARDEN */
+/* ****** GARDEN ****** */
 .main-garden {
   padding: 40px 0; }
 
