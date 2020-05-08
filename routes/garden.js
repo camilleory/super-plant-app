@@ -51,7 +51,7 @@ router.post("/addPlant", (req, res) => {
     })
     .then((response) => {
       console.log("This is the response from API", response.data);
-      res.render("garden/chosePlant", {
+      res.render("garden/selectPlant", {
         response: response.data,
       });
     })
@@ -59,6 +59,12 @@ router.post("/addPlant", (req, res) => {
       console.log("ID parameter will be here");
     });
 });
+
+//selectPlant GET REQUEST
+router.get("/selectPlant", (req, res, next) => {
+  res.render("garden/selectPlant");
+});
+
 
 //chosePlant GET REQUEST
 router.get("/chosePlant", (req, res, next) => {
@@ -94,6 +100,11 @@ router.post("/chosePlant", (req, res) => {
       });
     });
 });
+
+
+
+
+
 
 
 //Detail page GET REQUEST
