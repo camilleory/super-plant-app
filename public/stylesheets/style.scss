@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
+/*# sourceMappingURL=style.css.map */
+
 
 body {
-  padding: 50px;
+  padding-top: 0;
   width: 100vw;
   height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
@@ -19,14 +21,14 @@ body {
 }
 
 main {
-  margin-top: 10vh;
+  margin: 10vh 5vw;
 }
 
 
 a {
-  color: #1664FF; }
+  color: #1664FF; 
+}
 
-/*# sourceMappingURL=style.css.map */
 
 h1 {
   text-shadow: 5px 5px #333;
@@ -78,19 +80,20 @@ h5 {
   align-items: center;
   text-align: center;
   line-height: 1.7em;
-  padding: 4% 13%;
+  padding: 2% 10%;
 }
 
 .form-container input {
-  padding: 25px 25px;
+  margin-top: 20px;
+  padding: 10px 15px;
   border: 2px solid #1664FF;
   width: 60vw;
 }
 
 .btn-style {
   width: 60vw;
-  padding: 35px;
-  margin: 15px 0;
+  padding: 10px 15px;
+  margin-top: 30px;
   border-radius: 1em;
   border: none;
   background-color: #1664FF;
@@ -109,8 +112,8 @@ h5 {
 
 .google-login-btn {
   width: 60vw;
-  padding: 35px;
-  margin: 15px 0;
+  padding: 10px 15px;
+  margin-top: 30px;
   border-radius: 1em;
   border: none;
   background-color: white;
@@ -129,8 +132,8 @@ h5 {
 
 .signup-btn {
   width: 60vw;
-  margin-bottom: 30px;
-  padding: 35px;
+  padding: 10px 15px;
+  margin-top: 30px;
   border-radius: 1em;
   border: none;
   background-color: none;
@@ -190,7 +193,6 @@ h5 {
 .main-garden {
   padding: 40px 0;
 }
-
 
 .garden-container {
   background: rgb(255,255,255);
