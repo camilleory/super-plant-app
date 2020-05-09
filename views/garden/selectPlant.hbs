@@ -16,11 +16,23 @@
 </nav>
 
 <main class="form-container">
+<h2>There are many types of {{this.common_name}}. Select the right one.</h2>
 
-  <p class="verify">
-  There are many types of {{this.common_name}}. 
-  <br />
-  <a href="/garden/chosePlant">Select the one you really want!</a>
-  </p>
+
+<form action="/garden/selectPlant/" method="post">
+{{#each response}}
+<ul>
+<li>{{this.common_name}}</li>
+<li>
+    <input type="text" name="id" value="{{this.id}}">
+</li>
+
+</ul>
+{{/each}}
+
+<a href="/garden/chosePlant"><button type="submit">Select the one you really want!</button></a>
+</form>
+
+ 
 
 </main>
