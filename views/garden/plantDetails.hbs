@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top mt-2" style="background-color: none;">
+<nav class="navbar mt-2" style="background-color: none;">
   <a class="navbar-brand" href="/garden">all my plants</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,10 +8,6 @@
     <div class="d-flex justify-content-end">
       <ul class="navbar-nav mt-2">
         <li class="nav-item">
-          {{!-- <form action="/garden/delete/{{myPlant.id}}" method="POST"><button type="submit" class="nav-link nav-own">Delete plant</button></form> --}}
-          <a class="nav-link nav-own" href="/garden/delete/{{myPlant.id}}">Delete plant</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link nav-own" href="/auth/logout">Log out</a>
         </li>
       </ul>
@@ -19,18 +15,27 @@
   </div>
 </nav>
 
-<h3>{{myPlant.common_name}}</h3>
+<main class="plant-detail-container">
+
+  {{#if myPlant.nickname}}
+    <h3>{{myPlant.nickname}}</h3>
+  {{/if}}
+  {{#unless myPlant.nickname}}
+    <h3>{{myPlant.common_name}}</h3>
+  {{/unless}}
 {{!-- <li><img height="250px" src="{{myPlant.images.0.url}}" alt=""></li> --}}
+<div class="plant-detail-img-container">
 {{#each myPlant.images}}
-<img height="250px" src="{{url}}" alt="">
+<img class="plant-detail-img" height="250px" src="{{url}}" alt="">
 {{/each}}
+</div>
 <br>
 <br>
 
 <h4>Upload you own image</h4>
 <form action="/garden/plantDetails/uploadImage/{{myPlant.id}}" method="post" enctype="multipart/form-data">
 <input type="file" name="user-image" id="" required="true">
-<button type="submit">Upload Image</button>
+<button type="submit" class="uploadimg-btn-style btn-shadow">Upload Image</button>
 </form>
 <br>
 
@@ -52,3 +57,5 @@
 <a href="/garden/editPlant/{{myPlant.id}}">Edit plant</a>
 <br> 
 <a href="/garden">Go back to your garden</a>
+
+</main>

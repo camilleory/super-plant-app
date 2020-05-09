@@ -29,6 +29,10 @@ h1 {
 h5 {
   color: #4FDB98; }
 
+h3 {
+  color: #333;
+  font-size: 2.6em; }
+
 /* ****** BOOTSTRAP NAV BAR ****** */
 .navbar a {
   color: #333;
@@ -149,7 +153,7 @@ h5 {
 
 .garden-container {
   background: white;
-  background: linear-gradient(42deg, rgba(255, 255, 255, 0.4) 0%, rgba(179, 245, 244, 0.6) 55%, rgba(22, 100, 255, 0.7) 100%);
+  background: linear-gradient(42deg, rgba(255, 255, 255, 0.9) 0%, rgba(179, 245, 244, 0.6) 55%, rgba(255, 255, 255, 0.9) 100%);
   border-radius: 2em;
   color: black;
   display: flex;
@@ -159,7 +163,7 @@ h5 {
   align-items: center;
   text-align: left;
   line-height: 1.7em;
-  padding: 4% 13%; }
+  padding: 2% 10%; }
 
 .garden-img {
   border-top-left-radius: 2em;
@@ -177,6 +181,59 @@ h5 {
 
 .garden-container h3 {
   padding-top: 10px; }
+
+.plant-detail-container {
+  background: white;
+  background: linear-gradient(42deg, rgba(255, 255, 255, 0.9) 0%, rgba(179, 245, 244, 0.6) 55%, rgba(255, 255, 255, 0.9) 100%);
+  border-radius: 2em;
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: left;
+  line-height: 1.7em;
+  padding: 2% 10%; }
+
+.plant-detail-img-container {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  line-height: 1.7em;
+  padding: 2% 2%; }
+
+.plant-detail-img {
+  margin: 10px 10px;
+  border-top-left-radius: 2.5em;
+  border-bottom-left-radius: 2.5em;
+  border-bottom-right-radius: 2.5em;
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+  -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
+  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
+
+.uploadimg-btn-style {
+  padding: 10px 15px;
+  margin-top: 30px;
+  border-radius: 1em;
+  border: none;
+  background-color: #1664FF;
+  color: white; }
+
+.uploadimg-btn-style a {
+  color: white;
+  text-decoration: none; }
+
+.uploadimg-btn-style:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none; }
 
 /* ****** selectPlant ****** */
 #selectPlantInputId {
