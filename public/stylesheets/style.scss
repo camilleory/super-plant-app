@@ -234,7 +234,6 @@ h3 {
   padding-top: 10px;
 }
 
-
 .plant-detail-container {
   background: rgb(255,255,255);
   background: linear-gradient(42deg, rgba(255,255,255,0.9) 0%, rgba(179,245,244,0.6) 55%, rgba(255,255,255,0.9) 100%);
@@ -292,4 +291,15 @@ h3 {
 .uploadimg-btn-style:hover {
   color: rgba(255,255,255,0.8);
   text-decoration: none;
+  
+/* ****** selectPlant ****** */ 
+
+#selectPlantInputId{
+  display: none;
+}
+
+/* ****** ChosePlant ****** */ 
+
+#chosePlantInputId{
+  display: none;
 }
