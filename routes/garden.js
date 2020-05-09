@@ -170,6 +170,7 @@ router.post(
   "/plantDetails/uploadImage/:id",
   uploadCloud.single("user-image"),
   (req, res) => {
+
     const imageURL = req.file.url;
 
     Plant.findByIdAndUpdate(req.params.id, {
