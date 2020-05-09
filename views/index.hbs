@@ -1,4 +1,21 @@
-{{#if user}} Hi {{user.username}}, you are logged in. <a href="/auth/logout">Logout</a>{{/if}}
+{{#if user}}
+<nav class="navbar fixed-top mt-2" style="background-color: none;">
+  <a class="navbar-brand" href="/garden">all my plants</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars hamburger"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="d-flex justify-content-end">
+      <ul class="navbar-nav mt-2">
+        <li class="nav-item">
+          <a class="nav-link nav-own" href="/auth/logout">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{{/if}}
 
 <main class="form-container">
   <br />
@@ -6,7 +23,9 @@
   <h1>all my plants</h1>
   <br />
 
-  {{#if user}}Go to your <a href="/garden">Garden</a>.{{/if}}
+  {{#if user}}
+    <a href="/garden">Go to your garden</a>, {{user.username}}.
+  {{/if}}
 
   {{#unless user}}
 

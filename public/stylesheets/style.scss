@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
+/*# sourceMappingURL=style.css.map */
+
 
 body {
-  padding: 50px;
+  padding-top: 0;
   width: 100vw;
   height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
@@ -19,20 +21,14 @@ body {
 }
 
 main {
-  margin-top: 10vh;
+  margin: 10vh 5vw;
 }
 
-.logo {
-  color: #333;
-  font-size: xx-large;
-  text-shadow: 2px 2px #1664FF;
-  // letter-spacing: 0.1em;
-}
 
 a {
-  color: #1664FF; }
+  color: #1664FF; 
+}
 
-/*# sourceMappingURL=style.css.map */
 
 h1 {
   text-shadow: 5px 5px #333;
@@ -43,7 +39,34 @@ h5 {
   color: #4FDB98; 
 }
 
-/* FORM */
+
+/* ****** BOOTSTRAP NAV BAR ****** */
+
+.navbar a {
+  color: #333;
+  font-size: xx-large;
+  text-shadow: 2px 2px #1664FF;
+}
+
+.navbar a:hover {
+  color: #1664FF;
+  // font-size: xx-large;
+  text-shadow: none;
+}
+
+.hamburger {
+  font-size: 20px;
+  color: #1664FF;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+
+
+
+/* ****** AUTHENTICATION FORMS ****** */
 
 .form-container {
   // background: rgb(255,255,255);
@@ -57,19 +80,20 @@ h5 {
   align-items: center;
   text-align: center;
   line-height: 1.7em;
-  padding: 4% 13%;
+  padding: 2% 10%;
 }
 
 .form-container input {
-  padding: 25px 25px;
+  margin-top: 20px;
+  padding: 10px 15px;
   border: 2px solid #1664FF;
   width: 60vw;
 }
 
 .btn-style {
   width: 60vw;
-  padding: 35px;
-  margin: 15px 0;
+  padding: 10px 15px;
+  margin-top: 30px;
   border-radius: 1em;
   border: none;
   background-color: #1664FF;
@@ -88,8 +112,8 @@ h5 {
 
 .google-login-btn {
   width: 60vw;
-  padding: 35px;
-  margin: 15px 0;
+  padding: 10px 15px;
+  margin-top: 30px;
   border-radius: 1em;
   border: none;
   background-color: white;
@@ -108,8 +132,8 @@ h5 {
 
 .signup-btn {
   width: 60vw;
-  margin-bottom: 30px;
-  padding: 35px;
+  padding: 10px 15px;
+  margin-top: 30px;
   border-radius: 1em;
   border: none;
   background-color: none;
@@ -154,7 +178,7 @@ h5 {
   // width: 60vw;
   color: #333;
   margin: 20px 0;
-  padding: 15px 10px;
+  padding: 15px;
   background-color:rgba(255, 255, 255, 0.8);
   -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
@@ -162,24 +186,13 @@ h5 {
 }
 
 
-/* BOOTSTRAP NAV BAR */
 
-.hamburger {
-  font-size: 20px;
-  color: #1664FF;
-}
+/* ****** GARDEN ****** */ 
 
-.navbar-toggler {
-  border: none;
-}
-
-
-/* GARDEN */ 
 
 .main-garden {
   padding: 40px 0;
 }
-
 
 .garden-container {
   background: rgb(255,255,255);
