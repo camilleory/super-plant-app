@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
+
+/*# sourceMappingURL=style.css.map */
+
 body {
-  padding: 50px;
+  padding-top: 0;
   width: 100vw;
   height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -16,18 +19,20 @@ body {
   font-size: large; }
 
 main {
-  margin-top: 10vh; }
+  margin: 10vh 10vw; 
+}
 
 a {
   color: #1664FF; }
 
-/*# sourceMappingURL=style.css.map */
 h1 {
   text-shadow: 5px 5px #333;
   letter-spacing: 0.1em; }
 
 h5 {
   color: #4FDB98; }
+
+
 
 /* ****** BOOTSTRAP NAV BAR ****** */
 .navbar a {
@@ -46,6 +51,8 @@ h5 {
 .navbar-toggler {
   border: none; }
 
+
+
 /* ****** AUTHENTICATION FORMS ****** */
 .form-container {
   display: flex;
@@ -54,17 +61,20 @@ h5 {
   align-items: center;
   text-align: center;
   line-height: 1.7em;
-  padding: 4% 13%; }
+  padding: 2% 10%;
+} 
 
 .form-container input {
-  padding: 25px 25px;
+  margin-top: 30px;
+  padding: 10px 25px;
   border: 2px solid #1664FF;
-  width: 60vw; }
+  width: 60vw; 
+}
 
 .btn-style {
   width: 60vw;
-  padding: 35px;
-  margin: 15px 0;
+  padding: 15px 25px;
+  margin-top: 30px;
   border-radius: 1em;
   border: none;
   background-color: #1664FF;
@@ -72,11 +82,13 @@ h5 {
 
 .btn-style a {
   color: white;
-  text-decoration: none; }
+  text-decoration: none; 
+}
 
 .btn-style:hover {
   color: rgba(255, 255, 255, 0.8);
-  text-decoration: none; }
+  text-decoration: none; 
+}
 
 .google-login-btn {
   width: 60vw;
@@ -85,15 +97,18 @@ h5 {
   border-radius: 1em;
   border: none;
   background-color: white;
-  color: #1664FF; }
+  color: #1664FF; 
+}
 
 .google-login-btn a {
   color: #1664FF;
-  text-decoration: none; }
+  text-decoration: none; 
+}
 
 .google-login-btn:hover {
   color: rgba(22, 100, 255, 0.8);
-  text-decoration: none; }
+  text-decoration: none; 
+}
 
 .signup-btn {
   width: 60vw;
@@ -103,25 +118,30 @@ h5 {
   border: none;
   background-color: none;
   color: white;
-  font-size: x-large; }
+  font-size: x-large; 
+}
 
 .signup-btn a {
   color: white;
-  text-decoration: none; }
+  text-decoration: none; 
+}
 
 .signup-btn:hover {
   color: rgba(255, 255, 255, 0.8);
-  text-decoration: none; }
+  text-decoration: none; 
+}
 
 .btn-shadow {
   -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
-  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
+  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); 
+}
 
 .btn-shadow:hover {
   -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3);
-  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3); }
+  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3); 
+}
 
 .error-msg {
   width: 60vw;
@@ -141,6 +161,8 @@ h5 {
   -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
+
+
 
 /* ****** GARDEN ****** */
 .main-garden {
