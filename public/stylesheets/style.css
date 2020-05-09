@@ -81,8 +81,8 @@ h5 {
 
 .google-login-btn {
   width: 60vw;
-  padding: 35px;
-  margin: 15px 0;
+  padding: 10px 15px;
+  margin-top: 30px;
   border-radius: 1em;
   border: none;
   background-color: white;
@@ -98,8 +98,8 @@ h5 {
 
 .signup-btn {
   width: 60vw;
-  margin-bottom: 30px;
-  padding: 35px;
+  padding: 10px 15px;
+  margin-top: 30px;
   border-radius: 1em;
   border: none;
   background-color: none;
@@ -177,5 +177,13 @@ h5 {
 
 .garden-container h3 {
   padding-top: 10px; }
+
+/* ****** selectPlant ****** */
+#selectPlantInputId {
+  display: none; }
+
+/* ****** ChosePlant ****** */
+#chosePlantInputId {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
