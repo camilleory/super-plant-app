@@ -64,7 +64,7 @@ router.post("/addPlant", (req, res) => {
 
 //selectPlant GET REQUEST
 // Here we get the list of plants. 
-router.get("/selectPlant", (req, res, next) => {
+router.get("/selectPlant", (req, res) => {
   res.render("garden/selectPlant");
 });
 
@@ -75,30 +75,27 @@ router.post("/selectPlant", (req, res) => {
   //console.log('information sent to backend'+ req.body.id)
   let idArray = req.body.id;
   console.log("idArray", idArray);
+  let promises = [];
 
-  idArray.forEach(el => {
-
-    axios
+  idArray.map((el, i) => {
+    promises.push(axios
       .get("https://trefle.io/api/plants/" + el, {
         params: {
           token: process.env.TREFLE_TOKEN,
         },
       })
-      .then((response) => {
-        console.log("id should be here", response.data);
 
-        res.render("garden/chosePlant", {
-          fullData: response.data
-        });
+    )
+  })
+  //console.log(promises)
+  Promise.all(promises).then(response => {
+    res.render("garden/chosePlant", {
+      fullData: response
+    });
 
-      });
-  });
+  })
+
 });
-
-
-
-
-
 
 
 //chosePlant GET REQUEST
@@ -106,10 +103,11 @@ router.get("/chosePlant", (req, res) => {
   res.render("garden/chosePlant");
 });
 
-//chosePlant POST REQUEST --> Get plant ID and make a new post request to api, then save data into database
+//chosePlant POST REQUEST --> Get chosen plant ID and make a new post request to api, then save data into database
 
 router.post("/chosePlant", (req, res) => {
-  let selPlant = req.body.plantSelection;
+  let selPlant = req.body.id;
+  console.log("plant id", req.body.id)
 
   axios
     .get("https://trefle.io/api/plants/" + selPlant, {
@@ -125,36 +123,35 @@ router.post("/chosePlant", (req, res) => {
         family_common_name: response.data.family_common_name,
         images: response.data.images,
         owner: req.user.id,
-        nickname: req.body.nickname,
-        note: req.body.note,
-        water: req.body.water,
-        position: req.body.position
       });
       plant.save().then(() => {
-        res.redirect("/garden");
+        res.redirect("/garden/addDetails/" + plant.id);
       });
     });
 });
 
 
-
-
-
-
-
-//Detail page GET REQUEST
-router.get("/plantDetails/:id", (req, res, next) => {
+//addDetails GET REQUEST
+router.get("/addDetails/:id", (req, res) => {
   Plant.findById(req.params.id).then((plant) => {
-    res.render("garden/plantDetails", {
+    res.render("garden/addDetails", {
       myPlant: plant
     });
-  });
+  })
 });
 
+// addDetail POST REQUEST
 
-
-
-
+router.post('/addDetails/:id', (req, res) =>{
+  Plant.findByIdAndUpdate( req.params.id, {
+    nickname: req.body.nickname,
+    note: req.body.note,
+    water: req.body.water,
+    position: req.body.position
+  }).then(() => {
+    res.redirect('/garden')
+  });    
+  });
 
 // EditPlant GET REQUEST
 router.get("/editPlant/:id", (req, res, next) => {
@@ -163,6 +160,15 @@ router.get("/editPlant/:id", (req, res, next) => {
       myPlant: plant
     });
   })
+});
+
+//Detail page GET REQUEST
+router.get("/plantDetails/:id", (req, res, next) => {
+  Plant.findById(req.params.id).then((plant) => {
+    res.render("garden/plantDetails", {
+      myPlant: plant
+    });
+  });
 });
 
 

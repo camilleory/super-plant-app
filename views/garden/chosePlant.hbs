@@ -1,14 +1,19 @@
 Please chose which kind of plant you own:
 
-
-
 {{#each fullData}}
 
-{{this.common_name}}
+{{#each this.data}}
+<form action="/garden/chosePlant" method="post">
+<p>{{this.common_name}}</p>
 <img src="{{this.images.0.url}}" height="250px" alt=""> 
+<input type="text" name="id" value={{this.id}}>
+
+{{!-- <a href="/garden/addDetails/{{this.id}}"> --}}
+<button type="submit">Select</button></a>
+</form>
 
 {{/each}}
-
+{{/each}}
 
 
 {{!-- 
