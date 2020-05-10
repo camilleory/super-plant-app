@@ -165,17 +165,24 @@ router.get("/editPlant/:id", (req, res, next) => {
 // EditPlant POST REQUEST including image deletion
 
 router.post("/editPlant/:id", (req, res) => {
-  
+
   let notToDeleteList = req.body.notToDelete;
   let images = [];
 
-  notToDeleteList.forEach((el) => {
-    images.push({ url: el });
-  });
+  console.log(notToDeleteList);
 
-  console.log(images);
+  // if (notToDeleteList === undefined) {
+  //   return  images.push({ url: "/public/images/no-image-found.jpg" });
+  // } 
 
-  // console.log(notToDeleteList);
+  if (notToDeleteList !== Object) {
+    images.push({ url: notToDeleteList });
+  } else {
+    notToDeleteList.forEach((el) => {
+      images.push({ url: el });
+    });
+  }
+
   Plant.findByIdAndUpdate(req.params.id, {
     //scientific_name: req.body.scientific_name,
     //common_name: req.body.common_name,
