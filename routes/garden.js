@@ -144,7 +144,6 @@ router.post("/addDetails/:id", (req, res) => {
   });
 });
 
-
 //Detail page GET REQUEST
 router.get("/plantDetails/:id", (req, res, next) => {
   Plant.findById(req.params.id).then((plant) => {
@@ -166,23 +165,29 @@ router.get("/editPlant/:id", (req, res, next) => {
 // EditPlant POST REQUEST including image deletion
 
 router.post("/editPlant/:id", (req, res) => {
+  
+  let notToDeleteList = req.body.notToDelete;
+  let images = [];
 
-  let notToDeleteList = [{"url": req.body.notToDelete}];
+  notToDeleteList.forEach((el) => {
+    images.push({ url: el });
+  });
+
+  console.log(images);
+
   // console.log(notToDeleteList);
-  Plant.findByIdAndUpdate(req.params.id, 
-    {
+  Plant.findByIdAndUpdate(req.params.id, {
     scientific_name: req.body.scientific_name,
     common_name: req.body.common_name,
     nickname: req.body.nickname,
     note: req.body.note,
     water: req.body.water,
     position: req.body.position,
-    images: notToDeleteList,
+    images: images,
   }).then(() => {
     res.redirect("/garden/plantDetails/" + req.params.id);
   });
 });
-
 
 // cloudinary setup
 cloudinary.config({

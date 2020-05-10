@@ -25,7 +25,7 @@
   {{#each myPlant.images}}
   <img height="250px" src="{{url}}" alt="">
   <label for="Unselect to delete">Unselect to delete image: </label>
-  <input type="checkbox" name="notToDelete" checked="checked" value="{{url}}" id="">
+  <input type="checkbox" name="notToDelete" checked="checked" value={{url}} id="">
   {{/each}}
 
   <label for="">Scientific Name:</label>
