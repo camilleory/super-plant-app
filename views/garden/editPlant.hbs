@@ -18,20 +18,20 @@
 
 <h2>EDIT PLANT</h2>
 
-<form action="/garden/editPlant/{{myPlant.id}}" method="post">
+<h4>Unselect all plant images you want to delete</h4>
 
-<img height="250px" src="{{myPlant.images.0.url}}" alt="">
 
 <p>Common Name: {{myPlant.common_name}}</p>
 <p>Scientific Name: {{myPlant.scientific_name}}</p>
 
-  <button>Upload an image</button>
 
+<form action="/garden/editPlant/{{myPlant.id}}" method="post">
 
-
- {{!-- label for="">Scientific Name:</label>
-  <input type="text" name="scientific_name" value="{{myPlant.scientific_name}}"
-
+  {{#each myPlant.images}}
+  <img height="250px" src="{{url}}" alt="">
+  <label for="Unselect to delete">Unselect to delete image: </label>
+  <input type="checkbox" name="notToDelete" checked="checked" value={{url}} id="">
+  {{/each}}
 
   <label for="">Common Name:</label>
   <input type="text" name="common_name" value="{{myPlant.common_name}}"> --}}
@@ -41,8 +41,7 @@
 
   <label for="">Note:</label>
   <input type="text" name="note" value="{{myPlant.note}}">
-  
-  
+
   {{!-- <label for="">Water amount:</label>
   <input type="text" name="water" value="{{myPlant.water}}"> --}}
 
@@ -60,7 +59,9 @@
   {{!-- <label for="">Optimal position:</label>
   <input type="text" name="position" value="{{myPlant.position}}"> --}}
 
-  <button type="submit">Edit</button>
+  <button type="submit">Save changes</button>
+
 </form>
-<br />
+
+<br/>
 <form action="/garden/delete/{{myPlant.id}}" method="POST"><button type="submit">Delete plant</button></form>
