@@ -28,11 +28,9 @@
   <input type="checkbox" name="notToDelete" checked="checked" value={{url}} id="">
   {{/each}}
 
-  <label for="">Scientific Name:</label>
-  <input type="text" name="scientific_name" value="{{myPlant.scientific_name}}">
 
   <label for="">Common Name:</label>
-  <input type="text" name="common_name" value="{{myPlant.common_name}}">
+  <input type="text" name="common_name" value="{{myPlant.common_name}}"> --}}
 
   <label for="">Nickname:</label>
   <input type="text" name="nickname" value="{{myPlant.nickname}}">
@@ -40,11 +38,22 @@
   <label for="">Note:</label>
   <input type="text" name="note" value="{{myPlant.note}}">
 
-  <label for="">Water amount:</label>
-  <input type="text" name="water" value="{{myPlant.water}}">
+    {{!-- <label for="">Water amount:</label>
+  <input type="text" name="water" value="{{myPlant.water}}"> --}}
 
-  <label for="">Optimal position:</label>
-  <input type="text" name="position" value="{{myPlant.position}}">
+  <select name="water">
+    <option>Only little water</option>
+    <option>Average amount of water</option>
+    <option>Big amount of water</option>
+  </select>
+
+  <select name="position">
+    <option>Sun</option>
+    <option>Shadow</option>
+  </select>
+
+  {{!-- <label for="">Optimal position:</label>
+  <input type="text" name="position" value="{{myPlant.position}}"> --}}
 
   <button type="submit">Save changes</button>
 
