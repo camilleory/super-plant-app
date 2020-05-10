@@ -17,6 +17,7 @@ const User = require("./models/userModel");
 const bcrypt = require("bcrypt");
 const flash = require("connect-flash");
 
+
 mongoose
   .connect("mongodb://localhost/plantapp", { useNewUrlParser: true })
   .then((x) => {
@@ -57,6 +58,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
+
 
 // express-session configuration --> use mongostore in the setup then sessions get stored
 app.use(
