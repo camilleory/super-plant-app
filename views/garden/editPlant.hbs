@@ -34,7 +34,7 @@
   {{/each}}
 
   <label for="">Common Name:</label>
-  <input type="text" name="common_name" value="{{myPlant.common_name}}"> --}}
+  <input type="text" name="common_name" value="{{myPlant.common_name}}">
 
   <label for="">Nickname:</label>
   <input type="text" name="nickname" value="{{myPlant.nickname}}">
@@ -63,5 +63,4 @@
 
 </form>
 
-<br/>
-<form action="/garden/delete/{{myPlant.id}}" method="POST"><button type="submit">Delete plant</button></form>
+{{!-- <form action="/garden/delete/{{myPlant.id}}" method="POST"><button type="submit">Delete plant</button></form> --}}
