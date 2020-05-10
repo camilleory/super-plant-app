@@ -177,8 +177,8 @@ router.post("/editPlant/:id", (req, res) => {
 
   // console.log(notToDeleteList);
   Plant.findByIdAndUpdate(req.params.id, {
-    scientific_name: req.body.scientific_name,
-    common_name: req.body.common_name,
+    //scientific_name: req.body.scientific_name,
+    //common_name: req.body.common_name,
     nickname: req.body.nickname,
     note: req.body.note,
     water: req.body.water,

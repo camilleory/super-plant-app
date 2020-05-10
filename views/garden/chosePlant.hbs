@@ -3,44 +3,21 @@ Please chose which kind of plant you own:
 {{#each fullData}}
 
 {{#each this.data}}
+
+{{#if this.common_name }}
+{{#if this.images.0.url}}
+
 <form action="/garden/chosePlant" method="post">
 <p>{{this.common_name}}</p>
 <img src="{{this.images.0.url}}" height="250px" alt=""> 
-<input type="text" name="id" value={{this.id}}>
+<input type="text" name="id" value={{this.id}} id="chosePlantInputId">
 
-{{!-- <a href="/garden/addDetails/{{this.id}}"> --}}
 <button type="submit">Select</button></a>
 </form>
 
+{{/if}}
+{{/if}}
 {{/each}}
 {{/each}}
-
-
-{{!-- 
-<form action="/garden/chosePlant" method="post">
-  <select name="plantSelection">
-{{#each response}}
-
-
- <option value ={{this.id}} > {{this.common_name}} </option>
-  
- 
-{{/each}}
-</select>
-
-<br>
-<label for="">Nickname:</label>
-<input type="text" name="nickname">
- <label for="">Note:</label>
-  <input type="text" name="note">
-  <p>Upload an image of your plant</p>
- <label for="">Water amount:</label>
-   <input type="text" name="water">
-<label for="">Optimal position:</label>
-   <input type="text" name="position">
-
-  <p>Upload an image of your plant</p>
-<button type="submit">Submit</button>
-</form> --}}
 
 

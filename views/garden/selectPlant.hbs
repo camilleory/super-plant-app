@@ -16,15 +16,15 @@
 </nav>
 
 <main class="form-container">
-<h2>There are many types of {{this.common_name}}. Select the right one.</h2>
+<h2>There are many types of this plant.</h2>
 
 
 <form action="/garden/selectPlant/" method="post">
 {{#each response}}
-<ul>
+<ul id="selectPlantInputId">
 <li>{{this.common_name}}</li>
 <li>
-    <input type="text" name="id" value="{{this.id}}">
+    <input type="text" name="id" value="{{this.id}}" >
 </li>
 
 </ul>
