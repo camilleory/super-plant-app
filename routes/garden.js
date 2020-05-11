@@ -173,13 +173,15 @@ router.post("/editPlant/:id", (req, res) => {
 
   console.log(notToDeleteList);
 
-  // if (notToDeleteList === undefined) {
-  //   return  images.push({ url: "/public/images/no-image-found.jpg" });
-  // } 
+  if (typeof notToDeleteList === "undefined") {
+    images.push({url: "images/no-image-found.jpg"})
+  } 
 
-  if (notToDeleteList !== Object) {
+  if (typeof notToDeleteList === "string") {
     images.push({ url: notToDeleteList });
-  } else {
+  } 
+  
+  if (typeof notToDeleteList === "object") {
     notToDeleteList.forEach((el) => {
       images.push({ url: el });
     });
