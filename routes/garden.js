@@ -19,8 +19,6 @@ router.use((req, res, next) => {
 });
 
 // garden GET REQUEST (READ)
-// If the user has a list of plants --> Display plants from Database
-// TO DO --> If the user is new, show some random plants (from API or from Database?)
 
 router.get("/", (req, res, next) => {
   Plant.find({
@@ -51,11 +49,11 @@ router.post("/addPlant", (req, res) => {
     .then((response) => {
       console.log("This is the response from API", response.data);
       res.render("garden/selectPlant", {
-        response: response.data,
+        response: response.data, plant: req.body.common_name
       });
     })
     .then(() => {
-      console.log("ID parameter will be here");
+      console.log("ID parameter will be here", req.body.common_name);
     });
 });
 
