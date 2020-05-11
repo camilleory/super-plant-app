@@ -1,4 +1,23 @@
-Please chose which kind of plant you own:
+<nav class="navbar mt-2" style="background-color: none;">
+  <a class="navbar-brand" href="/garden">all my plants</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars hamburger"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="d-flex justify-content-end">
+      <ul class="navbar-nav mt-2">
+        <li class="nav-item">
+          <a class="nav-link nav-own" href="/auth/logout">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  
+<div class="infotextbox">Please choose the kind of plant you own:
 
 {{#each fullData}}
 
@@ -21,4 +40,8 @@ Please chose which kind of plant you own:
 {{/each}}
 {{/each}}
 
+</div>
 
+</div>
+
+</main>

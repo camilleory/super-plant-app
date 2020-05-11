@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top mt-2" style="background-color: none;">
+<nav class="navbar mt-2" style="background-color: none;">
   <a class="navbar-brand" href="/garden">all my plants</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,26 +31,30 @@
   {{/unless}}
 
   {{#if plantsList}}
-  <a href="garden/addPlant">Add a new plant</a>
 
   <div class="garden-container">
-    <ul>
+    <ul class="garden-img-container">
       {{#each plantsList}}
       <li>
         <a href="garden/plantDetails/{{this.id}}"><img height="250px" class="garden-img" src="{{this.images.0.url}}"
             alt=""></a>
         {{#if this.nickname}}
-          <a href="garden/plantDetails/{{this.id}}"><h3>{{this.nickname}}</h3></a>
+          <a href="garden/plantDetails/{{this.id}}"><h4>{{this.nickname}}</h4></a>
         {{/if}}
         {{#unless this.nickname}}
-          <a href="garden/plantDetails/{{this.id}}"><h3>{{this.common_name}}</h3></a>
+          <a href="garden/plantDetails/{{this.id}}"><h4>{{this.common_name}}</h4></a>
         {{/unless}}
       </li>
       <br>
       {{!-- <form action="garden/delete/{{this.id}}" method="POST"><button type="submit">Delete plant</button> </form> --}}
       {{/each}}
     </ul>
+
+    <a href="garden/addPlant" class="addplant-btn-style btn-shadow">Add another plant</a>
+
   </div>
   {{/if}}
+
+
 
 </main>

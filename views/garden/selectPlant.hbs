@@ -16,8 +16,7 @@
 </nav>
 
 <main class="form-container">
-<h2>There is more than one kind of {{plant}}.</h2>
-
+<div class="infotextbox">There is more than one kind of {{plant}}.
 
 <form action="/garden/selectPlant/" method="post">
 {{#each response}}
@@ -30,9 +29,9 @@
 </ul>
 {{/each}}
 
-<a href="/garden/chosePlant"><button type="submit">Select the one you really want!</button></a>
+<button type="submit"><a href="/garden/chosePlant">Select the one you really want!</a></button>
 </form>
 
- 
+ </p>
 
 </main>
