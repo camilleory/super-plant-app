@@ -16,7 +16,7 @@
 </nav>
 
 
-<h2>EDIT PLANT</h2>
+<h2>Edit your plant</h2>
 <p>Common Name: {{myPlant.common_name}}</p>
 <p>Scientific Name: {{myPlant.scientific_name}}</p>
 
@@ -37,7 +37,7 @@
   {{!-- <label for="">Common Name:</label>
   <input type="text" name="common_name" value="{{myPlant.common_name}}"> --}}
 
-  <label for="">Nickname:</label>
+  <label for="">Plant nickname:</label>
   <input type="text" name="nickname" value="{{myPlant.nickname}}">
 
   <label for="">Note:</label>
@@ -46,14 +46,16 @@
   <br>
   <br>
 
-  {{!-- <label for="">Water amount:</label>
-  <input type="text" name="water" value="{{myPlant.water}}"> --}}
+  <label for="">Water amount:</label>
+   {{!-- <input type="text" name="water" value="{{myPlant.water}}">  --}}
 
   <select name="water">
     <option>Only little water</option>
     <option>Average amount of water</option>
     <option>Big amount of water</option>
   </select>
+
+   <label for="">Optimal position:</label>
 
   <select name="position">
     <option>Sun</option>
