@@ -275,7 +275,8 @@ button {
 
 .plant-detail-list {
   font-size: x-large;
-  line-height: 1.6em; }
+  line-height: 1.6em;
+  padding-top: 50px; }
 
 .plant-detail-upload-container {
   color: black;
@@ -338,6 +339,40 @@ button {
   flex-direction: column;
   align-items: center;
   align-content: center; }
+
+.edit-img-container {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  line-height: 1.7em;
+  padding: 2% 2%; }
+
+.edit-img {
+  margin: 15px;
+  border-top-left-radius: 2.5em;
+  border-bottom-left-radius: 2.5em;
+  border-bottom-right-radius: 2.5em;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
+  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
+
+.edit-title {
+  color: #1664FF; }
+
+.edit-list {
+  font-size: x-large;
+  line-height: 1.6em; }
+
+.edit-input-border {
+  border: 2px solid #1664FF;
+  border-radius: 0.3em; }
 
 /* ****** selectPlant ****** */
 #selectPlantInputId {
