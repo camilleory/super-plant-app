@@ -81,11 +81,6 @@ button {
 /* ****** AUTHENTICATION FORMS ****** */
 
 .form-container {
-  // background: rgb(255,255,255);
-  // background: linear-gradient(42deg, rgba(255,255,255,0.4) 0%, rgba(179,245,244,0.6) 55%, rgba(22,100,255,0.7) 100%);
-  // border-radius: 2em;
-  // color: black;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -202,6 +197,19 @@ button {
 /* ****** GARDEN ****** */ 
 
 
+.main-centered {
+  padding: 40px 0;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  line-height: 1.7em;
+}
+
 .main-garden {
   padding: 40px 0;
 }
@@ -236,8 +244,8 @@ button {
 
 .garden-img {
   margin-top: 50px;
-  border-top-left-radius: 2em;
-  border-bottom-right-radius: 2em;
+  border-top-left-radius: 2.5em;
+  border-bottom-right-radius: 2.5em;
   object-fit: cover;
   width: 30vw;
   height: 30vh;
@@ -250,26 +258,32 @@ button {
 border: #4FDB98;
 }
 
-.garden-container a {
-  color: #000;
-  text-decoration: none;
-}
+// .garden-container a {
+
+// }
 
 .garden-container h4 {
   margin-top: 30px;
   max-width: 25vw;
+  color: #000;
+  text-decoration: none;
 }
 
 .addplant-btn-style {
   align-self: center;
   color: white;
   width: 60vw;
-  padding: 10px 15px;
-  margin: 30px 0;
+  padding: 20px 15px;
+  margin: 60px 0;
   border-radius: 1em;
   border: none;
   background-color: #1664FF;
   text-align: center;
+}
+
+.addplant-btn-style:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .addplant-btn-style a {
@@ -283,7 +297,7 @@ border: #4FDB98;
 
 .plant-detail-container {
   background: rgb(255,255,255);
-  background: linear-gradient(42deg, rgba(255,255,255,0.9) 0%, rgba(179,245,244,0.6) 55%, rgba(255,255,255,0.9) 100%);
+  // background: linear-gradient(42deg, rgba(255,255,255,0.9) 0%, rgba(179,245,244,0.6) 55%, rgba(255,255,255,0.9) 100%);
   border-radius: 2em;
   color: black;
   display: flex;
@@ -293,7 +307,7 @@ border: #4FDB98;
   align-items: start;
   text-align: left;
   line-height: 1.7em;
-  padding: 2% 10%;
+  padding: 4% 10%;
 }
 
 .plant-detail-img-container {
@@ -301,7 +315,7 @@ border: #4FDB98;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-align: left;
   line-height: 1.7em;
@@ -309,7 +323,7 @@ border: #4FDB98;
 }
 
 .plant-detail-img {
-  margin: 10px 10px;
+  margin: 15px;
   border-top-left-radius: 2.5em;
   border-bottom-left-radius: 2.5em;
   border-bottom-right-radius: 2.5em;
@@ -321,9 +335,29 @@ border: #4FDB98;
   box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 }
 
+.plant-detail-title {
+  color: #1664FF;
+}
+
+.plant-detail-list {
+  font-size: x-large;
+  line-height: 1.6em;
+}
+
+.plant-detail-upload-container {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.7em;
+  // padding: 2% 2%;
+}
+
 .uploadimg-btn-style {
-  padding: 10px 15px;
-  margin-top: 30px;
+  padding: 10px 25px;
   border-radius: 1em;
   border: none;
   background-color: #1664FF;
@@ -339,6 +373,53 @@ border: #4FDB98;
   color: rgba(255,255,255,0.8);
   text-decoration: none;
 }  
+
+.upload-photo-form {
+  background-color: #abc7ff;
+  border-radius: 0.5em;
+  padding: 30px;
+}
+
+
+.align-self-center {
+  align-self: center;
+}
+.delete-btn-style {
+  align-self: center;
+  color: white;
+  width: 60vw;
+  padding: 20px 15px;
+  margin-bottom: 60px;
+  border-radius: 1em;
+  border: none;
+  background-color: rgb(255, 0, 76);
+  text-align: center;
+}
+
+
+.delete-btn-style:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.delete-btn-style a {
+  color: white;
+}
+
+.delete-btn-style a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.plant-detail-btn-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+
 /* ****** selectPlant ****** */ 
 
 #selectPlantInputId{
