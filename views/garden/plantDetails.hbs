@@ -32,30 +32,57 @@
   <br>
   <br>
 
-  <ul class="plant-detail-list">
-    <li><span class="plant-detail-title">Scientific Name:</span> {{myPlant.scientific_name}}</li>
-    <li><span class="plant-detail-title">Common Name:</span> {{myPlant.common_name}}</li>
-    <li><span class="plant-detail-title">Common Family Name:</span> {{myPlant.family_common_name}}</li>
-    <li><span class="plant-detail-title">Nickname:</span> {{myPlant.nickname}}</li>
-    <li><span class="plant-detail-title">Note:</span> {{myPlant.note}}</li>
-    <li><span class="plant-detail-title">Water amount:</span> {{myPlant.water}}</li>
-    <li><span class="plant-detail-title">Optimal position:</span> {{myPlant.position}}</li>
-  </ul>
-  <br>
-
-  <div class="plant-detail-upload-container">
-  <h4>Upload you own image</h4>
-  <form action="/garden/plantDetails/uploadImage/{{myPlant.id}}" method="post" enctype="multipart/form-data" class="upload-photo-form">
-    <input type="file" name="user-image" id="" required="true">
-    <button type="submit" class="uploadimg-btn-style btn-shadow">Upload Image</button>
-  </form>
-  <br>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <td class="tabletitle">Common Name: </td>
+          <td>{{myPlant.common_name}}</td>
+        </tr>
+        <tr>
+          <td class="tabletitle">Scientific Name: </td>
+          <td>{{myPlant.scientific_name}}</td>
+        </tr>
+        <tr>
+          <td class="tabletitle">Common Family Name: </td>
+          <td>{{myPlant.family_common_name}}</td>
+        </tr>
+        <tr>
+          <td class="tabletitle">Nickname: </td>
+          <td>{{myPlant.nickname}}</td>
+        </tr>
+        <tr>
+          <td class="tabletitle">Note: </td>
+          <td>{{myPlant.note}}</td>
+        </tr>
+        <tr>
+          <td class="tabletitle">Water amount: </td>
+          <td>{{myPlant.water}}</td>
+        </tr>
+        <tr>
+          <td class="tabletitle">Optimal position: </td>
+          <td>{{myPlant.position}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-{{!-- <div class="plant-detail-btn-container"> --}}
+
+  <div class="plant-detail-upload-container">
+    <h4>Upload your own image</h4>
+    <form action="/garden/plantDetails/uploadImage/{{myPlant.id}}" method="post" enctype="multipart/form-data"
+      class="upload-photo-form">
+      <input type="file" name="user-image" id="" required="true">
+      <button type="submit" class="uploadimg-btn-style btn-shadow">Upload Image</button>
+    </form>
+    <br>
+  </div>
+
+  {{!-- <div class="plant-detail-btn-container"> --}}
   <a href="/garden/editPlant/{{myPlant.id}}" class="addplant-btn-style btn-shadow">Edit plant</a>
-  <form action="/garden/delete/{{myPlant.id}}" method="POST" class="align-self-center"><button type="submit" class="delete-btn-style btn-shadow">Delete plant</button></form>
-{{!-- </div> --}}
+  <form action="/garden/delete/{{myPlant.id}}" method="POST" class="align-self-center"><button type="submit"
+      class="delete-btn-style btn-shadow">Delete plant</button></form>
+  {{!-- </div> --}}
 
   <a href="/garden">Back to my garden</a>
 

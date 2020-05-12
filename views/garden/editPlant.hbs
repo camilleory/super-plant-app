@@ -17,67 +17,84 @@
 
 <main class="main-garden">
 
-<h2>Edit your plant</h2>
+  <h1>Edit your plant</h1>
 
-<div class="plant-detail-container">
+  <div class="plant-detail-container">
 
-<br />
-<h4>Unselect the images you want to delete</h4>
-<form action="/garden/editPlant/{{myPlant.id}}" method="post">
+    <br />
+    <h4>Unselect the images you want to delete</h4>
+    <form action="/garden/editPlant/{{myPlant.id}}" method="post">
 
-  <div class="edit-img-container">
-  {{#each myPlant.images}}
-  <img class="edit-img" src="{{url}}" alt="">
-  <label for="Unselect to delete">
-    {{!-- <h4>Unselect to delete this image: </h4> --}}
-  </label>
-  <input type="checkbox" name="notToDelete" checked="checked" value={{url}} id="" >
-  {{/each}}
-  </div>
+      <div class="edit-img-container">
+        {{#each myPlant.images}}
+        <img class="edit-img" src="{{url}}" alt="">
+        <label for="Unselect to delete">
+          {{!-- <h4>Unselect to delete this image: </h4> --}}
+        </label>
+        <input type="checkbox" name="notToDelete" checked="checked" value={{url}} id="">
+        {{/each}}
+      </div>
 
-  {{!-- <label for="">Common Name:</label>
+      {{!-- <label for="">Common Name:</label>
   <input type="text" name="common_name" value="{{myPlant.common_name}}"> --}}
 
-  <ul class="plant-detail-list">
-    <li><span class="plant-detail-title">Common Name:</span> {{myPlant.common_name}}</li>
-    <li><span class="plant-detail-title">Scientific Name:</span> {{myPlant.scientific_name}}</li>
-    <li>
-  <label for="" class="edit-title">Plant nickname:</label>
-  <input type="text" class="edit-input-border" name="nickname" value="{{myPlant.nickname}}">
-    </li>
-    <li>
-  <label for="" class="edit-title">Note:</label>
-  <input type="text" class="edit-input-border" name="note" value="{{myPlant.note}}">
-    </li>
-  <li>
-   {{!-- <input type="text" name="water" value="{{myPlant.water}}">  --}}
-  </li>
-  <li>
-  <label for="" class="edit-title">Water amount:</label>
-  <select name="water" class="edit-input-border">
-    <option>Only little water</option>
-    <option>Average amount of water</option>
-    <option>Big amount of water</option>
-  </select>
-</li>
-<li>   
-  <label for="" class="edit-title">Optimal position:</label>
-  <select name="position" class="edit-input-border">
-    <option>Sun</option>
-    <option>Shadow</option>
-  </select>
-</li>
-  </ul>
 
-  {{!-- <label for="">Optimal position:</label>
+
+
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <td class="tabletitle">Common Name:</td>
+              <td>{{myPlant.common_name}}</td>
+            </tr>
+            <tr>
+              <td class="tabletitle">Scientific Name:</td>
+              <td>{{myPlant.scientific_name}}</td>
+            </tr>
+            <tr>
+              <td class="tabletitle"><label for="">Note:</label>
+              </td>
+              <td><input type="text" class="edit-input-border" name="note" value="{{myPlant.note}}">
+              </td>
+            </tr>
+            <tr>
+              <td class="tabletitle">
+                <label for="" class="edit-title">Water amount:</label>
+              </td>
+              <td>
+                <select name="water" class="edit-input-border">
+                  <option>Only little water</option>
+                  <option>Average amount of water</option>
+                  <option>Big amount of water</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td class="tabletitle">
+                <label for="" class="edit-title">Optimal position:</label>
+              </td>
+              <td>
+                <select name="position" class="edit-input-border">
+                  <option>Sun</option>
+                  <option>Shadow</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      {{!-- <label for="">Optimal position:</label>
   <input type="text" name="position" value="{{myPlant.position}}"> --}}
-  <br>
-  <br>
-  <button type="submit" class="addplant-btn-style btn-shadow">Save all changes</button>
-</form>
+      <br>
+      <br>
+      <button type="submit" class="addplant-btn-style btn-shadow">Save all changes</button>
+    </form>
 
-<form action="/garden/delete/{{myPlant.id}}" method="POST" class="align-self-center"><button type="submit" class="delete-btn-style btn-shadow">Delete plant</button></form>
+    <form action="/garden/delete/{{myPlant.id}}" method="POST" class="align-self-center"><button type="submit"
+        class="delete-btn-style btn-shadow">Delete plant</button></form>
 
-</div>
+  </div>
 
 </main>
