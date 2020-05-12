@@ -39,10 +39,14 @@
         <a href="garden/plantDetails/{{this.id}}"><img height="250px" class="garden-img" src="{{this.images.0.url}}"
             alt=""></a>
         {{#if this.nickname}}
-          <a href="garden/plantDetails/{{this.id}}"><h4>{{this.nickname}}</h4></a>
+        <div class="garden-plantname">
+          <a href="garden/plantDetails/{{this.id}}">{{this.nickname}}</a>
+        </div>
         {{/if}}
         {{#unless this.nickname}}
-          <a href="garden/plantDetails/{{this.id}}"><h4>{{this.common_name}}</h4></a>
+        <div class="garden-plantname">
+          <a href="garden/plantDetails/{{this.id}}">{{this.common_name}}</a>
+        </div>
         {{/unless}}
       </li>
       <br>

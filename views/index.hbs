@@ -24,7 +24,10 @@
   <br />
 
   {{#if user}}
-    <a href="/garden">Go to your garden</a>, {{user.username}}.
+  <div class="infotextbox">
+    <a href="/garden">Go to your garden</a>
+  {{#if user.username}}, {{user.username}}{{/if}}!
+  </div>
   {{/if}}
 
   {{#unless user}}
