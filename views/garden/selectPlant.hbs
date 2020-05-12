@@ -18,19 +18,19 @@
 <main class="main-centered">
   <div class="infotextbox">There is more than one kind of {{plant}}.
 
-    <form action="/garden/selectPlant/" method="post">
-      {{#each response}}
-      <ul id="selectPlantInputId">
-        <li>{{this.common_name}}</li>
-        <li>
-          <input type="text" name="id" value="{{this.id}}">
-        </li>
+<form action="/garden/selectPlant" method="post">
+{{#each response}}
+<ul id="selectPlantInputId">
+<li>{{this.common_name}}</li>
+<li>
+    <input type="text" name="id" value="{{this.id}}" >
+</li>
 
       </ul>
       {{/each}}
 
-      <button type="submit"><a href="/garden/chosePlant">Select the one you really want!</a></button>
-    </form>
+<button type="submit">Select</button>
+</form>
 
   </div>
 
