@@ -27,10 +27,14 @@
   <h3>{{myPlant.common_name}}</h3>
   {{/unless}}
   {{!-- <li><img height="250px" src="{{myPlant.images.0.url}}" alt=""></li> --}}
-  <div class="plant-detail-img-container">    
+  <div class="plant-detail-img-container">
+
     {{#each myPlant.images}}
     <img class="plant-detail-img" height="250px" src="{{url}}" alt="">
     {{/each}}
+
+
+  
   </div>
   <br>
   <br>
