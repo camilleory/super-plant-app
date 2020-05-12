@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose      = require("mongoose");
+const Schema        = mongoose.Schema;
 
 function noValue(val) {
-  if (val[0] === undefined) val = [{url: "/images/no-image-found.jpg"}];
+  if (val[0] === undefined) val = [{url: "/images/Secret-Garden.jpg"}];
   return val;
 }
 
@@ -16,7 +16,7 @@ const PlantSchema = new Schema({
   },
   images: {
     type: Array,
-    default: [{url: "/images/no-image-found.jpg"}],
+    default: [{url: "/images/Secret-Garden.jpg"}],
     set: noValue,
   },
   owner: Schema.Types.ObjectId,
