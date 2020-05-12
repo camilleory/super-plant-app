@@ -49,8 +49,9 @@ router.post("/addPlant", (req, res) => {
     .then((response) => {
     
       console.log("This is the response from API", response);
-       if(!response.data[0] ||response.data[0].common_name === null ){res.render("garden/errorName")}
-       else {
+      if(!response.data[0] ||response.data[0].common_name === null ){res.render("garden/errorName")}
+      else {
+         console.log('rendering choice here')
       res.render("garden/selectPlant", {
         response: response.data, plant: req.body.common_name
       });
@@ -70,6 +71,7 @@ router.get("/selectPlant", (req, res) => {
 // Post request to get to the full data and retrieve the plant pictures
 
 router.post("/selectPlant", (req, res) => {
+  console.log("i am here ====>")
   let idArray = req.body.id;
   console.log("idArray", idArray);
   let promises = [];
@@ -85,8 +87,8 @@ router.post("/selectPlant", (req, res) => {
   });
   //console.log(promises)
   Promise.all(promises).then((response) => {
-    //if(response.data.common_name === null){console.log('no name')}
-    res.render("garden/chosePlant", {
+    console.log("fulldata here", response) 
+      res.render("garden/chosePlant", {
       fullData: response,
     });
   });
