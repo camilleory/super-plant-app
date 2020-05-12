@@ -1,13 +1,12 @@
-const express = require("express");
-const router = express.Router();
-const axios = require("axios");
-const Plant = require("../models/plantModel");
-const passport = require("passport");
+const express            = require("express");
+const router             = express.Router();
+const axios              = require("axios");
+const Plant              = require("../models/plantModel");
+const passport           = require("passport");
 
-const cloudinary = require("cloudinary");
-const cloudinaryStorage = require("multer-storage-cloudinary");
-// package to allow <input type="file"> in forms
-const multer = require("multer");
+const cloudinary         = require("cloudinary");
+const cloudinaryStorage  = require("multer-storage-cloudinary");
+const multer             = require("multer");
 
 // every route below ist protected through this middleware, only accessable after login and email verification
 router.use((req, res, next) => {
@@ -173,10 +172,8 @@ router.post("/editPlant/:id", (req, res) => {
   let notToDeleteList = req.body.notToDelete;
   let images = [];
 
-  console.log(notToDeleteList);
-
   if (typeof notToDeleteList === "undefined") {
-    images.push({url: "/images/no-image-found.jpg"})
+    images.push({url: "/images/Secret-Garden.jpg"})
   } 
 
   if (typeof notToDeleteList === "string") {
