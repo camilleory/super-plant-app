@@ -292,6 +292,21 @@ select:focus, select:active {
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.9); }
 
+.plant-detail-list {
+  font-size: x-large;
+  color: #333;
+  line-height: 2em; }
+
+.plant-detail-list-title {
+  color: #1664FF; }
+
+.plant-detail-list li {
+  margin: 20px; }
+
+.save-changes {
+  font-size: large;
+  line-height: normal; }
+
 .table {
   font-size: x-large;
   color: #333; }

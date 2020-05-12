@@ -354,6 +354,26 @@ background-color: rgba(79,219,152,0.5);
   box-shadow: 2px 5px 8px rgba(0,0,0,0.9);
 }
 
+.plant-detail-list {
+  font-size: x-large;
+  color: #333;
+  line-height: 2em;
+}
+
+.plant-detail-list-title {
+  color: #1664FF;
+}
+
+.plant-detail-list li {
+  margin: 20px;
+}
+
+.save-changes {
+  font-size: large;
+  line-height: normal;
+}
+
+
 .table {
   font-size: x-large;
   color: #333;
@@ -367,6 +387,8 @@ background-color: rgba(79,219,152,0.5);
 .table-hover tr:hover {
   background-color: #abc7ff;
 }
+
+
 
 .plant-detail-upload-container {
   margin-top: 60px;
