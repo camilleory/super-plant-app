@@ -176,7 +176,7 @@ router.post("/editPlant/:id", (req, res) => {
   console.log(notToDeleteList);
 
   if (typeof notToDeleteList === "undefined") {
-    images.push({url: "images/no-image-found.jpg"})
+    images.push({url: "/images/no-image-found.jpg"})
   } 
 
   if (typeof notToDeleteList === "string") {
