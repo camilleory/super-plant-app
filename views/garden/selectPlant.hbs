@@ -19,7 +19,7 @@
 </nav>
 
 <main class="main-centered">
-<div class="infotextbox">There is more than one kind of {{plant}}.
+  <div class="infotextbox">There is more than one kind of {{plant}}.
 
 <form action="/garden/selectPlant" method="post">
 {{#each response}}
@@ -29,12 +29,12 @@
     <input type="text" name="id" value="{{this.id}}" >
 </li>
 
-</ul>
-{{/each}}
+      </ul>
+      {{/each}}
 
 <button type="submit">Select</button>
 </form>
 
- </div>
+  </div>
 
 </main>

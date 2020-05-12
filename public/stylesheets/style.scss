@@ -21,6 +21,8 @@ body {
 }
 
 main {
+  margin-left: 5vw;
+  margin-right: 5vw;
   margin-top: 10vh;
   margin-bottom: 20vh;
 }
@@ -34,7 +36,6 @@ a {
 h1 {
   text-shadow: 5px 5px #333;
   letter-spacing: 0.1em;
-  margin-left: 20px;
 }
 
 h5 {
@@ -56,6 +57,10 @@ input:focus, input:active {
   box-shadow: none;
 }
 
+select:focus, select:active {
+  outline: none !important;
+  box-shadow: none;
+}
 
 /* ****** BOOTSTRAP NAV BAR ****** */
 
@@ -170,10 +175,11 @@ input:focus, input:active {
 }
 
 .btn-shadow:hover {
-  -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.3);
-	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.3);
-  box-shadow: 5px 8px 15px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 10px 10px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 10px 10px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.75);
 }
+
 
 .error-msg {
   width: 60vw;
@@ -334,16 +340,39 @@ background-color: rgba(79,219,152,0.5);
 
 .plant-detail-img {
   margin: 15px;
-  border-top-left-radius: 2.5em;
-  border-bottom-left-radius: 2.5em;
-  border-bottom-right-radius: 2.5em;
+  border: 20px solid white;
+  border-top-left-radius: 3em;
+  border-bottom-left-radius: 3em;
+  border-bottom-right-radius: 3em;
   object-fit: cover;
-  width: 300px;
-  height: 300px;
+  // width: 350px;
+  // height: 350px;
+  width: 40vw;
+  height: 50vh;
   -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
-  box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+  box-shadow: 2px 5px 8px rgba(0,0,0,0.9);
 }
+
+.plant-detail-list {
+  font-size: x-large;
+  color: #333;
+  line-height: 2em;
+}
+
+.plant-detail-list-title {
+  color: #1664FF;
+}
+
+.plant-detail-list li {
+  margin: 20px;
+}
+
+.save-changes {
+  font-size: large;
+  line-height: normal;
+}
+
 
 .table {
   font-size: x-large;
@@ -358,6 +387,8 @@ background-color: rgba(79,219,152,0.5);
 .table-hover tr:hover {
   background-color: #abc7ff;
 }
+
+
 
 .plant-detail-upload-container {
   margin-top: 60px;
@@ -451,11 +482,12 @@ background-color: rgba(79,219,152,0.5);
   border-bottom-left-radius: 2.5em;
   border-bottom-right-radius: 2.5em;
   object-fit: cover;
-  width: 200px;
-  height: 200px;
+  width: 30vw;
+  height: 30vh;  
+  border: 10px solid white;
   -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
-  box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+  box-shadow: 2px 5px 8px rgba(0,0,0,0.9);
 }
 
 .edit-title {
@@ -471,6 +503,8 @@ background-color: rgba(79,219,152,0.5);
   border: 2px solid #1664FF;
   border-radius: 0.3em;
 }
+
+
 
 /* ****** selectPlant ****** */ 
 
