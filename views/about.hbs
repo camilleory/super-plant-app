@@ -20,35 +20,29 @@
 </nav>
 {{/if}}
 
-<main class="form-container">
-  <br/>
-  <br/>
-  <h1>all my plants</h1>
-  <br/>
-  <h4>Look after them and they'll look after you</h4>
+<main class="main-garden">
 
-  {{#if user}}
-  <div class="infotextbox">
-    <a href="/garden">Go to your garden</a>
-    {{#if user.username}}, {{user.username}}{{/if}}!
-  </div>
-  {{/if}}
-
-  {{#unless user}}
-
-  <a class="signup-btn btn-shadow" href="/auth/login">Login</a>
-  <a class="signup-btn btn-shadow" href="/auth/google">Login with Google</a>
-  <a class="signup-btn btn-shadow" href="/auth/signup">Sign up</a>
-
-  {{/unless}}
-
+  <h1>about</h1>
   <br>
   <br>
+  <h2>all my plants</h2>
+  <h3>Look after them and they'll look after you</h3>
   <br>
+  <p>
+  all my plants is the app that finally let's you care for your plants the right way. Add all the...
+  </p>
 
+  <h2>who and what</h2>
+  <p>
+    This is the second project of a Web Development Bootcamp at Ironhack, Berlin. On this project worked:
+    <li>Marie</li>
+    <li>Camille</li>
+    <li>Manuel</li>
+    
+    links to github / whatever
+  </p>
 
-  
-  {{!-- this in white and small close to the bottom? --}}
-  <h3><a href="/about">About</a></h3>
+<h3><a href="/">Start your plant descovery journey</a></h3>
+
 
 </main>
