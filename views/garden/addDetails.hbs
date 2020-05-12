@@ -1,20 +1,18 @@
 <h2>Add some details to your plant</h2>
 <form action="/garden/addDetails/{{myPlant.id}}" method="post">
-
-
   <br>
-<label for="">Add a nickname:</label>
-<input type="text" name="nickname">
- <label for="">Add a note:</label>
+  <label for="">Add a nickname:</label>
+  <input type="text" name="nickname">
+  <label for="">Add a note:</label>
   <input type="text" name="note">
- <label for="">Select water amount:</label>
-<select name="water">
+  <label for="">Select water amount:</label>
+  <select name="water">
     <option>Only little water</option>
     <option>Average amount of water</option>
     <option>Big amount of water</option>
   </select>
 
-   <label for="">Select optimal position:</label>
+  <label for="">Select optimal position:</label>
 
   <select name="position">
     <option>Sun</option>
@@ -23,7 +21,7 @@
 
 
 
-<button type="submit">Submit</button>
+  <button type="submit">Submit</button>
 </form>
 
 <p>Upload an image</p>
