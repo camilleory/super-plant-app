@@ -17,6 +17,8 @@ body {
   font-size: large; }
 
 main {
+  margin-left: 5vw;
+  margin-right: 5vw;
   margin-top: 10vh;
   margin-bottom: 20vh; }
 
@@ -25,8 +27,7 @@ a {
 
 h1 {
   text-shadow: 5px 5px #333;
-  letter-spacing: 0.1em;
-  margin-left: 20px; }
+  letter-spacing: 0.1em; }
 
 h5 {
   color: #4FDB98; }
@@ -40,6 +41,10 @@ button:focus, button:active {
   box-shadow: none; }
 
 input:focus, input:active {
+  outline: none !important;
+  box-shadow: none; }
+
+select:focus, select:active {
   outline: none !important;
   box-shadow: none; }
 
@@ -134,9 +139,9 @@ input:focus, input:active {
   box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
 
 .btn-shadow:hover {
-  -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3);
-  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3); }
+  -webkit-box-shadow: inset 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 5px 5px 10px 0px rgba(0, 0, 0, 0.75); }
 
 .error-msg {
   width: 60vw;
@@ -276,15 +281,16 @@ input:focus, input:active {
 
 .plant-detail-img {
   margin: 15px;
-  border-top-left-radius: 2.5em;
-  border-bottom-left-radius: 2.5em;
-  border-bottom-right-radius: 2.5em;
+  border: 20px solid white;
+  border-top-left-radius: 3em;
+  border-bottom-left-radius: 3em;
+  border-bottom-right-radius: 3em;
   object-fit: cover;
-  width: 300px;
-  height: 300px;
+  width: 40vw;
+  height: 50vh;
   -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
-  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
+  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.9); }
 
 .table {
   font-size: x-large;
@@ -377,11 +383,12 @@ input:focus, input:active {
   border-bottom-left-radius: 2.5em;
   border-bottom-right-radius: 2.5em;
   object-fit: cover;
-  width: 200px;
-  height: 200px;
+  width: 30vw;
+  height: 30vh;
+  border: 10px solid white;
   -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
-  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
+  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.9); }
 
 .edit-title {
   color: #1664FF; }

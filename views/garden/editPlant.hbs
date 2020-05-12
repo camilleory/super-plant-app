@@ -35,13 +35,11 @@
         {{/each}}
       </div>
 
-      {{!-- <label for="">Common Name:</label>
-  <input type="text" name="common_name" value="{{myPlant.common_name}}"> --}}
 
 
+      {{!-- THIS IS THE FORM AS A TABLE... --}}
 
-
-      <div class="table-responsive">
+      {{!-- <div class="table-responsive">
         <table class="table table-hover">
           <tbody>
             <tr>
@@ -51,6 +49,12 @@
             <tr>
               <td class="tabletitle">Scientific Name:</td>
               <td>{{myPlant.scientific_name}}</td>
+            </tr>
+            <tr>
+              <td class="tabletitle"><label for="">Nickname:</label>
+              </td>
+              <td><input type="text" class="edit-input-border" name="note" value="{{myPlant.nickname}}">
+              </td>
             </tr>
             <tr>
               <td class="tabletitle"><label for="">Note:</label>
@@ -84,13 +88,23 @@
           </tbody>
         </table>
       </div>
-
-      {{!-- <label for="">Optimal position:</label>
-  <input type="text" name="position" value="{{myPlant.position}}"> --}}
-      <br>
-      <br>
-      <button type="submit" class="addplant-btn-style btn-shadow">Save all changes</button>
+      <button type="submit" class="addplant-btn-style btn-shadow">Save changes</button>
     </form>
+ --}}
+
+
+ {{!-- THIS IS JUST A TEST --}}
+{{!-- 
+    <form action="/garden/editPlant/{{myPlant.id}}" method="post">
+      <label for="" class="edit-title">Optimal position:</label>
+ 
+        <select name="position" class="edit-input-border">
+          <option>Sun</option>
+          <option>Shadow</option>
+        </select>
+        <button type="submit" class="addplant-btn-style btn-shadow">Save changes</button>
+    </form> --}}
+
 
     <form action="/garden/delete/{{myPlant.id}}" method="POST" class="align-self-center"><button type="submit"
         class="delete-btn-style btn-shadow">Delete plant</button></form>
