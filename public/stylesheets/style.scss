@@ -40,7 +40,11 @@ a:hover {
 h1 {
   text-shadow: 5px 5px #2e2d2b;
   letter-spacing: 0.1em;
-  // font-size: 4em;
+}
+
+.green {
+  color: #4FDB98; 
+  ;
 }
 
 h5 {
@@ -56,7 +60,7 @@ h3 {
   background-color: #2e2d2b;
   color: #4FDB98;
   font-size: large;
-  width: 100vw;
+  width: 100%;
   letter-spacing: 0.1em;
   font-style: oblique;
   margin-bottom: 6vh;
@@ -97,6 +101,9 @@ select:focus, select:active {
   box-shadow: none;
 }
 
+.text-centered {
+  text-align: center;
+}
 /* ****** BOOTSTRAP NAV BAR ****** */
 
 .navbar a {
@@ -167,7 +174,7 @@ select:focus, select:active {
 }
 
 .btn-style:hover {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.8); 
   text-decoration: none;
 }
 
@@ -411,19 +418,11 @@ background-color: rgba(79,219,152,0.5);
   text-align: center;
 }
 
-.addplant-btn-style:hover {
+.btn-choseplant:hover {
   text-decoration: none;
-  color: white;
+  color: rgba(255,255,255,0.8);
 }
 
-.addplant-btn-style a {
-  color: white;
-}
-
-.addplant-btn-style a:hover {
-  text-decoration: none;
-  color: white;
-}
 
 
 .plant-detail-container {
@@ -636,4 +635,37 @@ background-color: rgba(79,219,152,0.5);
 
 #chosePlantInputId{
   display: none;
+}
+
+
+/* ****** About ****** */ 
+
+.about-img-container {
+  color: #2e2d2b;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  line-height: 1.7em;
+  font-size: large;
+
+}
+
+.about-img-container li  {
+  margin: 25px;
+  font-size: xx-large;
+}
+
+.about-img-container li a  {
+  color: white;
+}
+
+.about-img-container li a:hover  {
+  color: #1664FF;
+}
+
+.about-img-container img  {
+  margin-bottom: 20px;
 }
