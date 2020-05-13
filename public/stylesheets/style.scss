@@ -21,8 +21,8 @@ body {
 }
 
 main {
-  margin-left: 5vw;
-  margin-right: 5vw;
+  margin-left: 3vw;
+  margin-right: 3vw;
   margin-top: 10vh;
   margin-bottom: 20vh;
 }
@@ -32,10 +32,15 @@ a {
   color: #1664FF; 
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 
 h1 {
-  text-shadow: 5px 5px #333;
+  text-shadow: 5px 5px #2e2d2b;
   letter-spacing: 0.1em;
+  // font-size: 4em;
 }
 
 h5 {
@@ -43,8 +48,38 @@ h5 {
 }
 
 h3 {
-  color: #333; 
+  color: #2e2d2b; 
   font-size: 2.6em;
+}
+
+.slogan {
+  background-color: #2e2d2b;
+  color: #4FDB98;
+  font-size: large;
+  width: 100vw;
+  letter-spacing: 0.1em;
+  font-style: oblique;
+  margin-bottom: 6vh;
+}
+
+.footer {
+  font-size: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3vw;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #abc7ff;
+  text-decoration: none;
 }
 
 button:focus, button:active {
@@ -65,7 +100,7 @@ select:focus, select:active {
 /* ****** BOOTSTRAP NAV BAR ****** */
 
 .navbar a {
-  color: #333;
+  color: #2e2d2b;
   font-size: xx-large;
   text-shadow: 2px 2px #1664FF;
 }
@@ -97,14 +132,23 @@ select:focus, select:active {
   align-items: center;
   text-align: center;
   line-height: 1.7em;
-  padding: 2% 10%;
+  padding: 8% 0;
 }
 
 .form-container input {
-  margin-top: 20px;
+  // margin: 20px 0;
+  margin-top: 8px;
+  margin-bottom: 30px;
+  
   padding: 10px 15px;
   border: 2px solid #1664FF;
   width: 60vw;
+}
+
+.form-container select {
+  // margin: 20px 0;
+  margin-top: 8px;
+  margin-bottom: 30px;
 }
 
 .btn-style {
@@ -183,7 +227,7 @@ select:focus, select:active {
 
 .error-msg {
   width: 60vw;
-  color: #333;
+  color: #2e2d2b;
   margin: 20px 0;
   padding: 15px 10px;
   background-color:rgba(240, 52, 52, 0.8);
@@ -194,7 +238,7 @@ select:focus, select:active {
 
 .infotextbox {
   // width: 60vw;
-  color: #333;
+  color: #2e2d2b;
   margin: 20px 0;
   padding: 25px;
   background-color:rgba(255, 255, 255, 0.8);
@@ -210,7 +254,6 @@ select:focus, select:active {
 
 .main-centered {
   padding: 40px 0;
-  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -225,23 +268,39 @@ select:focus, select:active {
   padding: 40px 0;
 }
 
-.garden-container {
+.garden-container-centeredtext  {
   background: rgb(255,255,255);
   background: linear-gradient(42deg, rgba(255,255,255,1) 0%, rgba(179,245,244,0.8) 55%, rgba(255,255,255,1) 100%);
   border-radius: 3em;
-  color: black;
+  color: #2e2d2b;
   display: flex;
+  min-height: 60vh;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   flex-wrap: wrap;
-  text-align: left;
+  text-align: center;
   line-height: 1.7em;
   padding: 2% 10%;
 }
 
+.garden-container {
+  background: rgb(255,255,255);
+  background: linear-gradient(42deg, rgba(255,255,255,1) 0%, rgba(179,245,244,0.8) 55%, rgba(255,255,255,1) 100%);
+  border-radius: 3em;
+  color: #2e2d2b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: left;
+  line-height: 1.7em;
+  padding: 4% 10%;
+}
+
 .garden-img-container {
-  color: black;
+  color: #2e2d2b;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -281,7 +340,7 @@ background-color: rgba(79,219,152,0.5);
 }
 
 .garden-plantname a:hover {
-  color: #333;
+  color: #2e2d2b;
   text-decoration: none;
 }
 
@@ -290,7 +349,7 @@ background-color: rgba(79,219,152,0.5);
   color: white;
   width: 60vw;
   padding: 20px 15px;
-  margin: 60px 0;
+  margin: 40px 0;
   border-radius: 1em;
   border: none;
   background-color: #1664FF;
@@ -311,11 +370,67 @@ background-color: rgba(79,219,152,0.5);
   color: white;
 }
 
+
+
+/* Choose Plant */
+
+.form-choseplant {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.7em;
+  padding: 8% 0;
+}
+
+.large {
+  font-size: x-large;
+}
+.chosePlant-img {
+  // margin-top: 50px;
+  border-top-left-radius: 2.5em;
+  border-bottom-right-radius: 2.5em;
+  object-fit: cover;
+  width: 40vw;
+  height: 40vh;
+  -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+  box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+}
+
+.btn-choseplant {
+  align-self: center;
+  color: white;
+  // width: 60vw;
+  padding: 7px 15px;
+  margin: 20px;
+  border-radius: 1em;
+  border: none;
+  background-color: #1664FF;
+  text-align: center;
+}
+
+.addplant-btn-style:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.addplant-btn-style a {
+  color: white;
+}
+
+.addplant-btn-style a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+
 .plant-detail-container {
   background: rgb(255,255,255);
   background: linear-gradient(42deg, rgba(255,255,255,1) 0%, rgba(179,245,244,0.8) 75%, rgba(255,255,255,1) 100%);
   border-radius: 3em;
-  color: black;
+  color: #2e2d2b;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -327,7 +442,7 @@ background-color: rgba(79,219,152,0.5);
 }
 
 .plant-detail-img-container {
-  color: black;
+  color: #2e2d2b;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -356,7 +471,7 @@ background-color: rgba(79,219,152,0.5);
 
 .plant-detail-list {
   font-size: x-large;
-  color: #333;
+  color: #2e2d2b;
   line-height: 2em;
 }
 
@@ -376,7 +491,7 @@ background-color: rgba(79,219,152,0.5);
 
 .table {
   font-size: x-large;
-  color: #333;
+  color: #2e2d2b;
 }
 
 .tabletitle {
@@ -392,7 +507,7 @@ background-color: rgba(79,219,152,0.5);
 
 .plant-detail-upload-container {
   margin-top: 60px;
-  color: black;
+  color: #2e2d2b;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -424,6 +539,7 @@ background-color: rgba(79,219,152,0.5);
   background-color: #abc7ff;
   border-radius: 0.5em;
   padding: 30px;
+  margin-bottom: 8vh;
 }
 
 .align-self-center {
@@ -465,7 +581,7 @@ background-color: rgba(79,219,152,0.5);
 }
 
 .edit-img-container {
-  color: black;
+  color: #2e2d2b;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -497,6 +613,10 @@ background-color: rgba(79,219,152,0.5);
 .edit-list {
   font-size: x-large;
   line-height: 1.6em;
+}
+
+.dropdown-list {
+  line-height: 2em;
 }
 
 .edit-input-border {

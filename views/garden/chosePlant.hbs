@@ -19,34 +19,34 @@
 </nav>
 
 <main>
-  
-{{!-- <div class="infotextbox">Please choose the kind of plant you own: --}}
+  <h2>Add a plant</h2>
+  <div class="garden-container-centeredtext">
+    
+    <p>Please choose the kind of plant you own:</p>
 
-<div class="garden-container">Please choose the kind of plant you own:
+    {{#each fullData}}
 
-{{#each fullData}}
+    {{#each this.data}}
 
-{{#each this.data}}
+    {{#if this.common_name }}
+    {{#if this.images.0.url}}
 
-{{#if this.common_name }}
-{{#if this.images.0.url}}
+    <form action="/garden/chosePlant" method="post" class="form-choseplant">
+      <p class="large">{{this.common_name}}</p>
 
-<form action="/garden/chosePlant" method="post">
-<p>{{this.common_name}}</p>
+      <img src="{{this.images.0.url}}" height="250px" alt="" class="chosePlant-img">
+      <input type="text" name="id" value={{this.id}} id="chosePlantInputId">
 
-<img src="{{this.images.0.url}}" height="250px" alt=""> 
-<input type="text" name="id" value={{this.id}} id="chosePlantInputId">
+      <button type="submit" class="btn-choseplant btn-shadow">Select</button>
+    </form>
 
-<button type="submit">Select</button></a>
-</form>
+    {{/if}}
+    {{/if}}
+    {{/each}}
+    {{/each}}
 
-{{/if}}
-{{/if}}
-{{/each}}
-{{/each}}
+  </div>
 
-</div>
-
-</div>
+  </div>
 
 </main>

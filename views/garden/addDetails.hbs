@@ -1,29 +1,46 @@
-<h2>Add some details to your plant</h2>
-<form action="/garden/addDetails/{{myPlant.id}}" method="post">
-  <br>
-  <label for="">Add a nickname:</label>
-  <input type="text" name="nickname">
-  <label for="">Add a note:</label>
-  <input type="text" name="note">
- <label for="">Select water amount:</label>
-<select name="water" title="Select water amount">
-    <option disabled selected>Select water amount</option>
-    <option>Only little water</option>
-    <option>Average amount of water</option>
-    <option>Big amount of water</option>
-  </select>
+<nav class="navbar mt-2" style="background-color: none;">
+  <a class="navbar-brand" href="/garden">all my plants</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars hamburger"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="d-flex justify-content-end">
+      <ul class="navbar-nav mt-2">
+        <li class="nav-item">
+          <a class="nav-link nav-own" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-own" href="/auth/logout">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <label for="">Select optimal position:</label>
-
-  <select name="position">
-    <option disabled selected>Select best position</option>
-    <option>Sun</option>
-    <option>Shadow</option>
-  </select>
-
-
-
-  <button type="submit">Submit</button>
-</form>
-
-<p>Upload an image</p>
+<main>
+  <h2>Add a plant</h2>
+  <div class="garden-container">
+    <p class="large">Add some details to your plant (optional).</p>
+    <form action="/garden/addDetails/{{myPlant.id}}" method="post" class="form-container">
+      <label for="">Nickname:</label>
+      <input type="text" name="nickname">
+      <label for="">Notes:</label>
+      <input type="text" name="note">
+      <label for="">Water needed:</label>
+      <select name="water" title="Select water amount" class="edit-input-border">
+        <option disabled selected>Select water amount</option>
+        <option>Only little water</option>
+        <option>Average amount of water</option>
+        <option>Big amount of water</option>
+      </select>
+      <label for="">Optimal position:</label>
+      <select name="position" class="edit-input-border">
+        <option disabled selected>Select best position</option>
+        <option>Full Sun</option>
+        <option>Shade</option>
+      </select>
+      <button type="submit" class="btn-style btn-shadow">Submit</button>
+    </form>
+  </div>
+</main>
