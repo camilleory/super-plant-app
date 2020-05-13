@@ -23,117 +23,51 @@
   <h1>Edit your plant</h1>
 
   <div class="plant-detail-container">
-
     <br />
     <h4>Unselect the images you want to delete</h4>
+
     <form action="/garden/editPlant/{{myPlant.id}}" method="post">
 
       <div class="edit-img-container">
         {{#each myPlant.images}}
         <img class="edit-img" src="{{url}}" alt="">
         <label for="Unselect to delete">
-          {{!-- <h4>Unselect to delete this image: </h4> --}}
         </label>
         <input type="checkbox" name="notToDelete" checked="checked" value={{url}} id="">
         {{/each}}
       </div>
 
 
+      <div class="edit-list ">
+        <span class="plant-detail-list-title">Name:</span> {{myPlant.common_name}}
+        <br />
+        <label for="" class="plant-detail-list-title">Nickname:</label>
+        <input type="text" class="edit-input-border"
+          name="nickname" value="{{myPlant.nickname}}">
+        <br />
+        <label for="" class="plant-detail-list-title">Note:</label>
+        <input type="text" class="edit-input-border" name="note" value="{{myPlant.note}}">
+        <br /> 
+        <label for="" class="edit-title">Water amount:</label>
+        <select name="water" class="edit-input-border">
+          <option disabled selected>Select water amount</option>
+          <option>Only little water</option>
+          <option>Average amount of water</option>
+          <option>Big amount of water</option>
+        </select>
+        <br />
+        <label for="" class="edit-title">Optimal position:</label>
+        <select name="position" class="edit-input-border">
+          <option disabled selected>Select best position</option>
+          <option>Sun</option>
+          <option>Shadow</option>
+        </select>
+      </div>
 
-      {{!-- THIS IS THE FORM AS A TABLE... --}}
-
-      {{!-- <div class="table-responsive">
-        <table class="table table-hover">
-          <tbody>
-            <tr>
-              <td class="tabletitle">Common Name:</td>
-              <td>{{myPlant.common_name}}</td>
-            </tr>
-            <tr>
-              <td class="tabletitle">Scientific Name:</td>
-              <td>{{myPlant.scientific_name}}</td>
-            </tr>
-            <tr>
-              <td class="tabletitle"><label for="">Nickname:</label>
-              </td>
-              <td><input type="text" class="edit-input-border" name="note" value="{{myPlant.nickname}}">
-              </td>
-            </tr>
-            <tr>
-              <td class="tabletitle"><label for="">Note:</label>
-              </td>
-              <td><input type="text" class="edit-input-border" name="note" value="{{myPlant.note}}">
-              </td>
-            </tr>
-            <tr>
-              <td class="tabletitle">
-                <label for="" class="edit-title">Water amount:</label>
-              </td>
-              <td>
-                <select name="water" class="edit-input-border" title="Select water amount">
-                 <option disabled selected>Select water amount</option>
-                  <option>Only little water</option>
-                  <option>Average amount of water</option>
-                  <option>Big amount of water</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td class="tabletitle">
-                <label for="" class="edit-title">Optimal position:</label>
-              </td>
-              <td>
-                <select name="position" class="edit-input-border" title="Select the best position">
-                    <option disabled selected>Select best position</option>
-                  <option>Sun</option>
-                  <option>Shadow</option>
-                </select>
-              </td>
-            </tr>
-          </tbody>
-        </table> 
-      </div> --}}
-
-      <button type="submit" class="addplant-btn-style btn-shadow">Save changes</button>
-    </form>
-
-{{!-- i re-commented the above button only to make the functionality work --}}
-
-      <ul class="plant-detail-list">
-        <li>
-          <span class="plant-detail-list-title">Name:</span> {{myPlant.common_name}}
-        </li>
-        <li>
-          <label for="" class="plant-detail-list-title">Nickname:</label> <input type="text" class="edit-input-border"
-            name="note" value="{{myPlant.nickname}}">
-        </li>
-        <li>
-          <label for="" class="plant-detail-list-title">Note:</label>
-          <input type="text" class="edit-input-border" name="note" value="{{myPlant.note}}">
-        </li>
-        <li>
-          <label for="" class="edit-title">Water amount:</label>
-          <select name="water" class="edit-input-border">
-            <option disabled selected>Select water amount</option>
-            <option>Only little water</option>
-            <option>Average amount of water</option>
-            <option>Big amount of water</option>
-          </select>
-        </li>
-        <li>
-          <label for="" class="edit-title">Optimal position:</label>
-          <select name="position" class="edit-input-border">
-            <option disabled selected>Select best position</option>
-            <option>Sun</option>
-            <option>Shadow</option>
-          </select>
-        </li>
-
-        <button type="submit" class="save-changes addplant-btn-style btn-shadow">Save changes</button>
+      <button type="submit" class="save-changes addplant-btn-style btn-shadow align-self-center">Save changes</button>
 
     </form>
 
-    </ul>
 
     <form action="/garden/delete/{{myPlant.id}}" method="POST" class="align-self-center"><button type="submit"
         class="delete-btn-style btn-shadow">Delete plant</button></form>
