@@ -173,7 +173,7 @@ router.post("/editPlant/:id", (req, res) => {
   let images = [];
 
   if (typeof notToDeleteList === "undefined") {
-    images.push({url: "/images/Secret-Garden.jpg"})
+    images.push({url: "/images/no-image-found.jpg"})
   } 
 
   if (typeof notToDeleteList === "string") {
