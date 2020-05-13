@@ -234,7 +234,7 @@ select:focus, select:active {
   flex-wrap: wrap;
   text-align: center;
   line-height: 1.7em;
-  padding: 8% 10%; }
+  padding: 4% 10%; }
 
 .garden-container {
   background: white;
@@ -334,7 +334,7 @@ select:focus, select:active {
   border-bottom-right-radius: 2.5em;
   object-fit: cover;
   width: 40vw;
-  height: 40vh;
+  height: auto;
   -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
@@ -346,12 +346,17 @@ select:focus, select:active {
   margin: 20px;
   border-radius: 1em;
   border: none;
-  background-color: #1664FF;
   text-align: center; }
 
 .btn-choseplant:hover {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8); }
+
+.bg-blue {
+  background-color: #1664FF; }
+
+.bg-green {
+  background-color: #4FDB98; }
 
 .plant-detail-container {
   background: white;

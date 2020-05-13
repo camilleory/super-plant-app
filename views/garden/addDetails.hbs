@@ -21,6 +21,8 @@
 <main>
   <h2>Add a plant</h2>
   <div class="garden-container">
+    <a href="/garden" class="text-left">&lt; my garden</a>
+    <br />
     <p class="large">Add some details to your plant (optional).</p>
     <form action="/garden/addDetails/{{myPlant.id}}" method="post" class="form-container">
       <label for="">Nickname:</label>
@@ -42,5 +44,7 @@
       </select>
       <button type="submit" class="btn-style btn-shadow">Submit</button>
     </form>
+    <a href="/garden" class="text-left">&lt; my garden</a>
+    <br />
   </div>
 </main>
