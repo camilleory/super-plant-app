@@ -13,11 +13,9 @@ const bcryptSalt = 10;
 const passport = require("passport");
 const session = require("express-session");
 const flash = require("connect-flash");
-
 const nodemailer = require("nodemailer");
 
 // signup with email
-
 let transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
@@ -32,7 +30,6 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", (req, res, next) => {
-
   const { email, password, name } = req.body;
   const token = Math.floor(Math.random() * 1000000);
 
@@ -44,15 +41,17 @@ router.post("/signup", (req, res, next) => {
   }
 
   transporter.sendMail({
-    from: ' "Super Plant App" <masterOfPlants@superplantapp.com>',
+    from: ' "All My Plant" <masterOfPlants@superplantapp.com>',
     to: email,
-    subject: "Login to Super Plant App",
-    html: `Click on this link to verify your email adress for Super Plant App: http://localhost:3000/auth/verify-email/${token}`,
+    subject: "Login to All My Plants App",
+    html: `Hello there! <br><br>
+    Please click on this link to verify your email adress and get access to All My Plants App: <br> 
+    http://localhost:3000/auth/verify-email/${token} <br><br>
+    Take care (of your plants)!`,
   });
 
   User.findOne({ email })
     .then((user) => {
-      
       if (user !== null) {
         res.render("auth/signup", {
           message: "User already exists",
@@ -78,23 +77,21 @@ router.post("/signup", (req, res, next) => {
     })
 
     .catch((error) => {
-      res.render("auth/verify", /*{ message: "Something went wrong" } */);
+      res.render("auth/verify" /*{ message: "Something went wrong" } */);
     });
 });
 
 router.get("/verify-email/:token", (req, res) => {
-
   User.findOne({ token: req.params.token })
-  
   .then((user) => {
-
     req.login(user, () => {
       req.user.verifiedEmail = true;
-      req.user.save()
-      
-      .then(() => {
-        res.redirect("/garden");
-      });
+      req.user
+        .save()
+
+        .then(() => {
+          res.redirect("/garden");
+        });
     });
   });
 });
@@ -102,7 +99,6 @@ router.get("/verify-email/:token", (req, res) => {
 //login
 router.get("/login", (req, res, next) => {
   res.render("auth/login", { message: req.flash("error") });
-  // console.log(req.flash('error'))
   // flash errors are always an array!!!
 });
 
