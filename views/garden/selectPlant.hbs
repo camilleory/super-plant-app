@@ -18,23 +18,21 @@
   </div>
 </nav>
 
-<main class="main-centered">
-  <div class="infotextbox">There is more than one kind of {{plant}}.
+<main>
+  <h2>Add a plant</h2>
+  <div class="garden-container">
+    <p>There is more than one kind of {{plant}}. </p>
 
-<form action="/garden/selectPlant" method="post">
-{{#each response}}
-<ul id="selectPlantInputId">
-<li>{{this.common_name}}</li>
-<li>
-    <input type="text" name="id" value="{{this.id}}" >
-</li>
-
+    <form action="/garden/selectPlant" method="post" class="form-container">
+      {{#each response}}
+      <ul id="selectPlantInputId">
+        <li>{{this.common_name}}</li>
+        <li><input type="text" name="id" value="{{this.id}}"></li>
       </ul>
       {{/each}}
 
-<button type="submit">Select</button>
-</form>
-
+      <button type="submit" class="addplant-btn-style btn-shadow">Select the one you want</button>
+    </form>
   </div>
 
 </main>

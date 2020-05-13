@@ -20,12 +20,14 @@
 
 <main>
   <h2>Add a plant</h2>
-  <form action="/garden/addPlant" method="post" class="form-container">
-    <label for="common_name">Enter the common or scientific name of the plant you have at home, or a plant you are
-      curious
-      about (and make sure you enter an existing plant name). &#42;</label>
-    <input type="text" name="common_name" placeholder="Name" required>
-    <button type="submit" class="btn-style btn-shadow">Add to my garden</button>
-  </form>
-  <p>{{data}}</p>
-</main>
+  <div class="garden-container">
+    <form action="/garden/addPlant" method="post" class="form-container">
+      <label for="common_name">Enter the common or scientific name of the plant you have at home, or a plant you are
+        curious
+        about (and make sure you enter an existing plant name). &#42;</label>
+      <input type="text" name="common_name" placeholder="Name" required>
+      <button type="submit" class="btn-style btn-shadow">Add to my garden</button>
+    </form>
+    <p>{{data}}</p>
+    </div>
+  </main>

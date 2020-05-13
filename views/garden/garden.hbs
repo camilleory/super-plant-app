@@ -24,12 +24,12 @@
   <h1>my garden</h1>
 
   {{#unless plantsList}}
-  <main class="form-container">
-    <p class="verify">
-      Your garden is empty, {{user.name}}!
-      <br />
-      Why don't you <a href="garden/addPlant">add your first plant?</a> :)
+  <main class="garden-container-centeredtext">
+    <p>
+      Your garden is empty, {{user.name}}!<br />
+      But now for very long...
     </p>
+      <a href="garden/addPlant" class="addplant-btn-style btn-shadow">Add my first plant</a>
   </main>
   {{/unless}}
 
