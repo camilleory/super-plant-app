@@ -364,6 +364,10 @@ background-color: rgba(79,219,152,0.5);
   text-decoration: none;
 }
 
+#bud{
+  height: 80px;
+}
+
 .addplant-btn-style {
   align-self: center;
   color: white;
@@ -648,6 +652,10 @@ background-color: rgba(79,219,152,0.5);
 
 #selectPlantInputId{
   display: none;
+}
+
+#selectPlantImg{
+  height: 60px;
 }
 
 /* ****** ChosePlant ****** */ 
