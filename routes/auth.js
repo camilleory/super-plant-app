@@ -41,7 +41,7 @@ router.post("/signup", (req, res, next) => {
   }
 
   transporter.sendMail({
-    from: ' "All My Plant" <masterOfPlants@superplantapp.com>',
+    from: ' "All My Plants" <masterOfPlants@superplantapp.com>',
     to: email,
     subject: "Login to All My Plants App",
     html: `Hello there! <br><br>
