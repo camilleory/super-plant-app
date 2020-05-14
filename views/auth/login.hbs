@@ -10,11 +10,11 @@
   {{/if}}
 
   <form action="/auth/login" method="post" class="form-container">
-    <label for="email">Email:</label>
-    <input type="email" name="email" placeholder="Email">
+    {{!-- <label for="email">Email:</label> --}}
+    <input type="email" name="email" placeholder="email">
     <br />
-    <label for="password">Password: </label>
-    <input type="password" name="passwd" placeholder="*******">
+    {{!-- <label for="password">Password: </label> --}}
+    <input type="password" name="passwd" placeholder="password">
     <br />
     <button type="submit" class="btn-style btn-shadow">Login</button>
     {{#unless user}}
