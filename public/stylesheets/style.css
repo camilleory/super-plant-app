@@ -294,6 +294,9 @@ select:focus, select:active {
   color: #2e2d2b;
   text-decoration: none; }
 
+#bud {
+  height: 80px; }
+
 .addplant-btn-style {
   align-self: center;
   color: white;
@@ -530,6 +533,9 @@ select:focus, select:active {
 /* ****** selectPlant ****** */
 #selectPlantInputId {
   display: none; }
+
+#selectPlantImg {
+  height: 60px; }
 
 /* ****** ChosePlant ****** */
 #chosePlantInputId {
