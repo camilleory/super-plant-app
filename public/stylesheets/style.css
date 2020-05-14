@@ -510,6 +510,9 @@ select:focus, select:active {
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.9); }
 
+.edit-save-btn {
+  align-self: center; }
+
 .edit-title {
   color: #1664FF; }
 
@@ -517,7 +520,8 @@ select:focus, select:active {
   margin-top: 50px;
   font-size: x-large;
   line-height: 1.6em;
-  text-align: center; }
+  text-align: left;
+  padding-left: 7vw; }
 
 .dropdown-list {
   line-height: 2em; }
