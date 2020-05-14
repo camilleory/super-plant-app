@@ -46,7 +46,7 @@ router.post("/signup", (req, res, next) => {
     subject: "Login to All My Plants App",
     html: `Hello there! <br><br>
     Please click on this link to verify your email adress and get access to All My Plants App: <br> 
-    http://localhost:3000/auth/verify-email/${token} <br><br>
+    ${process.env.EMAIL_LINK}/${token} <br><br>
     Take care (of your plants)!`,
   });
 
