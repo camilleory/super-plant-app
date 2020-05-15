@@ -79,15 +79,15 @@ h3 {
   margin-bottom: 3vw;
 }
 
-.footer a {
-  color: white;
-  text-decoration: none;
-}
+// .footer a {
+//   color: white;
+//   text-decoration: none;
+// }
 
-.footer a:hover {
-  color: #abc7ff;
-  text-decoration: none;
-}
+// .footer a:hover {
+//   color: #abc7ff;
+//   text-decoration: none;
+// }
 
 button:focus, button:active {
   outline: none !important;
@@ -153,9 +153,8 @@ select:focus, select:active {
 
 .form-container input {
   // margin: 20px 0;
-  margin-top: 8px;
-  margin-bottom: 30px;
-  
+  // margin-top: 8px;
+  // margin-bottom: 20px;
   padding: 10px 15px;
   border: 2px solid #1664FF;
   width: 60vw;
@@ -170,7 +169,7 @@ select:focus, select:active {
 .btn-style {
   width: 60vw;
   padding: 10px 15px;
-  margin-top: 30px;
+  margin-top: 25px;
   border-radius: 1em;
   border: none;
   background-color: #1664FF;
@@ -640,7 +639,6 @@ label{
   align-items: center;
   text-align: left;
   line-height: 1.7em;
-  // padding: 2% 2%;
 }
 
 .edit-img {
@@ -651,16 +649,13 @@ label{
   object-fit: cover;
   width: 30vw;
   height: auto;  
-  // border: 10px solid white;
   -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
   box-shadow: 2px 5px 8px rgba(0,0,0,0.9);
 }
 
 .edit-save-btn {
-  align-self: center;
-  // margin: 0 auto;
-
+  margin-left: 10%;
 }
 
 .edit-title {
@@ -669,10 +664,12 @@ label{
 
 .edit-list {
   margin-top: 50px;
-  font-size: x-large;
+  font-size: large;
   line-height: 1.6em;
   text-align: left;
-  padding-left: 7vw;
+  // padding-left: 7vw;
+  width:100%;
+
 }
 
 .dropdown-list {
