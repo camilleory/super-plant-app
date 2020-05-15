@@ -267,6 +267,16 @@ select:focus, select:active {
   height: auto;
   margin-top: 50px; }
 
+#gardenImg {
+  height: 40px;
+  margin-bottom: 30px; }
+
+.garden-container h3 {
+  font-size: 25px; }
+
+.garden-container span {
+  color: #1664FF; }
+
 .garden-img {
   object-fit: cover;
   max-width: 100%;
@@ -294,8 +304,12 @@ select:focus, select:active {
   color: #2e2d2b;
   text-decoration: none; }
 
-#bud {
-  height: 80px; }
+#emptyGardenImg {
+  height: 60px;
+  margin: 30px; }
+
+#addPlantLabel {
+  max-width: 500px; }
 
 .addplant-btn-style {
   align-self: center;
@@ -318,6 +332,17 @@ select:focus, select:active {
 .addplant-btn-style a:hover {
   text-decoration: none;
   color: white; }
+
+#addPlantImg {
+  height: 70px; }
+
+#addPlantForm {
+  padding: 30px; }
+
+label {
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding-top: 0; }
 
 /* Choose Plant */
 .form-choseplant {
@@ -535,11 +560,23 @@ select:focus, select:active {
   display: none; }
 
 #selectPlantImg {
-  height: 60px; }
+  height: 60px;
+  margin-bottom: 30px; }
+
+p {
+  margin: 0;
+  margin-top: 20px; }
+
+#selectPlantButton {
+  margin: 0; }
 
 /* ****** ChosePlant ****** */
 #chosePlantInputId {
   display: none; }
+
+#chosePlantImg {
+  height: 60px;
+  margin-bottom: 20px; }
 
 /* ****** About ****** */
 .about-img-container {
@@ -565,5 +602,10 @@ select:focus, select:active {
 
 .about-img-container img {
   margin-bottom: 20px; }
+
+/* ****** addDetails ****** */
+#addDetailsImg {
+  height: 50px;
+  margin: 20px; }
 
 /*# sourceMappingURL=style.css.map */
