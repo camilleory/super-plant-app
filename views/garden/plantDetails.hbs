@@ -21,29 +21,25 @@
 
 
 <main class="plant-detail-container">
-<a href="/garden" class="text-left">&lt; my garden</a>
+  <a href="/garden" class="text-left">&lt; my garden</a>
   <br>
 
   {{#if myPlant.nickname}}
-  <h3>{{myPlant.nickname}}</h3>
+    <h3>{{myPlant.nickname}}</h3>
   {{/if}}
   {{#unless myPlant.nickname}}
-  <h3>{{myPlant.common_name}}</h3>
+    <h3>{{myPlant.common_name}}</h3>
   {{/unless}}
   {{!-- <li><img height="250px" src="{{myPlant.images.0.url}}" alt=""></li> --}}
   <div class="plant-detail-img-container">
-
     {{#each myPlant.images}}
-    <img class="plant-detail-img" height="250px" src="{{url}}" alt="">
+    <img class="plant-detail-img" src="{{url}}" alt="">
     {{/each}}
-
-
-  
   </div>
   <br>
   <br>
 
-  <div class="table-responsive">
+  {{!-- <div class="table-responsive">
     <table class="table table-hover">
       <tbody>
         <tr>
@@ -76,7 +72,7 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </div> --}}
 
   <div class="plant-detail-upload-container">
     <h4>Upload your own image</h4>
@@ -87,7 +83,7 @@
       <button type="submit" class="uploadimg-btn-style btn-shadow">Upload Image</button>
     </form>
     <br />  
-  </div>
+  </div> 
 
   {{!-- <div class="plant-detail-btn-container"> --}}
   <a href="/garden/editPlant/{{myPlant.id}}" class="addplant-btn-style btn-shadow">Edit plant</a>
