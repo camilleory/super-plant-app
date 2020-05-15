@@ -1,7 +1,7 @@
 <nav class="navbar mt-2" style="background-color: none;">
   <a class="navbar-brand" href="/">all my plants</a>
 </nav>
-<br/><br/>
+<br /><br />
 <main class="form-container">
   <h1>Sign up</h1>
 
@@ -9,17 +9,17 @@
   <p class="error-msg">{{message}}</p>
   {{/if}}
 
-<form action="/auth/signup" method="post" class="form-container">
-{{!-- <label for="name">Name:</label> --}}
-<input type="text" name="name" placeholder="name">
-<br />
-{{!-- <label for="email">Email:</label> --}}
-<input type="email" name="email" placeholder="email">
-<br />
-{{!-- <label for="password">Password: </label> --}}
-<input type="password" name="password" placeholder="password">
-<br /> 
-<button type="submit" class="btn-style btn-shadow">Sign up</button>
-</form>
-<br />
-<p>Already have an account? <a href="/auth/login">Login</a> instead.</p>
+  <form action="/auth/signup" method="post" class="form-container">
+    {{!-- <label for="name">Name:</label> --}}
+    <input type="text" name="name" placeholder="name">
+    <br />
+    {{!-- <label for="email">Email:</label> --}}
+    <input type="email" name="email" placeholder="email">
+    <br />
+    {{!-- <label for="password">Password: </label> --}}
+    <input type="password" name="password" placeholder="password">
+    <br />
+    <button type="submit" class="btn-style btn-shadow">Sign up</button>
+  </form>
+  <br />
+  <p>Already have an account? <a href="/auth/login">Login</a> instead.</p>
