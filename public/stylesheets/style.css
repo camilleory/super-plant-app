@@ -39,8 +39,7 @@ h5 {
   color: #4FDB98; }
 
 h3 {
-  color: #2e2d2b;
-  font-size: 2.6em; }
+  color: #2e2d2b; }
 
 .slogan {
   background-color: #2e2d2b;
@@ -59,6 +58,12 @@ h3 {
   align-items: center;
   text-align: center;
   margin-bottom: 3vw; }
+
+.font-normal {
+  font-size: normal !important; }
+
+.padding-left {
+  padding-left: 2%; }
 
 button:focus, button:active {
   outline: none !important;
@@ -386,8 +391,7 @@ select:focus, select:active {
   align-items: center;
   text-align: left;
   line-height: 1.7em;
-  padding: 4% 4%;
-  width: 100%; }
+  padding: 4% 4%; }
 
 .plant-detail-img-container {
   color: #2e2d2b;
@@ -405,7 +409,7 @@ select:focus, select:active {
   border-bottom-left-radius: 3em;
   border-bottom-right-radius: 3em;
   object-fit: cover;
-  width: 35vw;
+  width: 40vw;
   height: auto;
   -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
@@ -427,7 +431,7 @@ select:focus, select:active {
   line-height: normal; }
 
 .table {
-  font-size: x-large;
+  font-size: large;
   color: #2e2d2b; }
 
 .tabletitle {
@@ -467,7 +471,8 @@ select:focus, select:active {
 .upload-photo-form {
   background-color: #abc7ff;
   border-radius: 0.5em;
-  width: 100%; }
+  width: 100%;
+  padding: 4%; }
 
 .align-self-center {
   align-self: center; }
@@ -534,6 +539,7 @@ select:focus, select:active {
   font-size: large;
   line-height: 1.6em;
   text-align: left;
+  padding-left: 5vw;
   width: 100%; }
 
 .dropdown-list {
