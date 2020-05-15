@@ -54,22 +54,30 @@
           <td class="tabletitle">Common Family Name: </td>
           <td>{{myPlant.family_common_name}}</td>
         </tr>
+        {{#if myPlant.nickname}}
         <tr>
           <td class="tabletitle">Nickname: </td>
           <td>{{myPlant.nickname}}</td>
         </tr>
+        {{/if}}
+        {{#if myPlant.note}}
         <tr>
           <td class="tabletitle">Note: </td>
           <td>{{myPlant.note}}</td>
         </tr>
+        {{/if}}
+        {{#if myPlant.water}}
         <tr>
           <td class="tabletitle">Water amount: </td>
           <td id="water">{{myPlant.water}}</td>
         </tr>
+        {{/if}}
+        {{#if myPlant.position}}
         <tr>
           <td class="tabletitle">Optimal position: </td>
           <td id="position">{{myPlant.position}}</td>
         </tr>
+        {{/if}}
       </tbody>
     </table>
   </div>

@@ -25,7 +25,17 @@
   <div class="plant-detail-container">
     <a href="/garden" class="text-left">&lt; my garden</a>
     <br>
-    <br />
+
+  {{#if myPlant.nickname}}
+  <h3>{{myPlant.nickname}}</h3>
+  {{/if}}
+  {{#unless myPlant.nickname}}
+  <h2>{{myPlant.common_name}}</h2>
+  {{/unless}}
+  <br>
+
+
+
     <h4>Unselect the images you want to delete</h4>
 
     <form action="/garden/editPlant/{{myPlant.id}}" method="post">
@@ -46,14 +56,14 @@
         <label for="" class="plant-detail-list-title">Nickname:</label>
 
         <input type="text" class="input-border input-short"
-          name="nickname" value="{{myPlant.nickname}}">
+          name="nickname" value="{{myPlant.nickname}}" placeholder="does your plant have a nickname?">
         <br />
         <label for="" class="plant-detail-list-title">Note:</label>
-        <input type="text" class="input-border input-short" name="note" value="{{myPlant.note}}">
+        <input type="text" class="input-border input-short" name="note" value="{{myPlant.note}}" placeholder="add your notes here">
         <br /> 
         <label for="" class="edit-title">Water amount:</label>
         <select name="water" class="input-border">
-          <option hidden>{{myPlant.water}}</option>
+          <option disabled selected>{{myPlant.water}} {{#unless myPlant.water}}Please choose..{{/unless}}</option>
           <option>Only little water</option>
           <option>Average amount of water</option>
           <option>Big amount of water</option>
@@ -61,7 +71,7 @@
         <br />
         <label for="" class="edit-title">Optimal position:</label>
         <select name="position" class="input-border">
-          <option hidden>{{myPlant.position}}</option>
+          <option disabled selected>{{myPlant.position}}{{#unless myPlant.position}}Please choose..{{/unless}}</option>
           <option>Sun</option>
           <option>Shadow</option>
         </select>
