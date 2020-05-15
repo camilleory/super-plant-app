@@ -27,11 +27,6 @@ main {
   margin-bottom: 20vh;
 }
 
-.main-index {
-  // margin-top: 10vh;
-}
-
-
 a {
   color: #1664FF; 
 }
@@ -39,7 +34,6 @@ a {
 a:hover {
   text-decoration: none;
 }
-
 
 h1 {
   text-shadow: 5px 5px #2e2d2b;
@@ -56,7 +50,7 @@ h5 {
 
 h3 {
   color: #2e2d2b; 
-  font-size: 2.6em;
+  // font-size: 2.6em;
 }
 
 .slogan {
@@ -88,6 +82,14 @@ h3 {
 //   color: #abc7ff;
 //   text-decoration: none;
 // }
+
+.font-normal {
+  font-size: normal !important; 
+}
+
+.padding-left {
+  padding-left: 2%;
+}
 
 button:focus, button:active {
   outline: none !important;
@@ -495,7 +497,7 @@ label{
   text-align: left;
   line-height: 1.7em;
   padding: 4% 4%;
-  width: 100%;
+  // width: 100%;
 }
 
 .plant-detail-img-container {
@@ -516,7 +518,7 @@ label{
   border-bottom-left-radius: 3em;
   border-bottom-right-radius: 3em;
   object-fit: cover;
-  width: 35vw;
+  width: 40vw;
   height: auto;
   -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
@@ -543,7 +545,7 @@ label{
 }
 
 .table {
-  font-size: x-large;
+  font-size: large;
   color: #2e2d2b;
 }
 
@@ -558,7 +560,6 @@ label{
 
 .plant-detail-upload-container {
   width: 80%;
-  // margin: 50px 3vw; 
   color: #2e2d2b;
   display: flex;
   flex-wrap: wrap;
@@ -592,7 +593,7 @@ label{
   background-color: #abc7ff;
   border-radius: 0.5em;
   width: 100%;
-  // margin-bottom: 8vh;
+  padding: 4%;
 }
 
 .align-self-center {
@@ -670,7 +671,7 @@ label{
   font-size: large;
   line-height: 1.6em;
   text-align: left;
-  // padding-left: 7vw;
+  padding-left: 5vw;
   width:100%;
 
 }

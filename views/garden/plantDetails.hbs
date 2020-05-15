@@ -21,7 +21,7 @@
 
 
 <main class="plant-detail-container">
-  <a href="/garden" class="text-left">&lt; my garden</a>
+  <a href="/garden" class="text-left font-normal padding-left">&lt; my garden</a>
   <br>
 
   {{#if myPlant.nickname}}
@@ -39,7 +39,7 @@
   <br>
   <br>
 
-  {{!-- <div class="table-responsive">
+  <div class="table-responsive">
     <table class="table table-hover">
       <tbody>
         <tr>
@@ -72,10 +72,10 @@
         </tr>
       </tbody>
     </table>
-  </div> --}}
+  </div>
 
   <div class="plant-detail-upload-container">
-    <h4>Upload your own image</h4>
+    <p >Upload your own image</p>
     <br />
     <form action="/garden/plantDetails/uploadImage/{{myPlant.id}}" method="post" enctype="multipart/form-data"
       class="upload-photo-form">
@@ -91,6 +91,6 @@
       class="delete-btn-style btn-shadow">Delete plant</button></form>
   {{!-- </div> --}}
 
-<a href="/garden" class="text-left">&lt; my garden</a>
+<a href="/garden" class="text-left padding-left font-normal">&lt; my garden</a>
 
 </main>
