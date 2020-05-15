@@ -25,6 +25,7 @@
 
   {{#unless plantsList}}
   <main class="garden-container-centeredtext">
+    <img id="emptyGardenImg" src="/images/gardening.png">
     <p>
       Your garden is empty, {{user.name}}!<br />
       But not for very long...
@@ -36,6 +37,9 @@
   {{#if plantsList}}
 
   <div class="garden-container">
+    <img id="gardenImg" src="/images/blossom.png">
+    <h3>What a nice garden, <span>{{user.name}}</span> ! </h3>
+   <p> --> Click on your plant to see the plant details.</p>
     <ul class="garden-img-container">
       {{#each plantsList}}
       <li>

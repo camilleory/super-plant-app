@@ -21,9 +21,9 @@
 <main>
   <h2>Add a plant</h2>
   <div class="garden-container">
+      <img id="selectPlantImg" src="/images/bud.png" alt="">
 
     <p>Great! But there is more than one kind of {{plant}}. </p>
-      <img id="selectPlantImg" src="/images/bud.png" alt="">
 
     <form action="/garden/selectPlant" method="post" class="form-container">
       {{#each response}}
@@ -33,7 +33,7 @@
       </ul>
       {{/each}}
 
-      <button type="submit" class="addplant-btn-style btn-shadow">Select the one you want</button>
+      <button id="selectPlantButton" type="submit" class="addplant-btn-style btn-shadow">Select the one you want</button>
     </form>
   </div>
 
