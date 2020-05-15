@@ -19,13 +19,18 @@
   </div>
 </nav>
 {{/if}}
+{{#unless user}}
+<nav class="navbar mt-2" style="background-color: none;">
+  <a class="navbar-brand" href="/">all my plants</a>
+</nav>
+{{/unless}}
 
 <main>
 
   <h1>about</h1>
   <div class="garden-container">
     {{!-- <div class="form-container"> --}}
-    <h1 class="green">all my plants</h1>
+    <h1 class="green text-centered">all my plants</h1>
     <div class="slogan text-centered">look after them and they'll look after you</div>
     {{!-- </div> --}}
     <p>
@@ -33,13 +38,13 @@
       home or the ones you would like to have into your virtual garden and keep track of their specific care
       requirements.
     </p>
-<br />
+    <br />
     <h2>who and what</h2>
     <br />
     <p>
       This is the second project of a Web Development Bootcamp at Ironhack, Berlin.
     </p>
-     <p>
+    <p>
       Who's behind the project?
     </p>
 
@@ -53,7 +58,7 @@
     </ul>
 
     <a href="/" class="btn-choseplant bg-green btn-shadow">Start your plant discovery journey!</a>
-  
-  </div>
+    <br />
 
+  </div>
 </main>
