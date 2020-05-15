@@ -44,6 +44,7 @@
         <span class="plant-detail-list-title">Name:</span> {{myPlant.common_name}}
         <br />
         <label for="" class="plant-detail-list-title">Nickname:</label>
+
         <input type="text" class="input-border input-short"
           name="nickname" value="{{myPlant.nickname}}">
         <br />
@@ -52,7 +53,7 @@
         <br /> 
         <label for="" class="edit-title">Water amount:</label>
         <select name="water" class="input-border">
-          <option disabled selected>Select water amount</option>
+          <option hidden>{{myPlant.water}}</option>
           <option>Only little water</option>
           <option>Average amount of water</option>
           <option>Big amount of water</option>
@@ -60,12 +61,12 @@
         <br />
         <label for="" class="edit-title">Optimal position:</label>
         <select name="position" class="input-border">
-          <option disabled selected>Select best position</option>
+          <option hidden>{{myPlant.position}}</option>
           <option>Sun</option>
           <option>Shadow</option>
         </select>
 
-              <button type="submit" class="save-changes addplant-btn-style btn-shadow edit-save-btn">Save changes</button>
+        <button type="submit" class="save-changes addplant-btn-style btn-shadow edit-save-btn">Save changes</button>
 
       </div>
 
