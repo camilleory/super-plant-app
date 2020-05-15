@@ -25,10 +25,10 @@
   <br>
 
   {{#if myPlant.nickname}}
-    <h3>{{myPlant.nickname}}</h3>
+  <h3>{{myPlant.nickname}}</h3>
   {{/if}}
   {{#unless myPlant.nickname}}
-    <h3>{{myPlant.common_name}}</h3>
+  <h3>{{myPlant.common_name}}</h3>
   {{/unless}}
   {{!-- <li><img height="250px" src="{{myPlant.images.0.url}}" alt=""></li> --}}
   <div class="plant-detail-img-container">
@@ -75,15 +75,37 @@
   </div>
 
   <div class="plant-detail-upload-container">
-    <p >Upload your own image</p>
-    <br />
+    <p>Upload your own image</p>
+    <br/>
+
     <form action="/garden/plantDetails/uploadImage/{{myPlant.id}}" method="post" enctype="multipart/form-data"
       class="upload-photo-form">
       <input type="file" name="user-image" id="" required="true">
       <button type="submit" class="uploadimg-btn-style btn-shadow">Upload Image</button>
     </form>
-    <br />  
+    <br/>  
   </div> 
+
+
+{{!-- =================
+this is another input group version, without responsiveness errors but also without the filename displayed. dont know why. any suggestions?
+======================= --}}
+  {{!-- <p>Upload your own image</p>
+  <br/>
+
+  <form action="/garden/plantDetails/uploadImage/{{myPlant.id}}" method="post" enctype="multipart/form-data"
+    class="upload-photo-form" align="center">
+
+    <div class="input-group">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile" aria-describedby="inputGroupFileAddon"
+          name="user-image" required="true">
+        <label class="custom-file-label" for="inputGroupFile">Choose file</label>
+      </div>
+    </div>
+    <button type="submit" class="uploadimg-btn-style btn-shadow">Upload Image</button>
+  </form> --}}
+
 
   {{!-- <div class="plant-detail-btn-container"> --}}
   <a href="/garden/editPlant/{{myPlant.id}}" class="addplant-btn-style btn-shadow">Edit plant</a>
@@ -91,6 +113,6 @@
       class="delete-btn-style btn-shadow">Delete plant</button></form>
   {{!-- </div> --}}
 
-<a href="/garden" class="text-left padding-left font-normal">&lt; my garden</a>
+  <a href="/garden" class="text-left padding-left font-normal">&lt; my garden</a>
 
 </main>
