@@ -330,10 +330,11 @@ select:focus, select:active {
 .garden-img-container li {
   width: 40%;
   height: auto;
+  flex-wrap: wrap;
   margin-top: 50px;
 }
 
-#gardenImg{
+#gardenImg {
   height: 40px;
   margin-bottom: 30px;
 }
@@ -363,9 +364,9 @@ background-color: rgba(79,219,152,0.5);
 }
 
 .garden-plantname {
-  margin-top: 30px;
+  margin-top: 20px;
   max-width: 25vw;
-  font-size: x-large;
+  // font-size: x-large;
 }
 .garden-plantname a  {
   color: #1664FF;
@@ -421,9 +422,13 @@ background-color: rgba(79,219,152,0.5);
 }
 
 label{
-  margin-bottom: 20px;
-  margin-top: 0;
-  padding-top: 0;
+  // margin-bottom: 10px;
+  // margin-top: 0;
+  // padding-top: 0;
+}
+
+.label {
+    margin-top: 20px;
 }
 
 /* Choose Plant */
@@ -489,7 +494,8 @@ label{
   align-items: center;
   text-align: left;
   line-height: 1.7em;
-  padding: 4% 10%;
+  padding: 4% 4%;
+  width: 100%;
 }
 
 .plant-detail-img-container {
@@ -500,19 +506,17 @@ label{
   justify-content: space-around;
   align-items: center;
   text-align: left;
-  line-height: 1.7em;
+  // line-height: 1.7em;
   padding: 2% 2%;
 }
 
-
 .plant-detail-img {
   margin: 15px;
-  // border: 20px solid white;
   border-top-left-radius: 3em;
   border-bottom-left-radius: 3em;
   border-bottom-right-radius: 3em;
   object-fit: cover;
-  width: 40vw;
+  width: 35vw;
   height: auto;
   -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
@@ -538,7 +542,6 @@ label{
   line-height: normal;
 }
 
-
 .table {
   font-size: x-large;
   color: #2e2d2b;
@@ -553,10 +556,9 @@ label{
   background-color: #abc7ff;
 }
 
-
-
 .plant-detail-upload-container {
-  margin-top: 60px;
+  width: 80%;
+  // margin: 50px 3vw; 
   color: #2e2d2b;
   display: flex;
   flex-wrap: wrap;
@@ -568,6 +570,7 @@ label{
 }
 
 .uploadimg-btn-style {
+  margin: 20px 0;
   padding: 10px 25px;
   border-radius: 1em;
   border: none;
@@ -588,8 +591,8 @@ label{
 .upload-photo-form {
   background-color: #abc7ff;
   border-radius: 0.5em;
-  padding: 30px;
-  margin-bottom: 8vh;
+  width: 100%;
+  // margin-bottom: 8vh;
 }
 
 .align-self-center {
@@ -676,9 +679,17 @@ label{
   line-height: 2em;
 }
 
-.edit-input-border {
+.input-border {
   border: 2px solid #1664FF;
   border-radius: 0.3em;
+}
+
+.input-short {
+  width: 40%;
+}
+
+.select-margin-bottom {
+  margin-bottom: 25px;
 }
 
 
