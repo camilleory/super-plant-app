@@ -65,18 +65,28 @@
         <br /> 
         <label for="" class="edit-title">Water amount:</label>
         <select name="water" class="input-border">
-          <option selected>{{myPlant.water}} {{#unless myPlant.water}}Please choose..{{/unless}}</option>
+          <option value="">Please choose</option>
+          {{#each waterOptions}}
+          <option {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+          {{/each}}
+          {{!-- <option selected>{{myPlant.water}} {{#unless myPlant.water}}Please choose..{{/unless}}</option>
           <option>Only little water</option>
           <option>Average amount of water</option>
-          <option>Big amount of water</option>
+          <option>Big amount of water</option> --}}
+
         </select>
         <br />
         <label for="" class="edit-title">Optimal position:</label>
         <select name="position" class="input-border">
-          <option selected>{{myPlant.position}}{{#unless myPlant.position}}Please choose..{{/unless}}</option>
+          <option value="">Please choose</option>
+          {{#each positionOptions}}
+          <option {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+          {{/each}}
+          
+          {{!-- <option selected>{{myPlant.position}}{{#unless myPlant.position}}Please choose..{{/unless}}</option>
           <option>Full Sun</option>
           <option>Partial Shade</option>
-          <option>Shade</option>
+          <option>Shade</option> --}}
         </select>
 
         <button type="submit" class="save-changes addplant-btn-style btn-shadow edit-save-btn">Save changes</button>
