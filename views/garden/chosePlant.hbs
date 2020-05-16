@@ -34,7 +34,7 @@
     {{#if this.images.0.url}}
 
     <form action="/garden/chosePlant" method="post" class="form-choseplant">
-      <p class="large">{{this.common_name}}</p>
+      <p class="large capital">{{this.common_name}}</p>
 
       <img src="{{this.images.0.url}}" alt="" class="chosePlant-img">
       <input type="text" name="id" value={{this.id}} id="chosePlantInputId">
