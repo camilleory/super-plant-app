@@ -150,8 +150,29 @@ router.post("/addDetails/:id", (req, res) => {
 //Detail page GET REQUEST
 router.get("/plantDetails/:id", (req, res, next) => {
   Plant.findById(req.params.id).then((plant) => {
+    let positionImageSrc;
+    if (plant.position === "Shade") {
+     positionImageSrc = "/images/cloud.png"
+    } else if (plant.position === "Full Sun") {
+      positionImageSrc = "/images/sun.png"
+    } else if (plant.position === "Partial Shade") {
+      positionImageSrc = "/images/partial-shade.png"
+    };
+
+    let waterImages = [];
+    if (plant.water === 'Only little water') {
+      waterImages = ["/images/water-drop.png"] 
+    } else if (plant.water ==='Average amount of water'){
+      waterImages = ["/images/water-drop.png", "/images/water-drop.png"] 
+    } else if (plant.water === 'Big amount of water'){
+      waterImages = ["/images/water-drop.png", "/images/water-drop.png", "/images/water-drop.png"] 
+    }
+    console.log('imgArray', waterImages)
+
     res.render("garden/plantDetails", {
       myPlant: plant,
+      positionImageSrc,
+      waterImages,
     });
   });
 });
@@ -159,7 +180,17 @@ router.get("/plantDetails/:id", (req, res, next) => {
 // EditPlant GET REQUEST
 router.get("/editPlant/:id", (req, res, next) => {
   Plant.findById(req.params.id).then((plant) => {
+    //Best position options
+    let positionOptions = [{ name: 'Full Sun' }, { name: 'Partial Shade' }, { name: 'Shade' }]
+    positionOptions.forEach((pos) => { if (plant.position === pos.name) { pos.selected = true }})
+    //Water amount options
+    let waterOptions = [{ name: 'Only little water'}, { name: 'Average amount of water' }, { name: 'Big amount of water' }]
+    waterOptions.forEach((pos) => { if (plant.water === pos.name) { pos.selected = true }})
+
+    console.log("positionOptions", positionOptions)
     res.render("garden/editPlant", {
+      positionOptions,
+      waterOptions,
       myPlant: plant,
     });
   });

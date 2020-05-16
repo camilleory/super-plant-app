@@ -69,13 +69,13 @@
         {{#if myPlant.water}}
         <tr>
           <td class="tabletitle">Water amount: </td>
-          <td id="water">{{myPlant.water}}</td>
+          <td id="water">{{#each this.waterImages}}<img height = 30px src="{{this}}">{{/each}}</td>
         </tr>
         {{/if}}
         {{#if myPlant.position}}
         <tr>
           <td class="tabletitle">Optimal position: </td>
-          <td id="position">{{myPlant.position}}</td>
+          <td id="position"><img height = 30px src="{{this.positionImageSrc}}"></td>
         </tr>
         {{/if}}
       </tbody>
