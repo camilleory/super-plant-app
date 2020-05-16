@@ -82,7 +82,11 @@
     </table>
   </div>
 
-  <div class="plant-detail-upload-container">
+
+
+
+
+  {{!-- <div class="plant-detail-upload-container">
     <p>Upload your own image</p>
     <br/>
 
@@ -92,13 +96,13 @@
       <button type="submit" class="uploadimg-btn-style btn-shadow">Upload Image</button>
     </form>
     <br/>  
-  </div> 
+  </div>  --}}
 
 
 {{!-- =================
 this is another input group version, without responsiveness errors but also without the filename displayed. dont know why. any suggestions?
 ======================= --}}
-  {{!-- <p>Upload your own image</p>
+  <p>Upload your own image</p>
   <br/>
 
   <form action="/garden/plantDetails/uploadImage/{{myPlant.id}}" method="post" enctype="multipart/form-data"
@@ -112,7 +116,7 @@ this is another input group version, without responsiveness errors but also with
       </div>
     </div>
     <button type="submit" class="uploadimg-btn-style btn-shadow">Upload Image</button>
-  </form> --}}
+  </form>
 
 
   {{!-- <div class="plant-detail-btn-container"> --}}
