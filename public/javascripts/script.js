@@ -19,9 +19,10 @@ else if (waterValue === 'Big amount of water'){
 
 let position = document.querySelector('#position').innerText 
 
-if (position === 'Sun') {
+if (position === 'Full Sun') {
   document.querySelector('#position').innerHTML = '<img height = 30px src ="/images/sun.png">'
-} else if (position === 'Shadow'){
+} else if (position === 'Shade'){
   document.querySelector('#position').innerHTML = '<img height = 30px src ="/images/cloud.png">'
-
+} else if (position === 'Partial Shade') {
+  document.querySelector('#position').innerHTML = '<img height = 40px src ="/images/partial-shade.png">'
 }
