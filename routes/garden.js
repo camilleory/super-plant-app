@@ -3,11 +3,9 @@ const router             = express.Router();
 const axios              = require("axios");
 const Plant              = require("../models/plantModel");
 const passport           = require("passport");
-
 const cloudinary         = require("cloudinary");
 const cloudinaryStorage  = require("multer-storage-cloudinary");
 const multer             = require("multer");
-
 // every route below ist protected through this middleware, only accessable after login and email verification
 router.use((req, res, next) => {
   if (req.isAuthenticated() && req.user.verifiedEmail === true) {
@@ -16,9 +14,7 @@ router.use((req, res, next) => {
     res.redirect("/auth/login");
   }
 });
-
 // garden GET REQUEST (READ)
-
 router.get("/", (req, res, next) => {
   Plant.find({
     owner: req.user,
@@ -30,12 +26,10 @@ router.get("/", (req, res, next) => {
     });
   });
 });
-
 // AddPlant GET REQUEST (CREATE)
 router.get("/addPlant", (req, res, next) => {
   res.render("garden/addPlant");
 });
-
 // AddPlant POST Request : User can enter the common or scientific name of the plant and we give him a list of all plants with this name
 router.post("/addPlant", (req, res) => {
   axios
@@ -46,7 +40,6 @@ router.post("/addPlant", (req, res) => {
       },
     })
     .then((response) => {
-    
       console.log("This is the response from API", response);
       if(!response.data[0] ||response.data[0].common_name === null ){res.render("garden/errorName")}
       else {
@@ -60,21 +53,17 @@ router.post("/addPlant", (req, res) => {
       console.log("ID parameter will be here", req.body.common_name);
     });
 });
-
 //selectPlant GET REQUEST
 // Here we get the list of plants.
 router.get("/selectPlant", (req, res) => {
   res.render("garden/selectPlant");
 });
-
 // Post request to get to the full data and retrieve the plant pictures
-
 router.post("/selectPlant", (req, res) => {
   console.log("i am here ====>")
   let idArray = req.body.id;
   console.log("idArray", idArray);
   let promises = [];
-
   idArray.map((el, i) => {
     promises.push(
       axios.get("https://trefle.io/api/plants/" + el, {
@@ -92,18 +81,14 @@ router.post("/selectPlant", (req, res) => {
     });
   });
 });
-
 //chosePlant GET REQUEST
 router.get("/chosePlant", (req, res) => {
   res.render("garden/chosePlant");
 });
-
 //chosePlant POST REQUEST --> Get chosen plant ID and make a new post request to api, then save data into database
-
 router.post("/chosePlant", (req, res) => {
   let selPlant = req.body.id;
   console.log("plant id", req.body.id);
-
   axios
     .get("https://trefle.io/api/plants/" + selPlant, {
       params: {
@@ -124,7 +109,6 @@ router.post("/chosePlant", (req, res) => {
       });
     });
 });
-
 //addDetails GET REQUEST
 router.get("/addDetails/:id", (req, res) => {
   Plant.findById(req.params.id).then((plant) => {
@@ -133,9 +117,7 @@ router.get("/addDetails/:id", (req, res) => {
     });
   });
 });
-
 // addDetail POST REQUEST
-
 router.post("/addDetails/:id", (req, res) => {
   Plant.findByIdAndUpdate(req.params.id, {
     nickname: req.body.nickname,
@@ -146,7 +128,6 @@ router.post("/addDetails/:id", (req, res) => {
     res.redirect("/garden");
   });
 });
-
 //Detail page GET REQUEST
 router.get("/plantDetails/:id", (req, res, next) => {
   Plant.findById(req.params.id).then((plant) => {
@@ -158,7 +139,6 @@ router.get("/plantDetails/:id", (req, res, next) => {
     } else if (plant.position === "Partial Shade") {
       positionImageSrc = "/images/partial-shade.png"
     };
-
     let waterImages = [];
     if (plant.water === 'Only little water') {
       waterImages = ["/images/water-drop.png"] 
@@ -168,7 +148,6 @@ router.get("/plantDetails/:id", (req, res, next) => {
       waterImages = ["/images/water-drop.png", "/images/water-drop.png", "/images/water-drop.png"] 
     }
     console.log('imgArray', waterImages)
-
     res.render("garden/plantDetails", {
       myPlant: plant,
       positionImageSrc,
@@ -176,7 +155,6 @@ router.get("/plantDetails/:id", (req, res, next) => {
     });
   });
 });
-
 // EditPlant GET REQUEST
 router.get("/editPlant/:id", (req, res, next) => {
   Plant.findById(req.params.id).then((plant) => {
@@ -186,7 +164,6 @@ router.get("/editPlant/:id", (req, res, next) => {
     //Water amount options
     let waterOptions = [{ name: 'Only little water'}, { name: 'Average amount of water' }, { name: 'Big amount of water' }]
     waterOptions.forEach((pos) => { if (plant.water === pos.name) { pos.selected = true }})
-
     console.log("positionOptions", positionOptions)
     res.render("garden/editPlant", {
       positionOptions,
@@ -195,28 +172,21 @@ router.get("/editPlant/:id", (req, res, next) => {
     });
   });
 });
-
 // EditPlant POST REQUEST including image deletion
-
 router.post("/editPlant/:id", (req, res) => {
-
   let notToDeleteList = req.body.notToDelete;
   let images = [];
-
   if (typeof notToDeleteList === "undefined") {
     images.push({url: "/images/no-image-found.jpg"})
   } 
-
   if (typeof notToDeleteList === "string") {
     images.push({ url: notToDeleteList });
   } 
-  
   if (typeof notToDeleteList === "object") {
     notToDeleteList.forEach((el) => {
       images.push({ url: el });
     });
   }
-
   Plant.findByIdAndUpdate(req.params.id, {
     //scientific_name: req.body.scientific_name,
     //common_name: req.body.common_name,
@@ -229,14 +199,12 @@ router.post("/editPlant/:id", (req, res) => {
     res.redirect("/garden/plantDetails/" + req.params.id);
   });
 });
-
 // cloudinary setup
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_KEY,
   api_secret: process.env.CLOUDINARY_SECRET,
 });
-
 var storage = cloudinaryStorage({
   cloudinary: cloudinary,
   folder: "plant-images", // The name of the folder in cloudinary
@@ -245,18 +213,15 @@ var storage = cloudinaryStorage({
     cb(null, file.originalname); // The file on cloudinary would have the same name as the original file name
   },
 });
-
 // UPLOAD USER IMAGE and push to first position of plant image array
 const uploadCloud = multer({
   storage: storage,
 });
-
 router.post(
   "/plantDetails/uploadImage/:id",
   uploadCloud.single("user-image"),
   (req, res) => {
     const imageURL = req.file.url;
-
     Plant.findByIdAndUpdate(req.params.id, {
       $push: {
         images: {
@@ -274,7 +239,6 @@ router.post(
     });
   }
 );
-
 // Delete Plant POST REQUEST
 router.post("/delete/:id", (req, res) => {
   console.log(req.params.id);
@@ -282,5 +246,4 @@ router.post("/delete/:id", (req, res) => {
     res.redirect("/garden");
   });
 });
-
 module.exports = router;
