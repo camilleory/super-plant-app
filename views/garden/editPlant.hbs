@@ -49,54 +49,6 @@
         {{/each}}
       </div>
 
-
-
-
-      {{!-- <div class="edit-list ">
-        <span class="plant-detail-list-title">Name:</span> <span class="capital">{{myPlant.common_name}}</span>
-        <br />
-        <label for="" class="plant-detail-list-title">Nickname:</label>
-
-        <input type="text" class="input-border input-short" name="nickname" value="{{myPlant.nickname}}"
-          placeholder="does your plant have a nickname?">
-        <br />
-        <label for="" class="plant-detail-list-title">Note:</label>
-        <input type="text" class="input-border input-short" name="note" value="{{myPlant.note}}"
-          placeholder="add your notes here">
-        <br />
-        <label for="" class="edit-title">Water amount:</label>
-        <select name="water" class="input-border">
-          <option value="">Please choose</option>
-          {{#each waterOptions}}
-          <option {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
-          {{/each}}
-          {{!-- <option selected>{{myPlant.water}} {{#unless myPlant.water}}Please choose..{{/unless}}</option>
-          <option>Only little water</option>
-          <option>Average amount of water</option>
-          <option>Big amount of water</option> --}}
-
-        </select>
-        <br />
-        <label for="" class="edit-title">Optimal position:</label>
-        <select name="position" class="input-border">
-          <option value="">Please choose</option>
-          {{#each positionOptions}}
-          <option {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
-          {{/each}}
-
-          {{!-- <option selected>{{myPlant.position}}{{#unless myPlant.position}}Please choose..{{/unless}}</option>
-          <option>Full Sun</option>
-          <option>Partial Shade</option>
-          <option>Shade</option> --}}
-        </select>
-
-        <button type="submit" class="save-changes addplant-btn-style btn-shadow edit-save-btn">Save changes</button>
-
-      </div> --}}
-
-
-
-
       <div class="edit-list">
         <span class="plant-detail-list-title label">Name:</span>
         <br />
@@ -110,26 +62,42 @@
         <label for="" class="plant-detail-list-title label">Note:</label>
         <br />
         <textarea name="note" class="input-border textarea" value="{{myPlant.note}}" placeholder="add your notes here"></textarea>
-
-        {{!-- <input type="text" class="input-border" name="note" value="{{myPlant.note}}" placeholder="add your notes here"> --}}
         <br /> 
         <label for="" class="edit-title label">Water amount:</label>
         <br />
+
         <select name="water" class="input-border">
+          <option value="">Please choose</option>
+          {{#each waterOptions}}
+          <option {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+          {{/each}}
+        </select>
+
+
+        {{!-- <select name="water" class="input-border">
           <option disabled selected>{{myPlant.water}} {{#unless myPlant.water}}Please choose..{{/unless}}</option>
           <option>Only little water</option>
           <option>Average amount of water</option>
           <option>Big amount of water</option>
-        </select>
+        </select> --}}
         <br />
         <label for="" class="edit-title label">Optimal position:</label>
         <br />
+
         <select name="position" class="input-border">
+          <option value="">Please choose</option>
+          {{#each positionOptions}}
+          <option {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+          {{/each}}
+        </select>
+
+
+        {{!-- <select name="position" class="input-border">
           <option disabled selected>{{myPlant.position}}{{#unless myPlant.position}}Please choose..{{/unless}}</option>
           <option>Full Sun</option>
           <option>Partial Shade</option>
           <option>Shade</option>
-        </select>
+        </select> --}}
 
         <button type="submit" class="save-changes addplant-btn-style btn-shadow">Save changes</button>
 
