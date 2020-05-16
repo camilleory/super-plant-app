@@ -25,10 +25,10 @@
   <br>
 
   {{#if myPlant.nickname}}
-  <h3>{{myPlant.nickname}}</h3>
+  <h3 class="capital">{{myPlant.nickname}}</h3>
   {{/if}}
   {{#unless myPlant.nickname}}
-  <h3>{{myPlant.common_name}}</h3>
+  <h3 class="capital">{{myPlant.common_name}}</h3>
   {{/unless}}
   {{!-- <li><img height="250px" src="{{myPlant.images.0.url}}" alt=""></li> --}}
   <div class="plant-detail-img-container">
@@ -44,20 +44,20 @@
       <tbody>
         <tr>
           <td class="tabletitle">Common Name: </td>
-          <td>{{myPlant.common_name}}</td>
+          <td><span class="capital">{{myPlant.common_name}}</span></td>
         </tr>
         <tr>
           <td class="tabletitle">Scientific Name: </td>
-          <td>{{myPlant.scientific_name}}</td>
+          <td><span class="capital">{{myPlant.scientific_name}}</span></td>
         </tr>
         <tr>
-          <td class="tabletitle">Common Family Name: </td>
-          <td>{{myPlant.family_common_name}}</td>
+          <td class="tabletitle">Family Name: </td>
+          <td><span class="capital">{{myPlant.family_common_name}}</span></td>
         </tr>
         {{#if myPlant.nickname}}
         <tr>
           <td class="tabletitle">Nickname: </td>
-          <td>{{myPlant.nickname}}</td>
+          <td><span class="capital">{{myPlant.nickname}}</span></td>
         </tr>
         {{/if}}
         {{#if myPlant.note}}

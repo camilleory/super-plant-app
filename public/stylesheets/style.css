@@ -22,6 +22,9 @@ main {
   margin-top: 10vh;
   margin-bottom: 20vh; }
 
+.capital {
+  text-transform: capitalize; }
+
 a {
   color: #1664FF; }
 

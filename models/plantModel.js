@@ -6,36 +6,27 @@ function noValue(val) {
   return val;
 }
 
-function lowercase(val) {
-  return val.toLowerCase();
-}
-
 const PlantSchema = new Schema({
   scientific_name: {
-    type: String,
-    set: lowercase,
+    type: String
   },
   common_name: {
     type: String,
-    required: true,
-    set: lowercase,
+    required: true
   },
   images: {
     type: Array,
     default: [{url: "/images/no-image-found.jpg"}],
-    set: noValue,
+    set: noValue
   },
   family_common_name: {
-    type: String,
-    set: lowercase,
+    type: String
   },
   nickname: {
-    type: String,
-    set: lowercase,
+    type: String
   },
   note: {
-    type: String,
-    set: lowercase,
+    type: String
   },
   owner: Schema.Types.ObjectId,
   water: String,
