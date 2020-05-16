@@ -26,13 +26,13 @@
     <a href="/garden" class="text-left">&lt; my garden</a>
     <br>
 
-  {{#if myPlant.nickname}}
-  <h3>{{myPlant.nickname}}</h3>
-  {{/if}}
-  {{#unless myPlant.nickname}}
-  <h2>{{myPlant.common_name}}</h2>
-  {{/unless}}
-  <br>
+    {{#if myPlant.nickname}}
+    <h3>{{myPlant.nickname}}</h3>
+    {{/if}}
+    {{#unless myPlant.nickname}}
+    <h2>{{myPlant.common_name}}</h2>
+    {{/unless}}
+    <br>
 
 
 
@@ -57,12 +57,13 @@
         <br />
         <label for="" class="plant-detail-list-title">Nickname:</label>
 
-        <input type="text" class="input-border input-short"
-          name="nickname" value="{{myPlant.nickname}}" placeholder="does your plant have a nickname?">
+        <input type="text" class="input-border input-short" name="nickname" value="{{myPlant.nickname}}"
+          placeholder="does your plant have a nickname?">
         <br />
         <label for="" class="plant-detail-list-title">Note:</label>
-        <input type="text" class="input-border input-short" name="note" value="{{myPlant.note}}" placeholder="add your notes here">
-        <br /> 
+        <input type="text" class="input-border input-short" name="note" value="{{myPlant.note}}"
+          placeholder="add your notes here">
+        <br />
         <label for="" class="edit-title">Water amount:</label>
         <select name="water" class="input-border">
           <option value="">Please choose</option>
@@ -82,7 +83,7 @@
           {{#each positionOptions}}
           <option {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
           {{/each}}
-          
+
           {{!-- <option selected>{{myPlant.position}}{{#unless myPlant.position}}Please choose..{{/unless}}</option>
           <option>Full Sun</option>
           <option>Partial Shade</option>
