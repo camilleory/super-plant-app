@@ -531,9 +531,6 @@ select:focus, select:active {
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.9); }
 
-.edit-save-btn {
-  margin-left: 10%; }
-
 .edit-title {
   color: #1664FF; }
 
@@ -541,19 +538,20 @@ select:focus, select:active {
   margin-top: 50px;
   font-size: large;
   line-height: 1.6em;
-  text-align: left;
-  padding-left: 5vw;
+  text-align: center;
   width: 100%; }
 
-.dropdown-list {
-  line-height: 2em; }
+.edit-list input, select {
+  width: 60%;
+  padding-left: 6px; }
+
+.textarea {
+  width: 60%;
+  height: 150px; }
 
 .input-border {
   border: 2px solid #1664FF;
   border-radius: 0.3em; }
-
-.input-short {
-  width: 40%; }
 
 .select-margin-bottom {
   margin-bottom: 25px; }

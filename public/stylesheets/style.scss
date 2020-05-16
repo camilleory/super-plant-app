@@ -427,12 +427,6 @@ background-color: rgba(79,219,152,0.5);
   padding: 30px;
 }
 
-label{
-  // margin-bottom: 10px;
-  // margin-top: 0;
-  // padding-top: 0;
-}
-
 .label {
     margin-top: 20px;
 }
@@ -662,10 +656,6 @@ label{
   box-shadow: 2px 5px 8px rgba(0,0,0,0.9);
 }
 
-.edit-save-btn {
-  margin-left: 10%;
-}
-
 .edit-title {
   color: #1664FF;
 }
@@ -674,23 +664,29 @@ label{
   margin-top: 50px;
   font-size: large;
   line-height: 1.6em;
-  text-align: left;
-  padding-left: 5vw;
+  text-align: center;
+  // padding-left: 5vw;
   width:100%;
 
 }
 
-.dropdown-list {
-  line-height: 2em;
+.edit-list input,select {
+  width: 60%;
+  padding-left: 6px;
 }
+
+.textarea {
+  width: 60%;
+  height: 150px;
+}
+
+// .dropdown-list {
+//   line-height: 2em;
+// }
 
 .input-border {
   border: 2px solid #1664FF;
   border-radius: 0.3em;
-}
-
-.input-short {
-  width: 40%;
 }
 
 .select-margin-bottom {
