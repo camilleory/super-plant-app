@@ -2,24 +2,21 @@
   <a class="navbar-brand" href="/">all my plants</a>
 </nav>
 <br /><br />
-<main class="form-container">
+<main class="main-container">
   <h1>Login</h1>
-
   {{#if message}}
   <div class="error-msg">{{message}}</div>
   {{/if}}
-
-  <form action="/auth/login" method="post" class="form-container">
-    {{!-- <label for="email">Email:</label> --}}
-    <input type="email" name="email" placeholder="email">
+  <form action="/auth/login" method="post" class="form">
+    <input type="email" name="email" placeholder="email" class="form__input">
     <br />
-    {{!-- <label for="password">Password: </label> --}}
-    <input type="password" name="passwd" placeholder="password">
+    <input type="password" name="passwd" placeholder="password" class="form__input">
     <br />
-    <button type="submit" class="btn-style btn-shadow">Login</button>
+    <button type="submit" class="form__submit btn-shadow">Login</button>
     {{#unless user}}
-    <a href="/auth/google" class="google-login-btn btn-shadow">Login with Google</a>
+    <a href="/auth/google" class="form__submit--white btn-shadow">Login with Google</a>
     {{/unless}}
   </form>
   <br />
   <p>Don't have an account? <a href="/auth/signup">Sign up</a> instead.</p>
+  </main>

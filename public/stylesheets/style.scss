@@ -7,24 +7,17 @@ body {
   padding-top: 0;
   width: 100vw;
   height: 100vh;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
   background-color: #fff000;
   background-image: url(../images/Secret-Garden.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  // font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
   font-family: Josefin Sans, sans-serif;
   font-weight: 500;
   color: white;
   font-size: large;
-}
-
-main {
-  margin-left: 3vw;
-  margin-right: 3vw;
-  margin-top: 10vh;
-  margin-bottom: 20vh;
 }
 
 .capital {
@@ -44,10 +37,6 @@ h1 {
   letter-spacing: 0.1em;
 }
 
-.green {
-  color: #4FDB98;
-}
-
 h5 {
   color: #4FDB98; 
 }
@@ -55,6 +44,10 @@ h5 {
 h3 {
   color: #2e2d2b; 
   // font-size: 2.6em;
+}
+
+.green {
+  color: #4FDB98;
 }
 
 .slogan {
@@ -77,47 +70,43 @@ h3 {
   margin-bottom: 3vw;
 }
 
-// .footer a {
-//   color: white;
-//   text-decoration: none;
-// }
-
-// .footer a:hover {
-//   color: #abc7ff;
-//   text-decoration: none;
-// }
-
-.font-normal {
+.font-normal { //do we still need this?
   font-size: normal !important; 
 }
 
-.padding-left {
+.font-xlarge {
+  font-size: x-large !important; 
+}
+
+.padding-left { //do we still need this?
   padding-left: 2%;
 }
 
-button:focus, button:active {
-  outline: none !important;
-  box-shadow: none;
-}
-
-input:focus, input:active {
-  outline: none !important;
-  box-shadow: none;
-}
-
-select:focus, select:active {
-  outline: none !important;
-  box-shadow: none;
-}
-
-.text-centered {
+.text-centered { //do we still need this?
   text-align: center;
 }
 
-.text-left {
+.text-left { //do we still need this?
   text-align: left;
   align-self: flex-start;
 }
+
+.align-flex-start {  
+  align-self: flex-start;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.nav-back-link {
+  text-align: left;
+  align-self: flex-start;
+  padding-left: 2%;
+  font-size: normal !important; 
+}
+
+
 
 /* ****** BOOTSTRAP NAV BAR ****** */
 
@@ -142,10 +131,115 @@ select:focus, select:active {
   border: none;
 }
 
+// Removes Bootstrap's ugly blue border around buttons
+button:focus, button:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+input:focus, input:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+select:focus, select:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+
 
 
 
 /* ****** AUTHENTICATION FORMS ****** */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  text-align: center;
+  padding: 4% 0;
+}
+
+.form--no-padding {
+  padding: 0;
+}
+
+.form__input {
+  padding: 10px 15px;
+  border: 2px solid #1664FF;
+  width: 60vw;
+}
+
+.form__submit {
+  width: 60vw;
+  padding: 10px 15px;
+  margin-top: 25px;
+  border-radius: 1em;
+  border: none;
+  background-color: #1664FF;
+  color: white;
+  text-decoration: none;
+}
+
+.form__submit:hover {
+  color: rgba(255,255,255,0.8); 
+  text-decoration: none;
+}
+
+.btn-shadow {
+  -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+  box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+}
+
+.btn-shadow:hover {
+  -webkit-box-shadow: inset 10px 10px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 10px 10px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.75);
+}
+
+.form__submit--white {
+  width: 60vw;
+  padding: 10px 15px;
+  margin-top: 30px;
+  border-radius: 1em;
+  border: none;
+  background-color: white;
+  color: #1664FF;
+  text-decoration: none;
+}
+
+.form__submit--white:hover {
+  color: rgba(22, 100, 255, 0.8);
+  text-decoration: none;
+}
+
+.error-msg {
+  width: 60vw;
+  color: #2e2d2b;
+  margin: 20px 0;
+  padding: 15px 10px;
+  background-color:rgba(240, 52, 52, 0.8);
+  -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+  box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+}
+
+.infotextbox {
+  // width: 60vw;
+  color: #2e2d2b;
+  margin: 20px 0;
+  padding: 25px;
+  background-color:rgba(255, 255, 255, 0.8);
+  -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+  box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+}
+
+
+// OLD FORMS
 
 .form-container {
   display: flex;
@@ -172,65 +266,89 @@ select:focus, select:active {
   margin-bottom: 30px;
 }
 
-.btn-style {
+// .btn-style {
+//   width: 60vw;
+//   padding: 10px 15px;
+//   margin-top: 25px;
+//   border-radius: 1em;
+//   border: none;
+//   background-color: #1664FF;
+//   color: white;
+// }
+
+// .btn-style a {
+//   color: white;
+//   text-decoration: none;
+// }
+
+// .btn-style:hover {
+//   color: rgba(255,255,255,0.8); 
+//   text-decoration: none;
+// }
+
+// .google-login-btn {
+//   width: 60vw;
+//   padding: 10px 15px;
+//   margin-top: 30px;
+//   border-radius: 1em;
+//   border: none;
+//   background-color: white;
+//   color: #1664FF;
+// }
+
+// .google-login-btn a {
+//   color: #1664FF;
+//   text-decoration: none;
+// }
+
+// .google-login-btn:hover {
+//   color: rgba(22, 100, 255, 0.8);
+//   text-decoration: none;
+// }
+
+// .signup-btn {
+//   width: 60vw;
+//   padding: 10px 15px;
+//   margin-top: 30px;
+//   border-radius: 1em;
+//   border: none;
+//   background-color: none;
+//   color: white;
+//   font-size: x-large;
+// }
+
+// .signup-btn a {
+//   color: white;
+//   text-decoration: none;
+// }
+
+// .signup-btn:hover {
+//   color: rgba(255,255,255,0.8);
+//   text-decoration: none;
+// }
+
+
+
+
+/* ****** BUTTONS ****** */ 
+
+.btn-link {
+  align-self: center;
+  color: white;
   width: 60vw;
-  padding: 10px 15px;
-  margin-top: 25px;
+  padding: 20px 15px;
+  margin: 40px 0;
   border-radius: 1em;
   border: none;
   background-color: #1664FF;
+  text-align: center;
   color: white;
 }
 
-.btn-style a {
+.btn-link:hover {
+  text-decoration: none;
   color: white;
-  text-decoration: none;
-}
-
-.btn-style:hover {
-  color: rgba(255,255,255,0.8); 
-  text-decoration: none;
-}
-
-.google-login-btn {
-  width: 60vw;
-  padding: 10px 15px;
-  margin-top: 30px;
-  border-radius: 1em;
-  border: none;
-  background-color: white;
-  color: #1664FF;
-}
-
-.google-login-btn a {
-  color: #1664FF;
-  text-decoration: none;
-}
-
-.google-login-btn:hover {
-  color: rgba(22, 100, 255, 0.8);
-  text-decoration: none;
-}
-
-.signup-btn {
-  width: 60vw;
-  padding: 10px 15px;
-  margin-top: 30px;
-  border-radius: 1em;
-  border: none;
-  background-color: none;
-  color: white;
-  font-size: x-large;
-}
-
-.signup-btn a {
-  color: white;
-  text-decoration: none;
-}
-
-.signup-btn:hover {
-  color: rgba(255,255,255,0.8);
-  text-decoration: none;
+  background-color: #1664FF;
 }
 
 .btn-shadow {
@@ -245,35 +363,42 @@ select:focus, select:active {
   box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.75);
 }
 
-
-.error-msg {
+.btn-delete {
+  align-self: center;
   width: 60vw;
-  color: #2e2d2b;
-  margin: 20px 0;
-  padding: 15px 10px;
-  background-color:rgba(240, 52, 52, 0.8);
-  -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
-	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
-  box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+  padding: 20px 15px;
+  margin-bottom: 60px;
+  border-radius: 1em;
+  border: none;
+  background-color: rgb(255, 0, 76);
+  text-align: center;
+  color: white;
+  text-decoration: none;
 }
 
-.infotextbox {
-  // width: 60vw;
-  color: #2e2d2b;
-  margin: 20px 0;
-  padding: 25px;
-  background-color:rgba(255, 255, 255, 0.8);
-  -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
-	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
-  box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+.btn-delete:hover {
+  text-decoration: none;
+  color: white;
 }
 
 
 
-/* ****** GARDEN ****** */ 
 
 
-.main-centered {
+// MAIN CONTAINERS
+
+.main-container {
+  margin: 10vh 3vw 10vh 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // text-align: left;
+  line-height: 1.7em;
+  // padding: 8% 0;
+}
+
+.main-centered { // modifier of main-container
   padding: 40px 0;
   display: flex;
   flex-direction: column;
@@ -285,31 +410,19 @@ select:focus, select:active {
   line-height: 1.7em;
 }
 
-.main-garden {
+.main-garden { // what is this?
   padding: 40px 0;
 }
 
-.garden-container-centeredtext  {
-  background: rgb(255,255,255);
-  background: linear-gradient(42deg, rgba(255,255,255,0.9) 0%, rgba(179,245,244,0.7) 75%, rgba(255,255,255,0.9) 100%);
-  border-radius: 3em;
-  color: #2e2d2b;
-  display: flex;
-  min-height: 60vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  text-align: center;
-  line-height: 1.7em;
-  padding: 4% 10%;
-}
+
+/* ****** GARDEN ****** */ 
+
+
 
 .garden-container {
   background: rgb(255,255,255);
   background: linear-gradient(42deg, rgba(255,255,255,0.9) 0%, rgba(179,245,244,0.7) 75%, rgba(255,255,255,0.9) 100%);
   border-radius: 3em;
-  color: #2e2d2b;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -318,10 +431,20 @@ select:focus, select:active {
   text-align: left;
   line-height: 1.7em;
   padding: 4% 10%;
+  color: #2e2d2b;
+  width:100%;
+}
+
+.garden-container--text-centered  {
+  text-align: center;
+}
+
+.flower-icon {
+  height: 40px;
+  margin-bottom: 30px;
 }
 
 .garden-img-container {
-  color: #2e2d2b;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -329,31 +452,22 @@ select:focus, select:active {
   align-content: space-between;
   align-items: flex-start;
   text-align: left;
-  line-height: 1.7em;
-  padding: 2% 2%;
+  // line-height: 1.7em;
+  // padding: 2% 2%;
 }
 
-.garden-img-container li {
+.garden-img-container--align-items-center {
+  align-items: center;
+}
+
+.garden-img-container__li {
   width: 40%;
   height: auto;
   flex-wrap: wrap;
   margin-top: 50px;
 }
 
-#gardenImg {
-  height: 40px;
-  margin-bottom: 30px;
-}
-
-.garden-container h3{
-  font-size: 25px;
-}
-
-.garden-container span{
-color: #1664FF;
-}
-
-.garden-img {
+.garden-img-container__img {
   object-fit: cover;
   max-width: 100%;
   max-height: 100%;
@@ -364,23 +478,15 @@ color: #1664FF;
   box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 }
 
-.garden-img a:hover {
-background-color: #4FDB98;
-background-color: rgba(79,219,152,0.5);
+.garden-img-container__img:hover {
+  opacity:0.8;
+  background-color: white;
 }
 
-.garden-plantname {
+.garden-img-container__plant-name {
   margin-top: 20px;
   max-width: 25vw;
-  // font-size: x-large;
-}
-.garden-plantname a  {
   color: #1664FF;
-  text-decoration: none;
-}
-
-.garden-plantname a:hover {
-  color: #2e2d2b;
   text-decoration: none;
 }
 
@@ -391,32 +497,6 @@ background-color: rgba(79,219,152,0.5);
 
 #addPlantLabel{
   max-width: 500px;
-}
-
-.addplant-btn-style {
-  align-self: center;
-  color: white;
-  width: 60vw;
-  padding: 20px 15px;
-  margin: 40px 0;
-  border-radius: 1em;
-  border: none;
-  background-color: #1664FF;
-  text-align: center;
-}
-
-.addplant-btn-style:hover {
-  text-decoration: none;
-  color: white;
-}
-
-.addplant-btn-style a {
-  color: white;
-}
-
-.addplant-btn-style a:hover {
-  text-decoration: none;
-  color: white;
 }
 
 #addPlantImg{
@@ -482,33 +562,21 @@ background-color: rgba(79,219,152,0.5);
 }
 
 
-.plant-detail-container {
-  background: rgb(255,255,255);
-  background: linear-gradient(42deg, rgba(255,255,255,0.9) 0%, rgba(179,245,244,0.7) 75%, rgba(255,255,255,0.9) 100%);
-  border-radius: 3em;
-  color: #2e2d2b;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  line-height: 1.7em;
-  padding: 4% 4%;
-  // width: 100%;
-}
 
-.plant-detail-img-container {
-  color: #2e2d2b;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  text-align: left;
-  // line-height: 1.7em;
-  padding: 2% 2%;
-}
+
+
+
+// .plant-detail-img-container {
+//   color: #2e2d2b;
+//   display: flex;
+//   flex-wrap: wrap;
+//   flex-direction: row;
+//   justify-content: space-around;
+//   align-items: center;
+//   text-align: left;
+//   // line-height: 1.7em;
+//   padding: 2% 2%;
+// }
 
 .plant-detail-img {
   margin: 15px;
@@ -547,45 +615,22 @@ background-color: rgba(79,219,152,0.5);
   color: #2e2d2b;
 }
 
-.tabletitle {
+.table__title {
   text-align: right;
   color: #1664FF;
 }
 
-.table-hover tr:hover {
-  background-color: #abc7ff;
-}
-
-.plant-detail-upload-container {
-  width: 80%;
-  color: #2e2d2b;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  line-height: 1.7em;
-}
-
-.uploadimg-btn-style {
-  margin: 20px 0;
-  padding: 10px 25px;
-  border-radius: 1em;
-  border: none;
-  background-color: #1664FF;
-  color: white;
-}
-
-.uploadimg-btn-style a {
-  color: white;
-  text-decoration: none;
-}
-
-.uploadimg-btn-style:hover {
-  color: rgba(255,255,255,0.8);
-  text-decoration: none;
-}  
+// .plant-detail-upload-container {
+//   width: 80%;
+//   color: #2e2d2b;
+//   display: flex;
+//   flex-wrap: wrap;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center;
+//   line-height: 1.7em;
+// }
 
 .upload-photo-form {
   background-color: #abc7ff;
@@ -594,35 +639,25 @@ background-color: rgba(79,219,152,0.5);
   padding: 4%;
 }
 
-.align-self-center {
-  align-self: center;
-}
-
-.delete-btn-style {
-  align-self: center;
-  color: white;
-  width: 60vw;
-  padding: 20px 15px;
-  margin-bottom: 60px;
+.upload-photo-form__submit {
+  margin: 20px 0;
+  padding: 10px 25px;
   border-radius: 1em;
   border: none;
-  background-color: rgb(255, 0, 76);
-  text-align: center;
-}
-
-.delete-btn-style:hover {
+  background-color: #1664FF;
+  color: white;
   text-decoration: none;
-  color: white;
 }
 
-.delete-btn-style a {
-  color: white;
-}
-
-.delete-btn-style a:hover {
+.upload-photo-form__submit:hover {
+  color: rgba(255,255,255,0.8);
   text-decoration: none;
-  color: white;
-}
+}  
+
+
+
+
+
 
 .plant-detail-btn-container {
   display: flex;
@@ -633,17 +668,15 @@ background-color: rgba(79,219,152,0.5);
 }
 
 .edit-img-container {
-  color: #2e2d2b;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: left;
-  line-height: 1.7em;
 }
 
-.edit-img {
+.edit-img-container__img {
   margin: 15px;
   border-top-left-radius: 2.5em;
   border-bottom-left-radius: 2.5em;
@@ -670,21 +703,12 @@ background-color: rgba(79,219,152,0.5);
 
 }
 
-.edit-list input,select {
+.edit-list__input, .edit-list__select {
   width: 60%;
   padding-left: 6px;
 }
 
-.textarea {
-  width: 60%;
-  height: 150px;
-}
-
-// .dropdown-list {
-//   line-height: 2em;
-// }
-
-.input-border {
+.blue-border {
   border: 2px solid #1664FF;
   border-radius: 0.3em;
 }

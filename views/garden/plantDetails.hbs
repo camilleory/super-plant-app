@@ -20,73 +20,78 @@
 
 
 
-<main class="plant-detail-container">
-  <a href="/garden" class="text-left font-normal padding-left">&lt; my garden</a>
-  <br>
+<main class="main-container">
 
-  {{#if myPlant.nickname}}
-  <h3 class="capital">{{myPlant.nickname}}</h3>
-  {{/if}}
-  {{#unless myPlant.nickname}}
-  <h3 class="capital">{{myPlant.common_name}}</h3>
-  {{/unless}}
-  {{!-- <li><img height="250px" src="{{myPlant.images.0.url}}" alt=""></li> --}}
-  <div class="plant-detail-img-container">
-    {{#each myPlant.images}}
-    <img class="plant-detail-img" src="{{url}}" alt="">
-    {{/each}}
-  </div>
-  <br>
-  <br>
+  <div class="garden-container">
 
-  <div class="table-responsive">
-    <table class="table table-hover">
-      <tbody>
-        <tr>
-          <td class="tabletitle">Common Name: </td>
-          <td><span class="capital">{{myPlant.common_name}}</span></td>
-        </tr>
-        <tr>
-          <td class="tabletitle">Scientific Name: </td>
-          <td><span class="capital">{{myPlant.scientific_name}}</span></td>
-        </tr>
-        <tr>
-          <td class="tabletitle">Family Name: </td>
-          <td><span class="capital">{{myPlant.family_common_name}}</span></td>
-        </tr>
-        {{#if myPlant.nickname}}
-        <tr>
-          <td class="tabletitle">Nickname: </td>
-          <td><span class="capital">{{myPlant.nickname}}</span></td>
-        </tr>
-        {{/if}}
-        {{#if myPlant.note}}
-        <tr>
-          <td class="tabletitle">Note: </td>
-          <td>{{myPlant.note}}</td>
-        </tr>
-        {{/if}}
-        {{#if myPlant.water}}
-        <tr>
-          <td class="tabletitle">Water amount: </td>
-          <td id="water">{{#each this.waterImages}}<img height = 30px src="{{this}}">{{/each}}</td>
-        </tr>
-        {{/if}}
-        {{#if myPlant.position}}
-        <tr>
-          <td class="tabletitle">Optimal position: </td>
-          <td id="position"><img height = 30px src="{{this.positionImageSrc}}"></td>
-        </tr>
-        {{/if}}
-      </tbody>
-    </table>
-  </div>
+    <a href="/garden" class="nav-back-link">&lt; my garden</a>
+    <br>
+
+    {{#if myPlant.nickname}}
+    <h3 class="capital">{{myPlant.nickname}}</h3>
+    {{/if}}
+    {{#unless myPlant.nickname}}
+    <h3 class="capital">{{myPlant.common_name}}</h3>
+    {{/unless}}
+    <div class="garden-img-container--align-items-center">
+      {{#each myPlant.images}}
+      <img class="plant-detail-img" src="{{url}}" alt="">
+      {{/each}}
+    </div>
+    <br>
+    <br>
+
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <td class="table__title">Common Name: </td>
+            <td><span class="capital">{{myPlant.common_name}}</span></td>
+          </tr>
+          <tr>
+            <td class="table__title">Scientific Name: </td>
+            <td><span class="capital">{{myPlant.scientific_name}}</span></td>
+          </tr>
+          <tr>
+            <td class="table__title">Family Name: </td>
+            <td><span class="capital">{{myPlant.family_common_name}}</span></td>
+          </tr>
+          {{#if myPlant.nickname}}
+          <tr>
+            <td class="table__title">Nickname: </td>
+            <td><span class="capital">{{myPlant.nickname}}</span></td>
+          </tr>
+          {{/if}}
+          {{#if myPlant.note}}
+          <tr>
+            <td class="table__title">Note: </td>
+            <td>{{myPlant.note}}</td>
+          </tr>
+          {{/if}}
+          {{#if myPlant.water}}
+          <tr>
+            <td class="table__title">Water amount: </td>
+            <td id="water">{{#each this.waterImages}}<img height=30px src="{{this}}">{{/each}}</td>
+          </tr>
+          {{/if}}
+          {{#if myPlant.position}}
+          <tr>
+            <td class="table__title">Optimal position: </td>
+            <td id="position"><img height=30px src="{{this.positionImageSrc}}"></td>
+          </tr>
+          {{/if}}
+        </tbody>
+      </table>
+    </div>
 
 
 
 
+    {{!--  ================= 
+OLD PHOTO UPLOAD FORM 
+======================= --}}
 
-  {{!-- <div class="plant-detail-upload-container">
+    {{!-- <div class="plant-detail-upload-container">
     <p>Upload your own image</p>
     <br/>
 
@@ -99,32 +104,35 @@
   </div>  --}}
 
 
-{{!-- =================
-this is another input group version, without responsiveness errors but also without the filename displayed. dont know why. any suggestions?
+    {{!-- =================
+this is another input group version, 
+without responsiveness errors but also 
+without the filename displayed
 ======================= --}}
-  <p>Upload your own image</p>
-  <br/>
+    <p>Upload your own image</p>
+    <br />
+    <form action="/garden/plantDetails/uploadImage/{{myPlant.id}}" method="post" enctype="multipart/form-data"
+      class="upload-photo-form" align="center">
 
-  <form action="/garden/plantDetails/uploadImage/{{myPlant.id}}" method="post" enctype="multipart/form-data"
-    class="upload-photo-form" align="center">
-
-    <div class="input-group">
-      <div class="custom-file">
-        <input type="file" class="custom-file-input" id="inputGroupFile" aria-describedby="inputGroupFileAddon"
-          name="user-image" required="true">
-        <label class="custom-file-label" for="inputGroupFile">Choose file</label>
+      <div class="input-group">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="inputGroupFile" aria-describedby="inputGroupFileAddon"
+            name="user-image" required="true">
+          <label class="custom-file-label" for="inputGroupFile">Choose file</label>
+        </div>
       </div>
-    </div>
-    <button type="submit" class="uploadimg-btn-style btn-shadow">Upload Image</button>
-  </form>
+      <button type="submit" class="upload-photo-form__submit btn-shadow">Upload Image</button>
+    </form>
 
 
-  {{!-- <div class="plant-detail-btn-container"> --}}
-  <a href="/garden/editPlant/{{myPlant.id}}" class="addplant-btn-style btn-shadow">Edit plant</a>
-  <form action="/garden/delete/{{myPlant.id}}" method="POST" class="align-self-center"><button type="submit"
-      class="delete-btn-style btn-shadow">Delete plant</button></form>
-  {{!-- </div> --}}
+    {{!-- <div class="plant-detail-btn-container"> --}}
+    <a href="/garden/editPlant/{{myPlant.id}}" class="btn-link btn-shadow">Edit plant</a>
+    <form action="/garden/delete/{{myPlant.id}}" method="POST" class="align-self-center"><button type="submit"
+        class="btn-delete btn-shadow">Delete plant</button></form>
+    {{!-- </div> --}}
 
-  <a href="/garden" class="text-left padding-left font-normal">&lt; my garden</a>
+    <a href="/garden" class="nav-back-link">&lt; my garden</a>
+
+  </div>
 
 </main>

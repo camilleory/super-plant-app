@@ -18,12 +18,13 @@
   </div>
 </nav>
 
-<main class="main-garden">
+{{!-- <main class="main-garden"> --}}
+<main class="main-container">
 
-  <h1>Edit your plant</h1>
+  <h1 class="align-flex-start">Edit your plant</h1>
 
-  <div class="plant-detail-container">
-    <a href="/garden" class="text-left">&lt; my garden</a>
+  <div class="garden-container">
+    <a href="/garden" class="nav-back-link">&lt; my garden</a>
     <br>
 
     {{#if myPlant.nickname}}
@@ -34,15 +35,13 @@
     {{/unless}}
     <br>
 
-
-
     <h4>Unselect the images you want to delete</h4>
 
-    <form action="/garden/editPlant/{{myPlant.id}}" method="post">
+    <form action="/garden/editPlant/{{myPlant.id}}" method="post" class="form form--no-padding">
 
       <div class="edit-img-container">
         {{#each myPlant.images}}
-        <img class="edit-img" src="{{url}}" alt="">
+        <img class="edit-img-container__img" src="{{url}}" alt="">
         <label for="Unselect to delete">
         </label>
         <input type="checkbox" name="notToDelete" checked="checked" value={{url}} id="">
@@ -56,58 +55,40 @@
         <br />
         <label for="" class="plant-detail-list-title label">Nickname:</label>
         <br />
-        <input type="text" class="input-border"
-          name="nickname" value="{{myPlant.nickname}}" placeholder="does your plant have a nickname?">
+        <input type="text" class="edit-list__input blue-border" name="nickname" value="{{myPlant.nickname}}"
+          placeholder="does your plant have a nickname?">
         <br />
         <label for="" class="plant-detail-list-title label">Note:</label>
         <br />
-        <textarea name="note" class="input-border textarea" value="{{myPlant.note}}" placeholder="add your notes here"></textarea>
-        <br /> 
+        <input type="text" name="note" class="edit-list__input blue-border" value="{{myPlant.note}}"
+          placeholder="add your notes here"></textarea>
+        <br />
         <label for="" class="edit-title label">Water amount:</label>
         <br />
-
-        <select name="water" class="input-border">
+        <select name="water" class="edit-list__select blue-border">
           <option value="">Please choose</option>
           {{#each waterOptions}}
           <option {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
           {{/each}}
         </select>
-
-
-        {{!-- <select name="water" class="input-border">
-          <option disabled selected>{{myPlant.water}} {{#unless myPlant.water}}Please choose..{{/unless}}</option>
-          <option>Only little water</option>
-          <option>Average amount of water</option>
-          <option>Big amount of water</option>
-        </select> --}}
         <br />
         <label for="" class="edit-title label">Optimal position:</label>
         <br />
-
-        <select name="position" class="input-border">
+        <select name="position" class="edit-list__select blue-border">
           <option value="">Please choose</option>
           {{#each positionOptions}}
           <option {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
           {{/each}}
         </select>
 
-
-        {{!-- <select name="position" class="input-border">
-          <option disabled selected>{{myPlant.position}}{{#unless myPlant.position}}Please choose..{{/unless}}</option>
-          <option>Full Sun</option>
-          <option>Partial Shade</option>
-          <option>Shade</option>
-        </select> --}}
-
-        <button type="submit" class="save-changes addplant-btn-style btn-shadow">Save changes</button>
+        <button type="submit" class="save-changes btn-link btn-shadow">Save changes</button>
 
       </div>
 
     </form>
 
-
     <form action="/garden/delete/{{myPlant.id}}" method="POST" class="align-self-center"><button type="submit"
-        class="delete-btn-style btn-shadow">Delete plant</button></form>
+        class="btn-delete btn-shadow">Delete plant</button></form>
 
     <a href="/garden" class="text-left">&lt; my garden</a>
   </div>
