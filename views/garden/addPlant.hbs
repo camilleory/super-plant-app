@@ -18,18 +18,18 @@
   </div>
 </nav>
 
-<main>
+<main class="main-container">
   <h2>Add a plant</h2>
   <div class="garden-container">
-    <a href="/garden" class="text-left">&lt; my garden</a>
+    <a href="/garden" class="nav-back-link">&lt; my garden</a>
     <br />
-    <img id="addPlantImg" src="/images/lotus.png">
-    <form id="addPlantForm" action="/garden/addPlant" method="post" class="form-container">
-      <label id="addPlantLabel" for="common_name">Enter the common or scientific name of the plant you have at home, or a plant you are
+    <img class="flower-icon" src="/images/lotus.png">
+    <form action="/garden/addPlant" method="post" class="form">
+      <label for="common_name" class="form__label--max-width-500">Enter the common or scientific name of the plant you have at home, or a plant you are
         curious
         about. &#42;</label>
-      <input type="text" name="common_name" placeholder="Name" required>
-      <button type="submit" class="btn-style btn-shadow">Add to my garden</button>
+      <input type="text" class="form__input" name="common_name" placeholder="Name" required>
+      <button type="submit" class="form__submit btn-shadow">Add to my garden</button>
     </form>
     <p>{{data}}</p>
     </div>

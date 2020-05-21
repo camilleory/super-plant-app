@@ -116,6 +116,8 @@ select:focus, select:active {
 .form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 4% 0; }
 
@@ -141,15 +143,8 @@ select:focus, select:active {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none; }
 
-.btn-shadow {
-  -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
-  -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
-  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
-
-.btn-shadow:hover {
-  -webkit-box-shadow: inset 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: inset 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: inset 5px 5px 10px 0px rgba(0, 0, 0, 0.75); }
+.form__label--max-width-500 {
+  max-width: 500px; }
 
 .form__submit--white {
   width: 60vw;
@@ -288,8 +283,7 @@ select:focus, select:active {
   text-align: center; }
 
 .flower-icon {
-  height: 40px;
-  margin-bottom: 30px; }
+  height: 60px; }
 
 .garden-img-container {
   display: flex;
@@ -328,19 +322,6 @@ select:focus, select:active {
   max-width: 25vw;
   color: #1664FF;
   text-decoration: none; }
-
-#emptyGardenImg {
-  height: 60px;
-  margin: 30px; }
-
-#addPlantLabel {
-  max-width: 500px; }
-
-#addPlantImg {
-  height: 70px; }
-
-#addPlantForm {
-  padding: 30px; }
 
 .label {
   margin-top: 20px; }
