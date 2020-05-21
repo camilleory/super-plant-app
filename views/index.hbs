@@ -20,7 +20,8 @@
 </nav>
 {{/if}}
 
-<div class="main-index form-container">
+<main class="main-container">
+<div class="form">
   <br/>
   <br/>
   <h1>all my plants</h1>
@@ -35,14 +36,18 @@
 
   {{#unless user}}
 
-  <a class="signup-btn btn-shadow" href="/auth/login">Login</a>
-  <a class="signup-btn btn-shadow" href="/auth/google"><img src="images/google-logo-PNG.png" alt="" height="35px" class="align-self-center">Login with Google</a>
-  <a class="signup-btn btn-shadow" href="/auth/signup">Sign up</a>
+  <a class="button button--transparent button--shadow" href="/auth/login">Login</a>
+  <a class="button button--transparent button--shadow" href="/auth/google"><img src="images/google-logo-PNG.png" alt="" height="35px" class="align-self-center">Login with Google</a>
+  <a class="button button--transparent button--shadow" href="/auth/signup">Sign up</a>
 
   {{/unless}}
 
+
+
+{{!-- <section class="footer">   --}}
+  <a href="/about" class="font-xlarge margin-top-60">About</a>
+{{!-- </section> --}}
+
 </div>
-  
-<section class="footer">  
-  <a href="/about" class="about">About</a>
-</section>
+
+</main>

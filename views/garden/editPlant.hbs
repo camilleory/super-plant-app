@@ -18,20 +18,13 @@
   </div>
 </nav>
 
-
-
-
-
-
-{{!-- <main class="main-garden"> --}}
 <main class="main-container">
 
-  <h1 class="align-flex-start">Edit your plant</h1>
+  <h1 class="align-flex-start">edit my plant</h1>
 
   <div class="garden-container">
     <a href="/garden" class="nav-back-link">&lt; my garden</a>
     <br>
-
 
 
 {{!-- RUTA'S FORM --}}
@@ -99,21 +92,21 @@
         <br />
         <label for="" class="edit-title label">Optimal position:</label>
         <br />
-        <select name="position" class="edit-list__select blue-border">
+        <select name="position" class="edit-list__select margin-bottom-25 blue-border">
           <option value="">Please choose</option>
           {{#each positionOptions}}
           <option {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
           {{/each}}
         </select>
 
-        <button type="submit" class="save-changes btn-link btn-shadow">Save changes</button>
+        <button type="submit" class="button button--shadow">Save changes</button>
 
       </div>
 
     </form>
 
-    <form action="/garden/delete/{{myPlant.id}}" method="POST" class="align-self-center"><button type="submit"
-        class="btn-delete btn-shadow">Delete plant</button></form>
+    <form action="/garden/delete/{{myPlant.id}}" method="POST"><button type="submit"
+        class="button button--delete button--shadow">Delete plant</button></form>
 
     <a href="/garden" class="text-left">&lt; my garden</a>
   </div>

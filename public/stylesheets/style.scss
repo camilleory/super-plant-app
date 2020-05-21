@@ -13,15 +13,10 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  // font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
   font-family: Josefin Sans, sans-serif;
   font-weight: 500;
   color: white;
   font-size: large;
-}
-
-.capital {
-  text-transform: capitalize;
 }
 
 a {
@@ -43,10 +38,9 @@ h5 {
 
 h3 {
   color: #2e2d2b; 
-  // font-size: 2.6em;
 }
 
-.green {
+.font-color-green {
   color: #4FDB98;
 }
 
@@ -60,17 +54,11 @@ h3 {
   margin-bottom: 6vh;
 }
 
-.footer {
-  font-size: x-large;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 3vw;
+.capital {
+  text-transform: capitalize;
 }
 
-.font-normal { //do we still need this?
+.font-normal { 
   font-size: normal !important; 
 }
 
@@ -78,33 +66,56 @@ h3 {
   font-size: x-large !important; 
 }
 
-.padding-left { //do we still need this?
+.margin-top-60 {
+  margin-top: 60px;
+}
+
+.padding-left { 
   padding-left: 2%;
 }
 
-.text-centered { //do we still need this?
+.text-centered { 
   text-align: center;
 }
 
-.text-left { //do we still need this?
+.text-left { 
   text-align: left;
   align-self: flex-start;
 }
 
 .align-flex-start {  
   align-self: flex-start;
+  padding-left: 50px;
 }
 
 .align-self-center {
   align-self: center;
 }
 
+.blue-border {
+  border: 2px solid #1664FF;
+  border-radius: 0.3em;
+}
+
 .nav-back-link {
   text-align: left;
   align-self: flex-start;
-  padding-left: 2%;
   font-size: normal !important; 
+  padding-bottom: 10px;
 }
+
+.infotextbox {
+  background-color:rgba(255, 255, 255, 0.8);
+  margin: 20px 0;
+  padding: 25px;
+  color: #2e2d2b;
+  border-radius: 0.2em;
+  -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+  box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
+}
+
+
 
 
 
@@ -131,7 +142,7 @@ h3 {
   border: none;
 }
 
-// Removes Bootstrap's ugly blue border around buttons
+// Removes Bootstrap's ugly blue border around buttons:
 button:focus, button:active {
   outline: none !important;
   box-shadow: none;
@@ -172,40 +183,8 @@ select:focus, select:active {
   width: 60vw;
 }
 
-.form__submit {
-  width: 60vw;
-  padding: 10px 15px;
-  margin-top: 25px;
-  border-radius: 1em;
-  border: none;
-  background-color: #1664FF;
-  color: white;
-  text-decoration: none;
-}
-
-.form__submit:hover {
-  color: rgba(255,255,255,0.8); 
-  text-decoration: none;
-}
-
 .form__label--max-width-500{
   max-width: 500px;
-}
-
-.form__submit--white {
-  width: 60vw;
-  padding: 10px 15px;
-  margin-top: 30px;
-  border-radius: 1em;
-  border: none;
-  background-color: white;
-  color: #1664FF;
-  text-decoration: none;
-}
-
-.form__submit--white:hover {
-  color: rgba(22, 100, 255, 0.8);
-  text-decoration: none;
 }
 
 .error-msg {
@@ -219,161 +198,78 @@ select:focus, select:active {
   box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 }
 
-.infotextbox {
-  // width: 60vw;
-  color: #2e2d2b;
-  margin: 20px 0;
-  padding: 25px;
-  background-color:rgba(255, 255, 255, 0.8);
-  -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
-	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
-  box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
-}
 
-
-// OLD FORMS
-
-.form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  line-height: 1.7em;
-  padding: 8% 0;
-}
-
-.form-container input {
-  // margin: 20px 0;
-  // margin-top: 8px;
-  // margin-bottom: 20px;
-  padding: 10px 15px;
-  border: 2px solid #1664FF;
-  width: 60vw;
-}
-
-.form-container select {
-  // margin: 20px 0;
-  margin-top: 8px;
-  margin-bottom: 30px;
-}
-
-
-// .btn-style {
-//   width: 60vw;
-//   padding: 10px 15px;
-//   margin-top: 25px;
-//   border-radius: 1em;
-//   border: none;
-//   background-color: #1664FF;
-//   color: white;
-// }
-
-// .btn-style a {
-//   color: white;
-//   text-decoration: none;
-// }
-
-// .btn-style:hover {
-//   color: rgba(255,255,255,0.8); 
-//   text-decoration: none;
-// }
-
-// .google-login-btn {
-//   width: 60vw;
-//   padding: 10px 15px;
-//   margin-top: 30px;
-//   border-radius: 1em;
-//   border: none;
-//   background-color: white;
-//   color: #1664FF;
-// }
-
-// .google-login-btn a {
-//   color: #1664FF;
-//   text-decoration: none;
-// }
-
-// .google-login-btn:hover {
-//   color: rgba(22, 100, 255, 0.8);
-//   text-decoration: none;
-// }
-
-// .signup-btn {
-//   width: 60vw;
-//   padding: 10px 15px;
-//   margin-top: 30px;
-//   border-radius: 1em;
-//   border: none;
-//   background-color: none;
-//   color: white;
-//   font-size: x-large;
-// }
-
-// .signup-btn a {
-//   color: white;
-//   text-decoration: none;
-// }
-
-// .signup-btn:hover {
-//   color: rgba(255,255,255,0.8);
-//   text-decoration: none;
-// }
 
 
 
 
 /* ****** BUTTONS ****** */ 
 
-.btn-link {
-  align-self: center;
-  color: white;
+.button {
+  align-self: center;  // is this gonna work inside a form??
+  background-color: #1664FF;
   width: 60vw;
-  padding: 20px 15px;
-  margin: 40px 0;
+  margin: 15px 0;
+  padding: 15px;
   border-radius: 1em;
   border: none;
-  background-color: #1664FF;
   text-align: center;
   color: white;
 }
 
-.btn-link:hover {
+.button:hover {
+  color: rgba(255,255,255,0.7); 
   text-decoration: none;
-  color: white;
-  background-color: #1664FF;
 }
 
-.btn-shadow {
+.button--shadow {
   -moz-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 	-webkit-box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
   box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 }
 
-.btn-shadow:hover {
+.button--shadow:hover {
   -webkit-box-shadow: inset 10px 10px 10px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 10px 10px 10px 0px rgba(0,0,0,0.75);
   box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.75);
 }
 
-.btn-delete {
-  align-self: center;
-  width: 60vw;
-  padding: 20px 15px;
-  margin-bottom: 60px;
-  border-radius: 1em;
-  border: none;
+.button--white {
+  background-color: white;
+  color: #1664FF;
+}
+
+.button--white:hover {
+  color: rgba(22, 100, 255, 0.7);
+  text-decoration: none;
+}
+
+.button--transparent {
+  background-color: transparent;
+}
+
+.button--transparent:hover {
+  background-color: transparent;
+}
+
+.button--small {
+  width: auto;
+}
+
+.button--delete {
   background-color: rgb(255, 0, 76);
-  text-align: center;
-  color: white;
-  text-decoration: none;
-}
-
-.btn-delete:hover {
-  text-decoration: none;
+  margin-bottom: 60px;
   color: white;
 }
 
+.button--delete:hover {
+  text-decoration: none;
+  color: rgba(255,255,255,0.7); 
+}
+
+.button--background-green {
+  background-color: #4FDB98;
+}
 
 
 
@@ -403,14 +299,10 @@ select:focus, select:active {
   line-height: 1.7em;
 }
 
-.main-garden { // what is this?
-  padding: 40px 0;
-}
+
 
 
 /* ****** GARDEN ****** */ 
-
-
 
 .garden-container {
   background: rgb(255,255,255);
@@ -434,6 +326,7 @@ select:focus, select:active {
 
 .flower-icon {
   height: 60px;
+  margin: 20px 0;
 }
 
 .garden-img-container {
@@ -444,8 +337,6 @@ select:focus, select:active {
   align-content: space-between;
   align-items: flex-start;
   text-align: left;
-  // line-height: 1.7em;
-  // padding: 2% 2%;
 }
 
 .garden-img-container--align-items-center {
@@ -485,11 +376,8 @@ select:focus, select:active {
 
 
 
-.label {
-    margin-top: 20px;
-}
 
-/* Choose Plant */
+/* Choose Plant View */
 
 .form-choseplant {
   display: flex;
@@ -501,11 +389,7 @@ select:focus, select:active {
   padding: 8% 0;
 }
 
-.large {
-  font-size: x-large;
-}
 .chosePlant-img {
-  // margin-top: 50px;
   border-top-left-radius: 2.5em;
   border-bottom-right-radius: 2.5em;
   object-fit: cover;
@@ -516,45 +400,12 @@ select:focus, select:active {
   box-shadow: 5px 8px 15px rgba(0,0,0,0.9);
 }
 
-.btn-choseplant {
-  align-self: center;
-  color: white;
-  // width: 60vw;
-  padding: 7px 15px;
-  margin: 20px;
-  border-radius: 1em;
-  border: none;
-  text-align: center;
-}
-
-.btn-choseplant:hover {
-  text-decoration: none;
-  color: rgba(255,255,255,0.8);
-}
-
-.bg-blue {
-  background-color: #1664FF;
-}
-.bg-green {
-  background-color: #4FDB98;
-}
 
 
 
 
+/* Plant Detail View */
 
-
-// .plant-detail-img-container {
-//   color: #2e2d2b;
-//   display: flex;
-//   flex-wrap: wrap;
-//   flex-direction: row;
-//   justify-content: space-around;
-//   align-items: center;
-//   text-align: left;
-//   // line-height: 1.7em;
-//   padding: 2% 2%;
-// }
 
 .plant-detail-img {
   margin: 15px;
@@ -583,11 +434,6 @@ select:focus, select:active {
   margin: 20px;
 }
 
-.save-changes {
-  font-size: large;
-  line-height: normal;
-}
-
 .table {
   font-size: large;
   color: #2e2d2b;
@@ -598,17 +444,7 @@ select:focus, select:active {
   color: #1664FF;
 }
 
-// .plant-detail-upload-container {
-//   width: 80%;
-//   color: #2e2d2b;
-//   display: flex;
-//   flex-wrap: wrap;
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
-//   text-align: center;
-//   line-height: 1.7em;
-// }
+// FORM UPLOAD PHOTO 
 
 .upload-photo-form {
   background-color: #abc7ff;
@@ -636,14 +472,7 @@ select:focus, select:active {
 
 
 
-
-.plant-detail-btn-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-}
+/*  Edit Plant View */
 
 .edit-img-container {
   display: flex;
@@ -676,9 +505,7 @@ select:focus, select:active {
   font-size: large;
   line-height: 1.6em;
   text-align: center;
-  // padding-left: 5vw;
   width:100%;
-
 }
 
 .edit-list__input, .edit-list__select {
@@ -686,46 +513,12 @@ select:focus, select:active {
   padding-left: 6px;
 }
 
-.blue-border {
-  border: 2px solid #1664FF;
-  border-radius: 0.3em;
-}
-
-.select-margin-bottom {
+.margin-bottom-25 {
   margin-bottom: 25px;
 }
 
 
 
-/* ****** selectPlant ****** */ 
-
-#selectPlantInputId{
-  display: none;
-}
-
-#selectPlantImg{
-  height: 60px;
-  margin-bottom: 30px;
-}
-
-p{
-  margin: 0;
-  margin-top: 20px;
-}
-#selectPlantButton{
-  margin: 0;
-}
-
-/* ****** ChosePlant ****** */ 
-
-#chosePlantInputId{
-  display: none;
-}
-
-#chosePlantImg{
-  height: 60px;
-  margin-bottom: 20px;
-}
 
 
 /* ****** About ****** */ 
@@ -740,7 +533,6 @@ p{
   text-align: center;
   line-height: 1.7em;
   font-size: large;
-
 }
 
 .about-img-container li  {
@@ -760,11 +552,14 @@ p{
   margin-bottom: 20px;
 }
 
-/* ****** addDetails ****** */ 
 
 
-#addDetailsImg{
-  height: 50px;
-  margin: 20px;
+/* ****** ID FOR DISPLAY NONE ****** */ 
+
+#selectPlantInputId{
+  display: none;
 }
 
+#chosePlantInputId{
+  display: none;
+}

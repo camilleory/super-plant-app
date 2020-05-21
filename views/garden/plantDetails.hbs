@@ -21,6 +21,7 @@
 
 
 <main class="main-container">
+  <h1 class="align-flex-start">add a plant</h1>
 
   <div class="garden-container">
 
@@ -109,10 +110,10 @@ this is another input group version,
 without responsiveness errors but also 
 without the filename displayed
 ======================= --}}
-    <p>Upload your own image</p>
     <br />
+    <p>Upload your own image</p>
     <form action="/garden/plantDetails/uploadImage/{{myPlant.id}}" method="post" enctype="multipart/form-data"
-      class="upload-photo-form" align="center">
+      class="upload-photo-form margin-bottom-25" align="center">
 
       <div class="input-group">
         <div class="custom-file">
@@ -124,12 +125,9 @@ without the filename displayed
       <button type="submit" class="upload-photo-form__submit btn-shadow">Upload Image</button>
     </form>
 
-
-    {{!-- <div class="plant-detail-btn-container"> --}}
-    <a href="/garden/editPlant/{{myPlant.id}}" class="btn-link btn-shadow">Edit plant</a>
-    <form action="/garden/delete/{{myPlant.id}}" method="POST" class="align-self-center"><button type="submit"
-        class="btn-delete btn-shadow">Delete plant</button></form>
-    {{!-- </div> --}}
+    <a href="/garden/editPlant/{{myPlant.id}}" class="button button--shadow">Edit plant</a>
+    <form action="/garden/delete/{{myPlant.id}}" method="POST"><button type="submit"
+        class="button button--delete button--shadow">Delete plant</button></form>
 
     <a href="/garden" class="nav-back-link">&lt; my garden</a>
 

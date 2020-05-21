@@ -15,9 +15,6 @@ body {
   color: white;
   font-size: large; }
 
-.capital {
-  text-transform: capitalize; }
-
 a {
   color: #1664FF; }
 
@@ -34,7 +31,7 @@ h5 {
 h3 {
   color: #2e2d2b; }
 
-.green {
+.font-color-green {
   color: #4FDB98; }
 
 .slogan {
@@ -46,20 +43,17 @@ h3 {
   font-style: oblique;
   margin-bottom: 6vh; }
 
-.footer {
-  font-size: x-large;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 3vw; }
+.capital {
+  text-transform: capitalize; }
 
 .font-normal {
   font-size: normal !important; }
 
 .font-xlarge {
   font-size: x-large !important; }
+
+.margin-top-60 {
+  margin-top: 60px; }
 
 .padding-left {
   padding-left: 2%; }
@@ -72,16 +66,31 @@ h3 {
   align-self: flex-start; }
 
 .align-flex-start {
-  align-self: flex-start; }
+  align-self: flex-start;
+  padding-left: 50px; }
 
 .align-self-center {
   align-self: center; }
 
+.blue-border {
+  border: 2px solid #1664FF;
+  border-radius: 0.3em; }
+
 .nav-back-link {
   text-align: left;
   align-self: flex-start;
-  padding-left: 2%;
-  font-size: normal !important; }
+  font-size: normal !important;
+  padding-bottom: 10px; }
+
+.infotextbox {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 20px 0;
+  padding: 25px;
+  color: #2e2d2b;
+  border-radius: 0.2em;
+  -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
+  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
 
 /* ****** BOOTSTRAP NAV BAR ****** */
 .navbar a {
@@ -129,36 +138,8 @@ select:focus, select:active {
   border: 2px solid #1664FF;
   width: 60vw; }
 
-.form__submit {
-  width: 60vw;
-  padding: 10px 15px;
-  margin-top: 25px;
-  border-radius: 1em;
-  border: none;
-  background-color: #1664FF;
-  color: white;
-  text-decoration: none; }
-
-.form__submit:hover {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none; }
-
 .form__label--max-width-500 {
   max-width: 500px; }
-
-.form__submit--white {
-  width: 60vw;
-  padding: 10px 15px;
-  margin-top: 30px;
-  border-radius: 1em;
-  border: none;
-  background-color: white;
-  color: #1664FF;
-  text-decoration: none; }
-
-.form__submit--white:hover {
-  color: rgba(22, 100, 255, 0.8);
-  text-decoration: none; }
 
 .error-msg {
   width: 60vw;
@@ -170,76 +151,60 @@ select:focus, select:active {
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
 
-.infotextbox {
-  color: #2e2d2b;
-  margin: 20px 0;
-  padding: 25px;
-  background-color: rgba(255, 255, 255, 0.8);
-  -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
-  -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
-  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
-
-.form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  line-height: 1.7em;
-  padding: 8% 0; }
-
-.form-container input {
-  padding: 10px 15px;
-  border: 2px solid #1664FF;
-  width: 60vw; }
-
-.form-container select {
-  margin-top: 8px;
-  margin-bottom: 30px; }
-
 /* ****** BUTTONS ****** */
-.btn-link {
+.button {
   align-self: center;
-  color: white;
+  background-color: #1664FF;
   width: 60vw;
-  padding: 20px 15px;
-  margin: 40px 0;
+  margin: 15px 0;
+  padding: 15px;
   border-radius: 1em;
   border: none;
-  background-color: #1664FF;
   text-align: center;
   color: white; }
 
-.btn-link:hover {
-  text-decoration: none;
-  color: white;
-  background-color: #1664FF; }
+.button:hover {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none; }
 
-.btn-shadow {
+.button--shadow {
   -moz-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
 
-.btn-shadow:hover {
+.button--shadow:hover {
   -webkit-box-shadow: inset 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
   box-shadow: inset 5px 5px 10px 0px rgba(0, 0, 0, 0.75); }
 
-.btn-delete {
-  align-self: center;
-  width: 60vw;
-  padding: 20px 15px;
-  margin-bottom: 60px;
-  border-radius: 1em;
-  border: none;
-  background-color: #ff004c;
-  text-align: center;
-  color: white;
+.button--white {
+  background-color: white;
+  color: #1664FF; }
+
+.button--white:hover {
+  color: rgba(22, 100, 255, 0.7);
   text-decoration: none; }
 
-.btn-delete:hover {
-  text-decoration: none;
+.button--transparent {
+  background-color: transparent; }
+
+.button--transparent:hover {
+  background-color: transparent; }
+
+.button--small {
+  width: auto; }
+
+.button--delete {
+  background-color: #ff004c;
+  margin-bottom: 60px;
   color: white; }
+
+.button--delete:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7); }
+
+.button--background-green {
+  background-color: #4FDB98; }
 
 .main-container {
   margin: 10vh 3vw 10vh 3vw;
@@ -259,9 +224,6 @@ select:focus, select:active {
   flex-wrap: wrap;
   text-align: center;
   line-height: 1.7em; }
-
-.main-garden {
-  padding: 40px 0; }
 
 /* ****** GARDEN ****** */
 .garden-container {
@@ -283,7 +245,8 @@ select:focus, select:active {
   text-align: center; }
 
 .flower-icon {
-  height: 60px; }
+  height: 60px;
+  margin: 20px 0; }
 
 .garden-img-container {
   display: flex;
@@ -323,10 +286,7 @@ select:focus, select:active {
   color: #1664FF;
   text-decoration: none; }
 
-.label {
-  margin-top: 20px; }
-
-/* Choose Plant */
+/* Choose Plant View */
 .form-choseplant {
   display: flex;
   flex-direction: column;
@@ -335,9 +295,6 @@ select:focus, select:active {
   text-align: center;
   line-height: 1.7em;
   padding: 8% 0; }
-
-.large {
-  font-size: x-large; }
 
 .chosePlant-img {
   border-top-left-radius: 2.5em;
@@ -349,25 +306,7 @@ select:focus, select:active {
   -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9);
   box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.9); }
 
-.btn-choseplant {
-  align-self: center;
-  color: white;
-  padding: 7px 15px;
-  margin: 20px;
-  border-radius: 1em;
-  border: none;
-  text-align: center; }
-
-.btn-choseplant:hover {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.8); }
-
-.bg-blue {
-  background-color: #1664FF; }
-
-.bg-green {
-  background-color: #4FDB98; }
-
+/* Plant Detail View */
 .plant-detail-img {
   margin: 15px;
   border-top-left-radius: 3em;
@@ -390,10 +329,6 @@ select:focus, select:active {
 
 .plant-detail-list li {
   margin: 20px; }
-
-.save-changes {
-  font-size: large;
-  line-height: normal; }
 
 .table {
   font-size: large;
@@ -422,13 +357,7 @@ select:focus, select:active {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none; }
 
-.plant-detail-btn-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  align-content: center; }
-
+/*  Edit Plant View */
 .edit-img-container {
   display: flex;
   flex-wrap: wrap;
@@ -463,35 +392,8 @@ select:focus, select:active {
   width: 60%;
   padding-left: 6px; }
 
-.blue-border {
-  border: 2px solid #1664FF;
-  border-radius: 0.3em; }
-
-.select-margin-bottom {
+.margin-bottom-25 {
   margin-bottom: 25px; }
-
-/* ****** selectPlant ****** */
-#selectPlantInputId {
-  display: none; }
-
-#selectPlantImg {
-  height: 60px;
-  margin-bottom: 30px; }
-
-p {
-  margin: 0;
-  margin-top: 20px; }
-
-#selectPlantButton {
-  margin: 0; }
-
-/* ****** ChosePlant ****** */
-#chosePlantInputId {
-  display: none; }
-
-#chosePlantImg {
-  height: 60px;
-  margin-bottom: 20px; }
 
 /* ****** About ****** */
 .about-img-container {
@@ -518,9 +420,11 @@ p {
 .about-img-container img {
   margin-bottom: 20px; }
 
-/* ****** addDetails ****** */
-#addDetailsImg {
-  height: 50px;
-  margin: 20px; }
+/* ****** ID FOR DISPLAY NONE ****** */
+#selectPlantInputId {
+  display: none; }
+
+#chosePlantInputId {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
