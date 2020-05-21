@@ -25,16 +25,18 @@
 </nav>
 {{/unless}}
 
-<main>
-
-  <h1>about</h1>
+<main class="main-container">
+  <h1 class="align-flex-start">about</h1>
   <div class="garden-container">
-    {{!-- <div class="form-container"> --}}
-    <h1 class="green text-centered">all my plants</h1>
+
+    {{#if user}}
+    <a href="/garden" class="nav-back-link">&lt; my garden</a>
+    {{/if}}
+
+    <h1 class="font-color-green text-centered">all my plants</h1>
     <div class="slogan text-centered">look after them and they'll look after you</div>
-    {{!-- </div> --}}
     <p>
-      all my plants is the app that finally lets you care for your plants the right way. Add all the plants you have at
+      all my plants is the app that finally allows you to care for your plants the right way. Add all the plants you have at
       home or the ones you would like to have into your virtual garden and keep track of their specific care
       requirements.
     </p>
@@ -42,7 +44,7 @@
     <br />
     <h2>who and what</h2>
     <p>
-      This is the second project of a Web Development Bootcamp at Ironhack, Berlin.
+      This website was built as part of the second project of a Web Development Bootcamp at Ironhack, Berlin.
     </p>
     <p>
       Who's behind the project?
@@ -57,10 +59,10 @@
             alt="manu" class="rounded-circle btn-shadow"><br />manuel</a></li>
     </ul>
 
-    <a href="/" class="btn-choseplant bg-green btn-shadow">Start your plant discovery journey!</a>
+    <a href="/" class="button button--background-green button--shadow">Start your plant discovery journey!</a>
     <br />
     <p>
-      Icons courtesy of <a href="https://www.freepik.com/">freepik</a>.
+      Flower icons courtesy of <a href="https://www.freepik.com/">freepik</a> :)
     </p>
 
   </div>

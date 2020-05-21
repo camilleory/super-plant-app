@@ -19,39 +19,38 @@
 </nav>
 
 
-<main class="main-garden">
+<main class="main-container">
 
-  <h1>my garden</h1>
+  <h1 class="align-flex-start">my garden</h1>
 
   {{#unless plantsList}}
-  <main class="garden-container-centeredtext">
-    <img id="emptyGardenImg" src="/images/gardening.png">
+  <div class="garden-container garden-container--text-centered">
+    <img class="flower-icon" src="/images/gardening.png">
     <p>
       Your garden is empty, {{user.name}}!<br />
       But not for very long...
     </p>
-      <a href="garden/addPlant" class="addplant-btn-style btn-shadow">Add your first plant</a>
-  </main>
+    <a href="garden/addPlant" class="button button--shadow">Add your first plant</a>
+  </div>
   {{/unless}}
 
   {{#if plantsList}}
 
   <div class="garden-container">
-    <img id="gardenImg" src="/images/lotus.png">
-    <h3>What a nice garden, {{user.name}}! </h3>
-   <p> Click on a plant for details or <a href="garden/addPlant" alt="add a plant">add a new plant</a>. </p>
+    <img src="/images/lotus.png" alt="" class="flower-icon">
+    <p class="font-xlarge">What a nice garden, {{user.name}}!</p>
+    <p> Click on a plant for details or <a href="garden/addPlant" alt="add a plant">add a new plant</a>. </p>
     <ul class="garden-img-container">
       {{#each plantsList}}
-      <li>
-        <a href="garden/plantDetails/{{this.id}}"><img class="garden-img" src="{{this.images.0.url}}"
-            alt=""></a>
+      <li class="garden-img-container__li">
+        <a href="garden/plantDetails/{{this.id}}"><img class="garden-img-container__img" src="{{this.images.0.url}}" alt=""></a>
         {{#if this.nickname}}
-        <div class="garden-plantname">
+        <div class="garden-img-container__plant-name">
           <a href="garden/plantDetails/{{this.id}}"><span class="capital">{{this.nickname}}</span></a>
         </div>
         {{/if}}
         {{#unless this.nickname}}
-        <div class="garden-plantname">
+        <div class="garden-img-container__plant-name">
           <a href="garden/plantDetails/{{this.id}}"><span class="capital">{{this.common_name}}</span></a>
         </div>
         {{/unless}}
@@ -61,7 +60,7 @@
       {{/each}}
     </ul>
 
-    <a href="garden/addPlant" class="addplant-btn-style btn-shadow">Add another plant</a>
+    <a href="garden/addPlant" class="button button--shadow">Add another plant</a>
 
   </div>
   {{/if}}

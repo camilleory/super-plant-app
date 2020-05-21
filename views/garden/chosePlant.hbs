@@ -18,12 +18,13 @@
   </div>
 </nav>
 
-<main>
-  <h2>Add a plant</h2>
-  <div class="garden-container-centeredtext">
-    <a href="/garden" class="text-left">&lt; my garden</a>
+<main class="main-container">
+  <h1 class="align-flex-start">add a plant</h1>
+
+  <div class="garden-container">
+    <a href="/garden" class="nav-back-link">&lt; my garden</a>
     <br />
-    <img id="chosePlantImg" src="/images/lawn.png">
+    <img class="flower-icon" src="/images/lawn.png">
     <p>Please choose the kind of plant you own:</p>
 
     {{#each fullData}}
@@ -34,12 +35,12 @@
     {{#if this.images.0.url}}
 
     <form action="/garden/chosePlant" method="post" class="form-choseplant">
-      <p class="large capital">{{this.common_name}}</p>
+      <p class="font-xlarge capital">{{this.common_name}}</p>
 
       <img src="{{this.images.0.url}}" alt="" class="chosePlant-img">
       <input type="text" name="id" value={{this.id}} id="chosePlantInputId">
 
-      <button type="submit" class="btn-choseplant bg-blue btn-shadow">Select</button>
+      <button type="submit" class="button button--small button--shadow">Select</button>
     </form>
 
     {{/if}}
@@ -47,7 +48,7 @@
     {{/each}}
     {{/each}}
 
-    <a href="/garden" class="text-left">&lt; my garden</a>
+    <a href="/garden" class="nav-back-link">&lt; my garden</a>
 
   </div>
 

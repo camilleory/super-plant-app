@@ -18,16 +18,17 @@
   </div>
 </nav>
 
-<main>
-  <h2>Add a plant</h2>
-  <div class="garden-container">
-    <a href="/garden" class="text-left">&lt; my garden</a>
+<main class="main-container">
+  <h1 class="align-flex-start">add a plant</h1>
 
-    <img id="selectPlantImg" src="/images/bud.png" alt="">
+  <div class="garden-container">
+    <a href="/garden" class="nav-back-link">&lt; my garden</a>
+
+    <img class="flower-icon" src="/images/bud.png" alt="">
 
     <p>Great! But there is more than one kind of {{plant}}. </p>
 
-    <form action="/garden/selectPlant" method="post" class="form-container">
+    <form action="/garden/selectPlant" method="post" class="form">
       {{#each response}}
       <ul id="selectPlantInputId">
         <li>{{this.common_name}}</li>
@@ -35,7 +36,7 @@
       </ul>
       {{/each}}
 
-      <button id="selectPlantButton" type="submit" class="addplant-btn-style btn-shadow">Select the one you
+      <button type="submit" class="button button--shadow">Select the one you
         want</button>
     </form>
   </div>
