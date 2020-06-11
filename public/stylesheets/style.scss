@@ -340,7 +340,13 @@ select:focus, select:active {
 }
 
 .garden-img-container--align-items-center {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .garden-img-container__li {
