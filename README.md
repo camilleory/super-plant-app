@@ -22,6 +22,6 @@ This website was built as part of the second project of a Web Development Bootca
 :sunflower: 
 
 
-Shout out to [Trefle](https://trefle.io) API for their very useful data on most uncommon vegetation ;) 
+Shout out to [Trefle](https://trefle.io) API for providing such useful data on most uncommon vegetation ;) 
 
 Flower icons courtesy of [freepik](https://www.freepik.com/)
