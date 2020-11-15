@@ -8,7 +8,9 @@ const cloudinaryStorage  = require("multer-storage-cloudinary");
 const multer             = require("multer");
 // every route below ist protected through this middleware, only accessable after login and email verification
 router.use((req, res, next) => {
-  if (req.isAuthenticated() && req.user.verifiedEmail === true) {
+  // UNCOMMENT THE FOLLOWING LINE, AND COMMENT OUT THE NEXT ONE, TO RESTORE AUTH EMAIL VERIFICATION
+  // if (req.isAuthenticated() && req.user.verifiedEmail === true) {
+  if (req.isAuthenticated()) { 
     next();
   } else {
     res.redirect("/auth/login");
@@ -31,9 +33,10 @@ router.get("/addPlant", (req, res, next) => {
   res.render("garden/addPlant");
 });
 // AddPlant POST Request : User can enter the common or scientific name of the plant and we give him a list of all plants with this name
-router.post("/addPlant", (req, res) => {
+router.post("/addPlant", (req, res, callback) => {
   axios
     .get("https://trefle.io/api/plants/", {
+    // .get("https://trefle.io/api/v1/plants/search", {
       params: {
         q: req.body.common_name,
         token: process.env.TREFLE_TOKEN,
@@ -51,7 +54,11 @@ router.post("/addPlant", (req, res) => {
     })
     .then(() => {
       console.log("ID parameter will be here", req.body.common_name);
+    })
+    .catch((error) => {
+      callback(error);
     });
+
 });
 //selectPlant GET REQUEST
 // Here we get the list of plants.
