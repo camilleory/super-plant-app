@@ -13,16 +13,18 @@ const bcryptSalt = 10;
 const passport = require("passport");
 const session = require("express-session");
 const flash = require("connect-flash");
-const nodemailer = require("nodemailer");
+// const nodemailer = require("nodemailer"); // UNCOMMENT THIS LINE TO RESTORE AUTH EMAIL VERIFICATION
 
+
+// UNCOMMENT THIS BLOCK TO RESTORE AUTH EMAIL VERIFICATION
 // signup with email
-let transporter = nodemailer.createTransport({
-  service: "Gmail",
-  auth: {
-    user: process.env.OUR_EMAIL,
-    pass: process.env.OUR_EMAIL_PW,
-  },
-});
+// let transporter = nodemailer.createTransport({
+//   service: "Gmail",
+//   auth: {
+//     user: process.env.OUR_EMAIL,
+//     pass: process.env.OUR_EMAIL_PW,
+//   },
+// });
 
 //signup and stay logged in
 router.get("/signup", (req, res) => {
@@ -31,7 +33,7 @@ router.get("/signup", (req, res) => {
 
 router.post("/signup", (req, res, next) => {
   const { email, password, name } = req.body;
-  const token = Math.floor(Math.random() * 1000000);
+  // const token = Math.floor(Math.random() * 1000000);  // UNCOMMENT THIS LINE TO RESTORE AUTH EMAIL VERIFICATION
 
   if (!email || !password) {
     res.render("auth/signup", {
@@ -40,15 +42,16 @@ router.post("/signup", (req, res, next) => {
     return;
   }
 
-  transporter.sendMail({
-    from: ' "All My Plants" <masterOfPlants@superplantapp.com>',
-    to: email,
-    subject: "Login to All My Plants App",
-    html: `Hello there! <br><br>
-    Please click on this link to verify your email adress and get access to All My Plants App: <br> 
-    ${process.env.EMAIL_LINK}/${token} <br><br>
-    Take care (of your plants)!`,
-  });
+  // UNCOMMENT THIS BLOCK TO RESTORE AUTH EMAIL VERIFICATION
+  // transporter.sendMail({
+  //   from: ' "All My Plants" <masterOfPlants@superplantapp.com>',
+  //   to: email,
+  //   subject: "Login to All My Plants App",
+  //   html: `Hello there! <br><br>
+  //   Please click on this link to verify your email adress and get access to All My Plants App: <br> 
+  //   ${process.env.EMAIL_LINK}/${token} <br><br>
+  //   Take care (of your plants)!`,
+  // });
 
   User.findOne({ email })
     .then((user) => {
@@ -65,7 +68,7 @@ router.post("/signup", (req, res, next) => {
       let newUser = new User({
         email: email,
         password: hashedPassword,
-        token: token,
+        // token: token, // UNCOMMENT THIS LINE TO RESTORE AUTH EMAIL VERIFICATION
         name: name,
       });
 
@@ -73,28 +76,29 @@ router.post("/signup", (req, res, next) => {
     })
 
     .then(() => {
-      res.render("auth/verify" /*, { message: req.flash("error") } */);
+      res.render("auth/login" /*, { message: req.flash("error") } */);
     })
 
     .catch((error) => {
-      res.render("auth/verify" /*{ message: "Something went wrong" } */);
+      res.render("auth/login" /*{ message: "Something went wrong" } */);
     });
 });
 
-router.get("/verify-email/:token", (req, res) => {
-  User.findOne({ token: req.params.token })
-  .then((user) => {
-    req.login(user, () => {
-      req.user.verifiedEmail = true;
-      req.user
-        .save()
+// UNCOMMENT THIS BLOCK TO RESTORE AUTH EMAIL VERIFICATION
+// router.get("/verify-email/:token", (req, res) => {
+//   User.findOne({ token: req.params.token })
+//   .then((user) => {
+//     req.login(user, () => {
+//       req.user.verifiedEmail = true;
+//       req.user
+//         .save()
 
-        .then(() => {
-          res.redirect("/garden");
-        });
-    });
-  });
-});
+//         .then(() => {
+//           res.redirect("/garden");
+//         });
+//     });
+//   });
+// });
 
 //login
 router.get("/login", (req, res, next) => {

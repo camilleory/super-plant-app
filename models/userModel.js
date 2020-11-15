@@ -8,10 +8,11 @@ const userSchema = new Schema(
     password: String,
     googleID: String,
     token: String,  
-    verifiedEmail: {
-      type: Boolean,
-      default: false,
-    },
+    // UNCOMMENT THIS BLOCK TO RESTORE AUTH EMAIL VERIFICATION
+    // verifiedEmail: {
+    //   type: Boolean,
+    //   default: false,
+    // },
 });
 
 const User = mongoose.model("User", userSchema);

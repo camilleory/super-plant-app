@@ -141,7 +141,7 @@ passport.use(
             googleID: profile.id,
             name: profile.displayName,
             email: profile.emails[0].value,
-            verifiedEmail: profile.emails[0].verified,
+            // verifiedEmail: profile.emails[0].verified, // UNCOMMENT THIS LINE TO RESTORE AUTH EMAIL VERIFICATION
           })
             .then((newUser) => {
               done(null, newUser);
